@@ -1,0 +1,9 @@
+mktextfm STXihei/OT
+mktextfm STXihei/OT
+mktextfm STXihei/OT
+mktextfm STXihei/BI/OT
+mktextfm STXihei/OT
+mktextfm STXihei/I/OT
+mktextfm STXihei/OT
+mktextfm STXihei/OT
+mktexpk --mfmode / --bdpi 600 --mag 1+123/600 --dpi 723 unisong7e
