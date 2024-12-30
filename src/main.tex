@@ -4079,7 +4079,7 @@ leftcard/.style={   % 左侧小卡片样式
         {丁酸梭菌}/{C. butyricum}/0.01350/{0-0.08}/27\%/77.88\%/丰度较低/{丁酸梭菌是一种厌氧性细菌，能够产生丁酸，对于肠道健康和食品发酵具有重要作用。}/{}/\currentpos,
         {霍氏真杆菌}/{E. hallii}/0.02035/{0-3.5506}/8\%/91.83\%/丰度较低/{霍氏真杆菌是一种厌氧细菌，以其能够发酵膳食纤维并产生丁酸而著称，促进肠道健康。}/{}/\currentpos,
         {直肠真杆菌}/{E. rectale}/2.14287/{0-13.029}/75\%/95.67\%/检出/{直肠真杆菌是一种厌氧细菌，以其能发酵膳食纤维并产生短链脂肪酸，尤其是丁酸，促进肠道健康。}/{}/\currentpos,
-        {普拉梭菌}/{F. prausnitzii}/26.23325/{0.18043-14.003}/98\%/99.52\%/超标/{普拉梭菌是一种益生菌，以其产生丁酸和抗炎作用而著称，对维持肠道健康和整体免疫功能有重要的积极影响。}/{建议调整饮食结构，增加膳食纤维摄入}/\currentpos,
+        {普拉梭菌}/{F. prausnitzii}/26.23325/{0.18043-14.003}/98\%/99.52\%/超标/{普拉梭菌是一种益生菌，以其产生丁酸和抗炎作用而著称，对维持肠道健康和整体免疫功能有重要的积极影响。}/{可以通过增加纤维摄入、食用发酵食品以及减少糖和加工食品的摄入来改善普拉梭菌超标情况。}/\currentpos,
         {嗜酸乳杆菌}/{L. acidophilus}/ND/{0-0.08}/15\%/88.94\%/未检出/{嗜酸乳杆菌是一种常见的益生菌，以其能够发酵乳糖并生成乳酸而著称，具有助于消化、增强免疫力以及维持肠道微生物平衡的潜力。}/{建议补充益生菌制剂}/\currentpos,
         {短乳杆菌}/{L. brevis}/0.00028/{0-0.08}/27\%/77.88\%/丰度较低/{短乳杆菌是一种乳酸菌，以其发酵能力和产生乳酸而著称，具有促进消化、增强免疫力和抗菌特性。}/{}/\currentpos
     }
@@ -4365,8 +4365,6 @@ leftcard/.style={   % 左侧小卡片样式
 \end{tikzpicture}
 \end{center}
 
-\newpage
-
 \begin{tcolorbox}[
     enhanced,
     colback=gray!3,
@@ -4433,9 +4431,205 @@ leftcard/.style={   % 左侧小卡片样式
     top=8pt,
     bottom=8pt
 ]
-{\small{\color{customTeal}\faInfoCircle} 有害菌指得是机会致病菌+致病菌。
+{\small{\color{customTeal}\faInfoCircle} 本报告列出了17种人体常见的肠道有害菌，有害菌能够破坏肠道内生态平衡，引起肠道功能紊乱等，损害人体健康。
 }
 \end{tcolorbox}
+
+\begin{tcolorbox}[
+    enhanced,
+    colback=lightpurple!10, % 卡片底色
+    colframe=lightpurple!10,  % 边框颜色
+    arc=3mm,
+    boxrule=0.5pt,
+    width=\textwidth,
+    top=8pt,
+    bottom=8pt
+]
+{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{什么是肠道有害菌？}\\
+{\color{orange!50}\faComments}\quad 肠道有害菌是指那些对宿主健康产生负面影响的微生物，它们在肠道过度生长时可能导致各种健康问题。肠道有害菌通过产生毒素、引发炎症、破坏肠道屏障等方式，可能干扰正常的消化吸收过程，诱发肠道疾病和全身性疾病。典型的有害菌包括：沙门氏菌属（Salmonella）、大肠杆菌（Escherichia coli）和金黄色葡萄球菌（Staphylococcus aureus），它们可能导致食物中毒、肠炎及其他感染性疾病。因此，维护肠道微生物的平衡、抑制有害菌的生长是保护整体健康的重要环节。
+}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+    enhanced,
+    colback=lightpurple!10, % 卡片底色
+    colframe=lightpurple!10,  % 边框颜色
+    arc=3mm,
+    boxrule=0.5pt,
+    width=\textwidth,
+    top=8pt,
+    bottom=8pt
+]
+{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{肠道有害菌越少越好吗？}\\
+{\color{orange!50}\faComments}\quad 肠道有害菌的存在并不一定是完全不利的，适量的有害菌可以在特定条件下发挥作用。然而，当有害菌的数量过多时，可能会引发健康问题。维护肠道健康的关键在于保持微生物群的平衡与多样性，适当控制有害菌的生长，同时配合健康的饮食和生活方式，以促进整体健康。
+}
+\end{tcolorbox}
+
+\begin{center}
+\begin{tikzpicture}[
+    font=\small,
+    title/.style={font=\small\bfseries\color{white}},
+    value/.style={font=\small},
+    reference/.style={font=\small},
+    cell/.style={anchor=west, text width=4.2cm},
+    note/.style={anchor=west, text width=4.5cm, align=left}
+]
+    \def\cardwidth{\textwidth}
+    \def\cardheight{10}
+    \def\barheight{0.25}
+    \def\barwidth{1.5}
+    \def\valuebarspace{0.4}
+
+    % 容器和标题栏背景
+    \draw[rounded corners=5, fill=white, draw=gray!20]
+        (0,0) rectangle (\cardwidth,-\cardheight);
+    \path[fill=customTeal]
+        (0,0) [rounded corners=5] -- (\cardwidth,0) --
+        (\cardwidth,0.8) -- (0,0.8) -- cycle;
+
+    % 表头
+    \node[title, anchor=west] at (0.5,0.4) {\textbf{菌种名称}};
+    \node[title] at (4.5,0.4) {\textbf{正常范围}};
+    \node[title] at (7.5,0.4) {\textbf{检测丰度}};
+    \node[title] at (10.5,0.4) {\textbf{结果评价}};
+    \node[title] at (13,0.4) {\textbf{超过\%的人}};
+    \node[title] at (16,0.4) {\textbf{有\%的正常人检出}};
+
+    % 初始化位置计数器
+    \def\currentpos{0.25}
+
+    % 数据行和卡片
+    \foreach \item/\enitem/\value/\range/\percentile/\detection/\status/\intro/\suggestion/\index in {
+        {埃希氏菌属}/{Escherichia}/0.14296/{0-3.83}/6\%/99.52\%/丰度较低/{正常菌属，条件致病菌。过多致病，导致腹泻并失衡。}/{}/\currentpos,
+        {链球菌属}/{Streptococcus}/0.31690/{0-0.3496}/13\%/99.52\%/丰度较低/{可引起化脓性炎症，个别菌为益生菌，常见皮肤、口腔、咽喉、婴幼儿常见菌。}/{}/\currentpos,
+        {韦荣菌属}/{Veillonella}/0.38326/{0-0.0086}/7\%/98.56\%/超标/{韦荣菌属可能在特定条件下引发健康问题，其过度生长可能导致肠道炎症，加剧消化系统相关疾病的风险。}/{建议调整饮食结构，注意口腔卫生}/\currentpos,
+        {泛菌属}/{Pantoea}/0.00225/{0-0.05}/-\%/0.02\%/丰度较低/{泛菌属可在特定条件下引发感染，特别是在免疫系统较弱的个体中，干扰正常的肠道功能，导致肠道不适、炎症或其他健康问题。}/{}/\currentpos,
+        {梭杆菌属}/{Fusobacterium}/0.00976/{0-0.05}/38\%/80.29\%/丰度较低/{聚合梭杆菌可诱发促进宫颈癌，产生菌多糖，代谢生成素酶，引发炎症和肝炎症，胃癌到肺癌患者富集。}/{}/\currentpos
+%        {志贺氏菌属}/{Shigella}/0.04732/{0-0.05}/-\%/62.98\%/丰度较低/{致病菌，引发腹泻等疾病，有不同的血清型，人类肠道菌唯一病毒，离口途径传播，通常与卫生条件差和食品安全有关。}/{}/\currentpos,
+%        {弯曲杆菌属}/{Campylobacter}/0.04799/{0-0.05}/-\%/55.29\%/丰度较低/{人和动物兼性致病菌，导致肠道疾病，常见肠胃炎和菌群紊乱，空肠弯曲杆菌会引起腹泻发烧，食物家禽宠物都可能携带弯曲杆菌。}/{}/\currentpos,
+%        {克雷伯氏菌属}/{Klebsiella}/0.09652/{0-0.05}/-\%/89.06\%/超标/{条件致病菌，人群检出率较高，过高导致肠道菌群紊乱，在口腔和肠道均有分布，易引发感染炎症，耐药，易感因素包括营养不良，抗生素，开放性伤口。}/{建议调整饮食，加强口腔卫生}/\currentpos,
+%        {脱硫弧菌属}/{Desulfovibrio}/0.02325/{0-0.05}/-\%/33.65\%/丰度较低/{属于变形菌门，产生硫化氢，导致炎症、腹泻，对肠道上皮具严生毒性，导致肠际通透性，约50\%人的口腔和肠道携带，过多通常肥胖，硫转移酶易聚合过重重，铅含含，系统性硬化症患者富集，与普拉梭菌共存利于丁酸生产。}/{}/\currentpos,
+%        {螺杆菌属}/{Helicobacter}/0.00373/{0-0.05}/-\%/22.12\%/丰度较低/{革兰氏阴性菌，微需氧菌，该菌属一些菌种被发现在人类上消化道内部，部分种为致病菌，与消化性溃疡、慢性胃炎、十二指肠炎、胃癌有关，包括幽门螺旋杆菌。}/{}/\currentpos,
+%        {弓形菌属}/{Arcobacter}/0.00209/{0-0.05}/-\%/7.69\%/丰度较低/{好氧菌，肠际致病菌，与河流海洋污染相关的潜在病原菌，人畜共患菌。}/{}/\currentpos
+    }
+    {
+        % 计算当前行的基础位置
+        \pgfmathsetmacro{\basepos}{-2.8*\currentpos}
+
+        % 菌种名称
+        \node[cell, align=left] at (0.5,\basepos) {
+            \small\textbf{\item}\\[-0.2em]
+            {\color{lightgray}\small\enitem}
+        };
+
+        % 正常范围
+        \node[reference] at (4.5,\basepos) {\footnotesize\range};
+
+        % 进度条相关
+        \pgfmathsetmacro{\barypos}{\basepos-\valuebarspace+0.1}
+        \def\barstart{6.75}
+
+        % 进度条背景
+        \fill[gray!10, rounded corners=2] (\barstart,\barypos)
+            rectangle (\barstart+\barwidth,\barypos+\barheight);
+
+        % 检测丰度值
+        \node[value] at (7.5,{\basepos-\valuebarspace+0.6}) {\footnotesize\value};
+
+        % 解析范围并计算进度条长度
+        \def\parserange#1-#2\endparse{\def\minval{#1}\def\maxval{#2}}
+        \expandafter\parserange\range\endparse
+
+        % 计算进度条长度和颜色
+        \pgfmathsetmacro{\progress}{min(\value/\maxval, 1.0)}
+        \pgfmathparse{\value > \maxval ? "customred" : (\value < \minval ? "customred" : "green!50")}
+        \let\barcolor=\pgfmathresult
+
+        % 进度条显示
+        \ifnum\pdfstrcmp{\status}{超标}=0
+            \fill[customred, rounded corners=2] (\barstart,\barypos)
+                rectangle (\barstart+\barwidth,\barypos+\barheight);
+        \else
+            \fill[\barcolor, rounded corners=2] (\barstart,\barypos)
+                rectangle (\barstart+\barwidth*\progress,\barypos+\barheight);
+        \fi
+
+        % 结果评价
+        \ifnum\pdfstrcmp{\status}{超标}=0
+            \node[value, text=customred] at (10.5,\basepos) {\footnotesize\textbf{\status}};
+        \else
+            \node[value, text=customGreen] at (10.5,\basepos) {\footnotesize\textbf{\status}};
+        \fi
+
+        % 丰度超过%人
+        \node[value] at (13,\basepos) {\footnotesize\percentile};
+
+        % %正常人检出
+        \node[value] at (16,\basepos) {\footnotesize\detection};
+
+        % 添加卡片
+        \pgfmathsetmacro{\cardypos}{\basepos-0.5}
+        \begin{scope}[shift={(0,\cardypos)}]
+            % 卡片背景
+            \pgfmathsetmacro{\cardheight}{
+                \ifnum\pdfstrcmp{\status}{超标}=0
+                    1.0  % 两行内容时的高度
+                \else
+                    0.6  % 一行内容时的高度
+                \fi
+            }
+
+            \fill[rounded corners=5pt, customTeal!5, draw=gray!5]
+                (0.3,-\cardheight) rectangle (17.3,0);
+
+            % 菌群简介图标和内容
+            \node[anchor=west] at (0.5,-0.3) {
+                \textbf{\color{gray!90}\footnotesize \textcolor{customTeal}{\faInfoCircle}}
+            };
+            \node[anchor=west, text width=16cm] at (0.9,-0.3) {
+                {\small\color{gray}\footnotesize \intro}
+            };
+
+            % 异常解读标题和内容
+            \ifnum\pdfstrcmp{\status}{超标}=0
+                \node[anchor=west] at (0.55,-0.8) {
+                    \textbf{\color{customRed}\footnotesize \textcolor{customRed}{\faBell}}
+                };
+                \node[anchor=west, text width=16cm] at (0.9,-0.8) {
+                    {\small\color{gray}\footnotesize \suggestion}
+                };
+            \fi
+        \end{scope}
+
+        % 分割线
+        \pgfmathsetmacro{\linepos}{
+            \ifnum\pdfstrcmp{\status}{超标}=0
+                \basepos-1.7  % 超标时的分割线位置
+            \else
+                \basepos-1.3  % 正常时的分割线位置
+            \fi
+        }
+        \draw[gray!20] (0.2,\linepos) -- (\cardwidth-0.2,\linepos);
+
+        % 根据当前行的状态计算下一行的位置增量
+        \ifnum\pdfstrcmp{\status}{超标}=0
+            \pgfmathsetmacro{\increment}{0.85}  % 超标行（两行内容）需要更大的增量
+        \else
+            \pgfmathsetmacro{\increment}{0.7}  % 正常行（一行内容）使用较小的增量
+        \fi
+
+        % 更新位置计数器
+        \pgfmathsetmacro{\nextpos}{\currentpos+\increment}
+        \xdef\currentpos{\nextpos}
+    }
+
+    % 最后一行的处理，消除多余的空白
+    \pgfmathsetmacro{\lastincrement}{2}  % 最后一行的增量
+    \pgfmathsetmacro{\nextpos}{\currentpos+\lastincrement}
+    \xdef\currentpos{\nextpos}
+
+\end{tikzpicture}
+\end{center}
 
 \newpage
 
