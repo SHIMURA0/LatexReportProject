@@ -2655,7 +2655,7 @@ leftcard/.style={   % 左侧小卡片样式
 
     % 数据行和卡片
     \foreach \item/\enitem/\value/\range/\percentile/\detection/\status/\intro/\suggestion/\index in {
-        {粪杆菌属}/{Faecalibacterium}/28.86665/{1.9351-17.7942}/99\%/98.08\%/正常/{基石菌，丁酸生产菌，下一代益生菌，抗炎，慢性便秘、乳糜泻、肠易激综合征和炎性肠病中减少，维持肠道稳态，抑制病原菌，与拟杆菌，青霉双歧杆菌等交叉调节，生产B12，缓解过敏，改善肝脏健康，远离焦虑等可以增加其丰度。}/{建议：乳杆菌补充、亚麻籽、壳聚糖、柿子糖（甜栗）}/\currentpos,
+        {粪杆菌属}/{Faecalibacterium}/28.86665/{1.9351-17.7942}/99\%/98.08\%/超标/{粪杆菌属属于拟杆菌科，能够有效分解复杂的多糖和纤维，帮助宿主消化和吸收营养，产生短链脂肪酸（如乙酸、丙酸、丁酸），有助于维持肠道健康。}/{建议：乳杆菌补充、亚麻籽、壳聚糖、柿子糖（甜栗）}/\currentpos,
         {经黏液真杆菌属}/{Blautia}/10.17279/{0.0846-6.9056}/75\%/97.60\%/超标/{消化复合碳水化合物，健康菌，偏低与炎症疾病，营养不良相关，减肥有效果，缓解炎症性疾病和代谢疾病，抑制病原菌，老年，氟喹诺酮和环丝氨酸饮酒会减少，参与实菌群，差异素生物转化}/{建议：高胆汁酸、红酒、啤酒}/\currentpos,
         {戴阿利斯特杆菌属}/{Dialister}/2.74325/{0-3.7365}/79\%/96.15\%/正常/{代谢碳水化合物，产短链脂肪酸，许多种都可能导致感染，但是抑制症感者缺乏，关节炎恶者富集，与强直性脊柱炎正相关，癌症患者样本中显著升高，丰度高难以减肥，油炸食品会增加其丰度}/{}/\currentpos,
         {罗氏菌属}/{Roseburia}/6.33667/{0.583-16.3581}/10\%/96.15\%/正常/{基石菌，产丁酸，丙酸，乙酸，影响结肠运动，具抗炎特性，分解不可消化的碳水化合物，百岁老人富集，抗炎，IBD和IBS，直肠癌，代谢类疾病患者减少，与神经、免疫，过敏相关，缺乏加剧疾病，过多也会导致菌群失衡，与含碳水化合物会促进其生长，例如菌落，燕麦，青香蕉等}/{}/\currentpos,
@@ -3740,14 +3740,12 @@ leftcard/.style={   % 左侧小卡片样式
 
     % 数据行和卡片
     \foreach \item/\enitem/\value/\range/\percentile/\detection/\status/\intro/\suggestion/\index in {
-        {嗜粘蛋白-艾克曼菌}/{A. muciniphila}/0.00394/{0-6.6395}/27\%/95.67\%/丰度较低/{肠道益生菌，维护肠黏膜健康。参与肠道屏障功能的维护，与代谢健康密切相关。}/{}/\currentpos,
-        {凝结芽孢杆菌}/{Bacillus coagulans}/0.00027/{0-0.08}/15\%/88.94\%/丰度较低/{益生菌，改善消化功能。能够产生乳酸，具有良好的耐受性，可以改善肠道环境。}/{}/\currentpos,
-        {枯草芽孢杆菌}/{Bacillus subtilis}/0.00185/{0-0.08}/58\%/87.50\%/丰度较低/{益生菌，增强免疫力。产生多种有益物质，具有较强的环境适应能力。}/{}/\currentpos,
-        {多形拟杆菌}/{Bacteroides thetaiotaomicron}/0.00020/{0-2.7856}/64\%/86.06\%/丰度较低/{肠道共生菌，参与营养代谢。对复杂碳水化合物的分解具有重要作用。}/{}/\currentpos,
-        {青春双歧杆菌}/{Bifidobacterium adolescentis}/ND/{0-14.286}/24\%/97.12\%/未检出/{益生菌，调节肠道菌群。是成年人肠道中最主要的双歧杆菌之一。}/{建议补充益生菌制剂}/\currentpos,
-        {角双歧杆菌}/{Bifidobacterium angulatum}/ND/{0-0.15257}/8\%/91.83\%/未检出/{益生菌，维护肠道健康。参与碳水化合物的代谢，产生有益的代谢产物。}/{建议补充益生菌制剂}/\currentpos
-%        {动物双歧杆菌}/{Bifidobacterium animalis}/0.00113/{0-0.18833}/27\%/77.88\%/丰度较低/{益生菌，改善肠道功能。具有良好的耐受性，常用于发酵乳制品。}/{}/\currentpos,
-%        {两歧双歧杆菌}/{Bifidobacterium bifidum}/ND/{0-2.1225}/8\%/98.56\%/未检出/{重要益生菌，增强免疫力。对婴幼儿肠道健康特别重要。}/{建议补充益生菌制剂}/\currentpos
+        {嗜粘蛋白-艾克曼菌}/{A. muciniphila}/0.00394/{0-6.6395}/27\%/95.67\%/丰度较低/{嗜粘蛋白-艾克曼菌是一种革兰氏阴性细菌，能够分解肠道黏液，有助于维持肠道屏障功能和调节代谢健康。}/{}/\currentpos,
+        {凝结芽孢杆菌}/{B. coagulans}/0.00027/{0-0.08}/15\%/88.94\%/丰度较低/{凝结芽孢杆菌是一种耐热的革兰氏阳性芽孢杆菌，常用于作为益生菌，具有促进肠道健康和改善消化的潜在益处。}/{}/\currentpos,
+        {枯草芽孢杆菌}/{B. subtilis}/0.00185/{0-0.08}/58\%/87.50\%/丰度较低/{枯草芽孢杆菌是一种广泛存在的革兰氏阳性芽孢杆菌，常用于发酵食品，有助于改善肠道微生态和促进植物生长。}/{}/\currentpos,
+        {多形拟杆菌}/{B. thetaiotaomicron}/0.00020/{0-2.7856}/64\%/86.06\%/丰度较低/{多形拟杆菌是一种革兰氏阴性厌氧细菌，能够有效分解复杂碳水化合物，并在维持肠道微生态平衡和健康方面发挥重要作用。}/{}/\currentpos,
+        {青春双歧杆菌}/{B. adolescentis}/ND/{0-14.286}/24\%/97.12\%/未检出/{青春双歧杆菌是一种革兰氏阳性益生菌，参与消化过程并有助于维持肠道健康，常被作为益生菌补充剂的一部分。}/{建议补充益生菌制剂}/\currentpos,
+        {角双歧杆菌}/{B. angulatum}/ND/{0-0.15257}/8\%/91.83\%/未检出/{角双歧杆菌是一种革兰氏阳性益生菌，有助于维持肠道微生物平衡，并可能对宿主的免疫系统发挥积极作用。}/{建议补充益生菌制剂}/\currentpos
     }
     {
         % 计算当前行的基础位置
@@ -3756,7 +3754,7 @@ leftcard/.style={   % 左侧小卡片样式
         % 菌种名称
         \node[cell, align=left] at (0.5,\basepos) {
             \small\textbf{\item}\\[-0.2em]
-            {\color{gray}\small\enitem}
+            {\color{lightgray}\small\enitem}
         };
 
         % 正常范围
@@ -3795,7 +3793,7 @@ leftcard/.style={   % 左侧小卡片样式
         \ifnum\pdfstrcmp{\status}{超标}=0
             \node[value, text=customred] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \else
-            \node[value, text=green!50!black] at (10.5,\basepos) {\footnotesize\textbf{\status}};
+            \node[value, text=customGreen] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \fi
 
         % 丰度超过%人
@@ -3905,19 +3903,17 @@ leftcard/.style={   % 左侧小卡片样式
 
     % 数据行和卡片
     \foreach \item/\enitem/\value/\range/\percentile/\detection/\status/\intro/\suggestion/\index in {
-        {动物双歧杆菌}/{Bifidobacterium animalis}/0.00113/{0-0.18833}/27\%/77.88\%/丰度较低/{益生菌，改善肠道功能。具有良好的耐受性，常用于发酵乳制品。}/{}/\currentpos,
-        {两歧双歧杆菌}/{Bifidobacterium bifidum}/ND/{0-2.1225}/8\%/98.56\%/未检出/{重要益生菌，增强免疫力。对婴幼儿肠道健康特别重要。}/{建议补充益生菌制剂}/\currentpos,
-        {短双歧杆菌}/{Bifidobacterium breve}/0.00158/{0-0.08}/67\%/99.52\%/丰度较低/{益生菌，抑制有害菌。对维持肠道菌群平衡具有重要作用。}/{}/\currentpos,
-        {链状双歧杆菌}/{Bifidobacterium catenulatum}/ND/{0-0.50838}/50\%/99.52\%/未检出/{益生菌，维护肠道平衡。能够分解多种复杂碳水化合物。}/{建议补充益生菌制剂}/\currentpos,
-        {乳双歧杆菌}/{Bifidobacterium crudilactis}/ND/{0-0.08}/44\%/99.52\%/未检出/{益生菌，促进营养吸收。在发酵乳制品中常见。}/{建议补充益生菌制剂}/\currentpos,
-        {婴儿双歧杆菌}/{Bifidobacterium infantis}/ND/{0-0.08}/2\%/99.04\%/未检出/{婴幼儿益生菌，预防肠道感染。对婴幼儿肠道发育极其重要。}/{建议补充益生菌制剂}/\currentpos,
-        {长双歧杆菌}/{Bifidobacterium longum}/0.01861/{0-6.854}/95\%/98.56\%/丰度较低/{重要益生菌，改善肠道环境。具有抗炎和免疫调节作用。}/{}/\currentpos,
-        {胃痛双歧杆菌}/{Bifidobacterium merycicum}/ND/{0-0.08}/8\%/91.83\%/未检出/{益生菌，保护胃肠道。对维持胃肠道健康有重要作用。}/{建议补充益生菌制剂}/\currentpos,
-        {穆卡拉巴双歧杆菌}/{Bifidobacterium moukalabense}/0.00021/{0-0.08}/27\%/77.88\%/丰度较低/{益生菌，维持菌群平衡。是较新发现的双歧杆菌种。}/{}/\currentpos,
-        {假长双歧杆菌}/{Bifidobacterium pseudolongum}/0.00142/{0-0.08}/83\%/5.77\%/丰度较低/{益生菌，参与肠道代谢。对维持肠道健康有重要作用。}/{}/\currentpos,
-        {分支双歧杆菌}/{Bifidobacterium ramosum}/ND/{0-0.08}/98\%/35.58\%/未检出/{益生菌，促进营养吸收。参与多种营养物质的代谢。}/{建议补充益生菌制剂}/\currentpos
-%        {罗伊氏双歧杆菌}/{Bifidobacterium reuteri}/ND/{0-0.08}/83\%/5.77\%/未检出/{益生菌，具有免疫调节作用。能产生多种有益代谢物。}/{建议补充益生菌制剂}/\currentpos,
-%        {短柄双歧杆菌}/{Bifidobacterium stellenboschense}/ND/{0-0.08}/27\%/77.88\%/未检出/{益生菌，参与碳水化合物代谢。维持肠道微生态平衡。}/{建议补充益生菌制剂}/\currentpos
+        {动物双歧杆菌}/{B. animalis}/0.00113/{0-0.18833}/27\%/77.88\%/丰度较低/{动物双歧杆菌是一种革兰氏阳性益生菌，具有促进消化健康、增强免疫功能以及改善肠道微生态的潜在益处。}/{}/\currentpos,
+        {两歧双歧杆菌}/{B. bifidum}/ND/{0-2.1225}/8\%/98.56\%/未检出/{两歧双歧杆菌是一种革兰氏阳性益生菌，能够帮助分解食物，促进营养吸收，有助于维护肠道健康和增强免疫系统功能。}/{建议补充益生菌制剂}/\currentpos,
+        {短双歧杆菌}/{B. breve}/0.00158/{0-0.08}/67\%/99.52\%/丰度较低/{短双歧杆菌是一种革兰氏阳性益生菌，它在消化过程中发挥重要作用，能够帮助分解乳糖和其他碳水化合物，促进肠道健康。}/{}/\currentpos,
+        {链状双歧杆菌}/{B. catenulatum}/ND/{0-0.50838}/50\%/99.52\%/未检出/{链状双歧杆菌是一种革兰氏阳性益生菌，它有助于改善肠道微生物群的平衡，促进消化健康，可能在发酵过程中可能产生有益的代谢物。}/{建议补充益生菌制剂}/\currentpos,
+        {乳双歧杆菌}/{B. crudilactis}/ND/{0-0.08}/44\%/99.52\%/未检出/{乳双歧杆菌是一种革兰氏阳性益生菌，它在乳糖代谢方面发挥作用，能够帮助消化乳制品，维持肠道健康和增强免疫系统。}/{建议补充益生菌制剂}/\currentpos,
+        {婴儿双歧杆菌}/{B. infantis}/ND/{0-0.08}/2\%/99.04\%/未检出/{婴儿双歧杆菌是一种革兰氏阳性益生菌，主要存在于新生儿和婴儿的肠道中。这种细菌对婴儿的消化系统发育至关重要。}/{建议补充益生菌制剂}/\currentpos,
+        {长双歧杆菌}/{B. longum}/0.01861/{0-6.854}/95\%/98.56\%/丰度较低/{长双歧杆菌是一种革兰氏阳性益生菌，它可以促进消化、增强免疫系统、帮助维持肠道微生物平衡、减少肠道炎症等。}/{}/\currentpos,
+        {胃痛双歧杆菌}/{B. merycicum}/ND/{0-0.08}/8\%/91.83\%/未检出/{胃痛双歧杆菌是一种相对较少研究的双歧杆菌，它具有促进肠道健康、改善消化和增强免疫反应的潜力。}/{建议补充益生菌制剂}/\currentpos,
+        {穆卡拉巴双歧杆菌}/{B. moukalabense}/0.00021/{0-0.08}/27\%/77.88\%/丰度较低/{穆卡拉巴双歧杆菌是一种相对较新的双歧杆菌菌株，对肠道健康有积极影响。}/{}/\currentpos,
+        {假长双歧杆菌}/{B. pseudolongum}/0.00142/{0-0.08}/83\%/5.77\%/丰度较低/{假长双歧杆菌是一种革兰氏阳性益生菌，具有促进肠道健康和改善消化的能力。}/{}/\currentpos,
+        {分支双歧杆菌}/{B. ramosum}/ND/{0-0.08}/98\%/35.58\%/未检出/{分支双歧杆菌是一种革兰氏阳性益生菌，它主要存在于人类的肠道中，尤其是在婴儿期和幼儿期。}/{建议补充益生菌制剂}/\currentpos
     }
     {
         % 计算当前行的基础位置
@@ -3926,7 +3922,7 @@ leftcard/.style={   % 左侧小卡片样式
         % 菌种名称
         \node[cell, align=left] at (0.5,\basepos) {
             \small\textbf{\item}\\[-0.2em]
-            {\color{gray}\small\enitem}
+            {\color{lightgray}\small\enitem}
         };
 
         % 正常范围
@@ -3965,7 +3961,7 @@ leftcard/.style={   % 左侧小卡片样式
         \ifnum\pdfstrcmp{\status}{超标}=0
             \node[value, text=customred] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \else
-            \node[value, text=green!50!black] at (10.5,\basepos) {\footnotesize\textbf{\status}};
+            \node[value, text=customGreen] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \fi
 
         % 丰度超过%人
@@ -4075,19 +4071,17 @@ leftcard/.style={   % 左侧小卡片样式
 
     % 数据行和卡片
     \foreach \item/\enitem/\value/\range/\percentile/\detection/\status/\intro/\suggestion/\index in {
-        {罗伊氏双歧杆菌}/{Bifidobacterium reuteri}/ND/{0-0.08}/83\%/5.77\%/未检出/{益生菌，具有免疫调节作用。能产生多种有益代谢物。}/{建议补充益生菌制剂}/\currentpos,
-        {短柄双歧杆菌}/{Bifidobacterium stellenboschense}/ND/{0-0.08}/27\%/77.88\%/未检出/{益生菌，参与碳水化合物代谢。维持肠道微生态平衡。}/{建议补充益生菌制剂}/\currentpos,
-        {粪双歧杆菌}/{Bifidobacterium stercoris}/ND/{0-0.08}/8\%/91.83\%/未检出/{益生菌，参与肠道代谢。对肠道健康有积极作用。}/{建议补充益生菌制剂}/\currentpos,
-        {布劳特氏菌属氢营养菌}/{Blautia hydrogenotropica}/0.00262/{0-0.08}/27\%/77.88\%/丰度较低/{参与氢气代谢，维持肠道环境平衡。对肠道微生态有重要作用。}/{}/\currentpos,
-        {穗状丁酸弧菌}/{Butyrivibrio crossotus}/0.00239/{0-2.9334}/8\%/91.83\%/丰度较低/{产生丁酸，维护肠道健康。参与纤维素降解。}/{}/\currentpos,
-        {丁酸梭菌}/{Clostridium butyricum}/0.01350/{0-0.08}/27\%/77.88\%/丰度较低/{产生丁酸，具有益生作用。改善肠道环境。}/{}/\currentpos,
-        {霍氏真杆菌}/{Eubacterium hallii}/0.02035/{0-3.5506}/8\%/91.83\%/丰度较低/{产生短链脂肪酸，维护肠道健康。参与多种代谢过程。}/{}/\currentpos,
-        {直肠真杆菌}/{Eubacterium rectale}/2.14287/{0-13.029}/75\%/95.67\%/检出/{产生丁酸，维护肠道健康。参与碳水化合物代谢，具有抗炎作用。}/{}/\currentpos,
-        {普拉梭菌}/{Faecalibacterium prausnitzii}/26.23325/{0.18043-14.003}/98\%/99.52\%/超标/{重要益生菌，产生丁酸。具有抗炎作用，与肠道健康密切相关。}/{建议调整饮食结构，增加膳食纤维摄入}/\currentpos,
-        {嗜酸乳杆菌}/{Lactobacillus acidophilus}/ND/{0-0.08}/15\%/88.94\%/未检出/{重要益生菌，产生乳酸。改善肠道环境，增强免疫力。}/{建议补充益生菌制剂}/\currentpos,
-        {短乳杆菌}/{Lactobacillus brevis}/0.00028/{0-0.08}/27\%/77.88\%/丰度较低/{益生菌，发酵乳制品常见。具有抗氧化作用。}/{}/\currentpos
-%        {干酪乳杆菌}/{Lactobacillus casei}/ND/{0-0.08}/8\%/91.83\%/未检出/{益生菌，改善消化功能。增强免疫系统，维护肠道健康。}/{建议补充益生菌制剂}/\currentpos,
-%        {卷曲乳杆菌}/{Lactobacillus crispatus}/0.00489/{0-0.08}/67\%/99.52\%/丰度较低/{益生菌，维持微生态平衡。产生抗菌物质，保护肠道。}/{}/\currentpos
+        {罗伊氏双歧杆菌}/{B. reuteri}/ND/{0-0.08}/83\%/5.77\%/未检出/{罗伊氏双歧杆菌是一种特有的益生菌，以其能在肠道中产生抗菌物质并改善消化健康而著称，有助于缓解腹泻和增强免疫功能。}/{建议补充益生菌制剂}/\currentpos,
+        {短柄双歧杆菌}/{B. stellenboschense}/ND/{0-0.08}/27\%/77.88\%/未检出/{短柄双歧杆菌是一种益生菌，能够促进肠道健康并可能改善消化功能，常见于人类和动物的肠道微生物群中。}/{建议补充益生菌制剂}/\currentpos,
+        {粪双歧杆菌}/{B. stercoris}/ND/{0-0.08}/8\%/91.83\%/未检出/{粪双歧杆菌是一种益生菌，主要存在于人类和动物的肠道中，以其助于维持肠道微生物平衡和促进消化健康而受到关注。}/{建议补充益生菌制剂}/\currentpos,
+        {布劳特氏菌属氢营养菌}/{B. hydrogenotropica}/0.00262/{0-0.08}/27\%/77.88\%/丰度较低/{布劳特氏菌属氢营养菌是一种厌氧细菌，以其能够利用氢气作为电子供体并产生短链脂肪酸而著称。}/{}/\currentpos,
+        {穗状丁酸弧菌}/{B. crossotus}/0.00239/{0-2.9334}/8\%/91.83\%/丰度较低/{穗状丁酸弧菌是一种厌氧细菌，以其发酵纤维素产生丁酸的能力而闻名，有助于促进肠道健康和维持消化功能。}/{}/\currentpos,
+        {丁酸梭菌}/{C. butyricum}/0.01350/{0-0.08}/27\%/77.88\%/丰度较低/{丁酸梭菌是一种厌氧性细菌，能够产生丁酸，对于肠道健康和食品发酵具有重要作用。}/{}/\currentpos,
+        {霍氏真杆菌}/{E. hallii}/0.02035/{0-3.5506}/8\%/91.83\%/丰度较低/{霍氏真杆菌是一种厌氧细菌，以其能够发酵膳食纤维并产生丁酸而著称，促进肠道健康。}/{}/\currentpos,
+        {直肠真杆菌}/{E. rectale}/2.14287/{0-13.029}/75\%/95.67\%/检出/{直肠真杆菌是一种厌氧细菌，以其能发酵膳食纤维并产生短链脂肪酸，尤其是丁酸，促进肠道健康。}/{}/\currentpos,
+        {普拉梭菌}/{F. prausnitzii}/26.23325/{0.18043-14.003}/98\%/99.52\%/超标/{普拉梭菌是一种益生菌，以其产生丁酸和抗炎作用而著称，对维持肠道健康和整体免疫功能有重要的积极影响。}/{建议调整饮食结构，增加膳食纤维摄入}/\currentpos,
+        {嗜酸乳杆菌}/{L. acidophilus}/ND/{0-0.08}/15\%/88.94\%/未检出/{嗜酸乳杆菌是一种常见的益生菌，以其能够发酵乳糖并生成乳酸而著称，具有助于消化、增强免疫力以及维持肠道微生物平衡的潜力。}/{建议补充益生菌制剂}/\currentpos,
+        {短乳杆菌}/{L. brevis}/0.00028/{0-0.08}/27\%/77.88\%/丰度较低/{短乳杆菌是一种乳酸菌，以其发酵能力和产生乳酸而著称，具有促进消化、增强免疫力和抗菌特性。}/{}/\currentpos
     }
     {
         % 计算当前行的基础位置
@@ -4096,7 +4090,7 @@ leftcard/.style={   % 左侧小卡片样式
         % 菌种名称
         \node[cell, align=left] at (0.5,\basepos) {
             \small\textbf{\item}\\[-0.2em]
-            {\color{gray}\small\enitem}
+            {\color{lightgray}\small\enitem}
         };
 
         % 正常范围
@@ -4135,7 +4129,7 @@ leftcard/.style={   % 左侧小卡片样式
         \ifnum\pdfstrcmp{\status}{超标}=0
             \node[value, text=customred] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \else
-            \node[value, text=green!50!black] at (10.5,\basepos) {\footnotesize\textbf{\status}};
+            \node[value, text=customGreen] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \fi
 
         % 丰度超过%人
@@ -4245,12 +4239,12 @@ leftcard/.style={   % 左侧小卡片样式
 
     % 数据行和卡片
     \foreach \item/\enitem/\value/\range/\percentile/\detection/\status/\intro/\suggestion/\index in {
-        {干酪乳杆菌}/{Lactobacillus casei}/ND/{0-0.08}/8\%/91.83\%/未检出/{益生菌，改善消化功能。增强免疫系统，维护肠道健康。}/{建议补充益生菌制剂}/\currentpos,
-        {卷曲乳杆菌}/{Lactobacillus crispatus}/0.00489/{0-0.08}/67\%/99.52\%/丰度较低/{益生菌，维持微生态平衡。产生抗菌物质，保护肠道。}/{}/\currentpos,
-        {德氏乳杆菌}/{Lactobacillus delbrueckii}/ND/{0-0.08}/44\%/99.52\%/未检出/{益生菌，发酵乳制品重要菌种。改善消化功能。}/{建议补充益生菌制剂}/\currentpos,
-        {发酵乳杆菌}/{Lactobacillus fermentum}/0.00013/{0-0.08}/27\%/77.88\%/丰度较低/{益生菌，参与发酵过程。产生多种有益代谢物。}/{}/\currentpos,
-        {格氏乳杆菌}/{Lactobacillus gasseri}/ND/{0-0.08}/8\%/91.83\%/未检出/{益生菌，调节免疫系统。维护肠道健康。}/{建议补充益生菌制剂}/\currentpos,
-        {瑞士乳杆菌}/{Lactobacillus helveticus}/ND/{0-0.08}/44\%/99.52\%/未检出/{益生菌，发酵乳制品常见。改善营养吸收。}/{建议补充益生菌制剂}/\currentpos
+        {干酪乳杆菌}/{L. casei}/ND/{0-0.08}/8\%/91.83\%/未检出/{干酪乳杆菌是一种乳酸菌，它以其良好的发酵特性和能够耐受酸性环境而著称，具有促进消化、增强免疫力、改善肠道菌群平衡等益处。}/{建议补充益生菌制剂}/\currentpos,
+        {卷曲乳杆菌}/{L. crispatus}/0.00489/{0-0.08}/67\%/99.52\%/丰度较低/{卷曲乳杆菌是一种重要的乳酸菌，它以其对维持阴道健康和抑制病原体生长的能力而闻名，同时也能促进消化系统的健康。}/{}/\currentpos,
+        {德氏乳杆菌}/{L. delbrueckii}/ND/{0-0.08}/44\%/99.52\%/未检出/{德氏乳杆菌是一种乳酸菌，它能够在酸性环境中生存，具有良好的发酵能力，并能产生多种代谢产物，能够促进消化和增强免疫功能。}/{建议补充益生菌制剂}/\currentpos,
+        {发酵乳杆菌}/{L. fermentum}/0.00013/{0-0.08}/27\%/77.88\%/丰度较低/{发酵乳杆菌是一种常见的乳酸菌，具有促进消化、增强免疫功能和抑制有害病原体生长的潜力，对肠道健康有益。}/{}/\currentpos,
+        {格氏乳杆菌}/{L. gasseri}/ND/{0-0.08}/8\%/91.83\%/未检出/{格氏乳杆菌是一种重要的乳酸菌，具有促进消化、增强免疫功能和维持阴道健康的潜力，对于肠道和生殖道的健康有益。}/{建议补充益生菌制剂}/\currentpos,
+        {瑞士乳杆菌}/{L. helveticus}/ND/{0-0.08}/44\%/99.52\%/未检出/{瑞士乳杆菌是一种重要的乳酸菌，有助于分解乳蛋白，释放出有益的氨基酸和生物活性肽，从而促进消化、增强免疫功能等。}/{建议补充益生菌制剂}/\currentpos
     }
     {
         % 计算当前行的基础位置
@@ -4259,7 +4253,7 @@ leftcard/.style={   % 左侧小卡片样式
         % 菌种名称
         \node[cell, align=left] at (0.5,\basepos) {
             \small\textbf{\item}\\[-0.2em]
-            {\color{gray}\small\enitem}
+            {\color{lightgray}\small\enitem}
         };
 
         % 正常范围
@@ -4298,7 +4292,7 @@ leftcard/.style={   % 左侧小卡片样式
         \ifnum\pdfstrcmp{\status}{超标}=0
             \node[value, text=customred] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \else
-            \node[value, text=green!50!black] at (10.5,\basepos) {\footnotesize\textbf{\status}};
+            \node[value, text=customGreen] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \fi
 
         % 丰度超过%人
@@ -8746,6 +8740,97 @@ leftcard/.style={   % 左侧小卡片样式
         {\large\color{orange}\textbf{未检测到毒力基因}}
     \end{tcolorbox}
 \end{minipage}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[
+    font=\small,
+    title/.style={font=\small\bfseries\color{white}},
+    value/.style={font=\small},
+    reference/.style={font=\small},
+    cell/.style={anchor=west, text width=4.2cm},
+    note/.style={anchor=west, text width=4.5cm, align=left}
+]
+    \def\cardwidth{\textwidth}
+    \def\cardheight{3}
+    \def\barheight{0.25}
+    \def\barwidth{1.5}
+    \def\valuebarspace{0.4}
+
+    % 容器和标题栏背景
+    \draw[rounded corners=5, fill=white, draw=gray!20]
+        (0,0) rectangle (\cardwidth,-\cardheight);
+    \path[fill=customTeal]
+        (0,0) [rounded corners=5] -- (\cardwidth,0) --
+        (\cardwidth,0.8) -- (0,0.8) -- cycle;
+
+    % 表头
+    \node[title, anchor=west] at (0.5, 0.4) {\textbf{来源菌株}};
+    \node[title] at (5, 0.4) {\textbf{外排基因}};
+    \node[title] at (8.5, 0.4) {\textbf{基因类型}};
+    \node[title] at (12, 0.4) {\textbf{reads数量}};
+    \node[title] at (16, 0.4) {\textbf{检测结果}};
+
+    % 初始化位置计数器
+    \def\currentpos{0.25}
+
+    \foreach \zhname/\enname/\gene/\type/\reads/\drugs/\intro/\suggestion/\pos in {
+        {产志贺毒素大肠杆菌}/{STEC}/{stx1A}/{毒力}/-/{阴性}/{耐药基因可能导致对氨基糖苷类抗生素产生耐药性，影响治疗效果。}/{}/\currentpos,
+        {产志贺毒素大肠杆菌}/{STEC}/{stx1B}/{毒力}/-/{阴性}/{耐药基因可能导致对氨基糖苷类抗生素产生耐药性，影响治疗效果。}/{}/\currentpos,
+        {产志贺毒素大肠杆菌}/{STEC}/{stx2A}/{毒力}/-/{阴性}/{耐药基因可能导致对氨基糖苷类抗生素产生耐药性，影响治疗效果。}/{}/\currentpos,
+        {产志贺毒素大肠杆菌}/{STEC}/{stx2B}/{毒力}/-/{阴性}/{耐药基因可能导致对氨基糖苷类抗生素产生耐药性，影响治疗效果。}/{}/\currentpos
+    }
+    {
+        % 计算当前行的基础位置
+        \pgfmathsetmacro{\basepos}{-2.8*\currentpos}
+
+        % 来源菌株
+        \node[cell, align=left] at (0.5,\basepos) {
+            \small\textbf{\zhname}\\[-0.2em]
+            {\color{gray}\small\textit{\enname}}
+        };
+
+        % 其余列
+        \node[reference] at (5,\basepos) {\footnotesize\gene};
+        \node[value] at (8.5,\basepos) {\footnotesize\type};
+        \node[value] at (12,\basepos) {\footnotesize\reads};
+
+        % 修改耐药药物列的显示方式
+        \node[value, align=right] at (16,\basepos) {\footnotesize\drugs};
+
+        % 添加卡片
+        \pgfmathsetmacro{\cardypos}{\basepos-0.5}
+        \begin{scope}[shift={(0,\cardypos)}]
+            % 卡片背景
+            \fill[rounded corners=5pt, customTeal!5, draw=gray!5]
+                (0.3,-1.0) rectangle (17.3,0);
+
+            % 基因说明图标和内容
+            \node[anchor=west] at (0.5,-0.3) {
+                \textbf{\color{gray!90}\footnotesize \textcolor{customTeal}{\faInfoCircle}}
+            };
+            \node[anchor=west, text width=16cm] at (0.9,-0.3) {
+                {\small\color{gray}\footnotesize \intro}
+            };
+
+            % 建议内容
+            \node[anchor=west] at (0.5,-0.8) {
+                \textbf{\color{customTeal}\footnotesize \textcolor{customTeal}{\faLightbulb}}
+            };
+            \node[anchor=west, text width=16cm] at (0.9,-0.8) {
+                {\small\color{gray}\footnotesize \suggestion}
+            };
+        \end{scope}
+
+        % 分割线
+        \draw[gray!20] (0.2,\basepos-1.7) -- (\cardwidth-0.2,\basepos-1.7);
+
+        % 更新位置计数器
+        \pgfmathsetmacro{\nextpos}{\currentpos+0.85}
+        \xdef\currentpos{\nextpos}
+    }
+
+\end{tikzpicture}
 \end{center}
 
 \newpage
@@ -13236,27 +13321,36 @@ overlay={
 \item 正常：菌群丰度在参考范围内波动
 \end{itemize}
 \end{itemize}
-\textbf{评估结果解读}
-\begin{itemize}[]
-\item 数据来源：
+}
+\end{tcolorbox}
 
+\begin{tcolorbox}[
+    enhanced,
+    colback=lightpurple!10, % 卡片底色
+    colframe=lightpurple!10,  % 边框颜色
+    arc=3mm,
+    boxrule=0.5pt,
+    width=\textwidth,
+    top=8pt,
+    bottom=8pt
+]
+{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{如何阅读以下的腹胀相关菌的检测表格？}\\
+{\color{orange!50}\faComments}\quad 以下是表格各列的解释
 \begin{itemize}
-\item 全球最大规模调查样本数据库
-\item 权威文献报道的疾病相关性研究
-\item 临床病例与健康对照组比较研究
-\item 结果意义：
-\item 相关性不等同于因果关系
-\item 同一菌群可能与多种症状相关
-\item 症状可能同时涉及多个菌群的变化
+    \item \textbf{菌种名称}：与疾病相关的肠道菌群的中文学术名和拉丁名。
+    \item \textbf{正常范围}：该疾病相关菌种在健康人群中的丰度范围。
+    \item \textbf{检测丰度}：实际检测到的该疾病相关菌种的数量，其中ND代表该菌种的数量过低未检测到。
+    \item \textbf{结果评价}：根据检测丰度与正常范围的比较，给出的健康状态评估数值。
+    \item \textbf{超过\%的人}：表示您肠道检测的该疾病相关菌属的丰度值比人群中\%的人要高。（-\%代表该菌属的丰度超标过高不予显示）
+    \item \textbf{腹胀相关性}：该疾病相关菌种和疾病的相关性，正相关指的是该菌种的丰度增加可能会加剧疾病症状表现，负相关指的是该菌种丰都的降低可能会加剧疾病的症状表现。
+    \item \textbf{相关性强度}：该菌种和腹胀相关性的证据支持强度。相关性强度以{\small\color{lightgray}\faStar}到{\small\color{lightgray}\faStar \faStar \faStar}依次递增来评定。
+    \begin{itemize}
+        \item \small{\color{lightgray}\faStar}：来自单篇论文或人群数据差异统计。
+        \item \small{\color{lightgray}\faStar\faStar}：大规模人群样本统计和至少单篇论文。
+        \item \small{\color{lightgray}\faStar\faStar\faStar}：大量研究论文证实。
+    \end{itemize}
 \end{itemize}
-\end{itemize}
-\textbf{注意事项}
-\begin{itemize}[]
-\item 超标提示：菌群丰度超出正常范围，提示存在异常
-\item 综合考虑：需结合个人症状和临床检查综合判断
-\item 动态监测：建议定期复查，观察菌群变化趋势
-\item 个体差异：考虑年龄、性别、地域等个体因素影响
-\end{itemize}
+建议在异常丰度的菌群中重点关注那些与腹胀正相关的超标菌群，因为他们的增加超标可能会引发腹胀或者导致现有的腹胀症状更为严重。
 }
 \end{tcolorbox}
 
@@ -13296,22 +13390,11 @@ overlay={
 ]
 {\small{\color{customTeal}\faInfoCircle}
 肠道菌群通过影响能量吸收、脂肪代谢和免疫功能，在肥胖发生发展中扮演重要角色。\\
+
 {\color{orange}\faExclamationTriangle} \textbf{特别注意}：
-%\textbf{关键菌群作用}
-%\begin{itemize}[]
-%\item 厚壁菌门：增高与肥胖相关，提高热量吸收
-%\item 拟杆菌门：降低与肥胖相关，减少能量收获
-%\item 阿克曼氏菌：维护肠道屏障，改善代谢功能
-%\item 双歧杆菌：调节免疫功能，改善代谢状态
-%\end{itemize}
-%
-%\textbf{改善建议}
-%\begin{itemize}[]
-%\item 增加膳食纤维摄入，调节菌群结构
-%\item 控制高脂高糖饮食，避免菌群失衡
-%\item 适量运动，促进有益菌生长
-%\item 合理使用益生菌，改善肠道环境
-%\end{itemize}
+\begin{itemize}
+    \item 在本报告中，与肥胖相关的某些肠道菌群可能会出现异常水平。然而，值得注意的是，这些菌群的丰度水平的异常并不一定会导致个体出现肥胖症状。这是因为肥胖的发生通常涉及多种复杂因素，包括个体的代谢状态、遗传因素、饮食习惯、运动水平、睡眠质量以及整体的心理和身体健康状况。 \item 为了更好地规避潜在的肥胖风险，您应结合以下菌群情况以及自身的生活习惯、病史等因素来综合评估肥胖风险。在出现体重增加、能量低下或其他相关健康问题时，应及时咨询专业医生或营养师，以获取准确的评估和进一步的治疗建议。
+\end{itemize}
 }
 \end{tcolorbox}
 
