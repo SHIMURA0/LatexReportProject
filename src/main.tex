@@ -33,6 +33,7 @@
 %\setCJKmainfont{PingFang SC Light}
 \setmainfont{PingFangSC-Regular}
 %\setmainfont{PingFang SC}
+%\setCJKmainfont{Microsoft YaHei}
 
 % 定义颜色
 \definecolor{boxborder}{RGB}{220, 220, 220} % 边框颜色
@@ -7794,7 +7795,7 @@ leftcard/.style={   % 左侧小卡片样式
     \end{tcolorbox}
 \end{minipage}
 
-\vspace{0.8cm}
+\vspace{0.3cm}
 
 % 第二行卡片
 \begin{minipage}{0.48\textwidth}
@@ -7844,8 +7845,62 @@ leftcard/.style={   % 左侧小卡片样式
     top=8pt,
     bottom=8pt
 ]
-{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{什么是肠道菌群的耐药基因？有什么临床意义？}\\
-{\color{orange!50}\faComments}\quad 肠道菌群的耐药基因是指存在于肠道细菌中的一类基因，这些基因赋予细菌抵抗抗生素或其他抗菌药物的能力。
+{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{什么是肠道菌群的耐药基因？}\\
+{\color{orange!50}\faComments}\quad 肠道菌群的耐药基因是指那些使细菌对特定抗生素或其他抗微生物药物产生耐药性的基因。这些基因编码的蛋白质可以干扰药物的作用机制，使细菌能够在抗生素存在的环境中生存和繁殖。
+
+}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+    enhanced,
+    colback=lightpurple!10, % 卡片底色
+    colframe=white,  % 边框颜色
+    arc=3mm,
+    boxrule=0.5pt,
+    width=\textwidth,
+    top=8pt,
+    bottom=8pt
+]
+{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{什么是肠道菌群的金属耐受基因？}\\
+{\color{orange!50}\faComments}\quad 肠道菌群的金属耐受基因是指存在于肠道微生物中的基因，这些基因使细菌能够在高浓度金属（如铜、铅、镉等）环境中生存。耐受机制包括金属离子排出、金属结合、细胞壁改造等。
+
+}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+    enhanced,
+    colback=lightpurple!10, % 卡片底色
+    colframe=white,  % 边框颜色
+    arc=3mm,
+    boxrule=0.5pt,
+    width=\textwidth,
+    top=8pt,
+    bottom=8pt
+]
+{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{什么是肠道菌群的外排系统基因？}\\
+{\color{orange!50}\faComments}\quad 肠道菌群的外排系统基因是指一类编码外排泵或外排系统的基因，这些系统使细菌能够将有害物质（如抗生素，毒素，重金属和杀生物剂等）从细胞内主动排出，以抵御这些物质的毒性。
+%\textbf{临床意义}：
+%\begin{enumerate}
+%    \item 感染机制：毒力基因揭示了细菌如何通过生物机制引发感染，从而帮助理解感染的病理过程。
+%    \item 疾病诊断：检测肠道菌群中毒力基因的存在可以作为某些感染性疾病的诊断标志。
+%    \item 临床预防：了解毒力基因的影响可为开发抗感染策略和疫苗提供依据，有助于预防相关疾病。
+%    \item 抗生素使用策略：识别含有毒力基因的细菌，帮助医生制定更有效的抗生素治疗方案。
+%\end{enumerate}
+}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+    enhanced,
+    colback=lightpurple!10, % 卡片底色
+    colframe=white,  % 边框颜色
+    arc=3mm,
+    boxrule=0.5pt,
+    width=\textwidth,
+    top=8pt,
+    bottom=8pt
+]
+{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{什么是肠道菌群的毒力基因？}\\
+{\color{orange!50}\faComments}\quad 肠道菌群的毒力基因是指那些使细菌能够造成宿主组织损伤或引发炎症反应的基因。这些基因通常与细菌的致病性有关，使其能在宿主内存活、繁殖并引起疾病。
 
 }
 \end{tcolorbox}
@@ -8016,101 +8071,6 @@ leftcard/.style={   % 左侧小卡片样式
     \end{itemize}
 \end{tcolorbox}
 
-\begin{center}
-\begin{tikzpicture}[
-    % 基础样式定义
-    font=\small,
-    title/.style={font=\footnotesize\bfseries\color{white}},
-    cell/.style={anchor=west, text width=4.2cm, font=\small\bfseries}, % 加粗
-    gene/.style={anchor=east, text width=2.8cm, font=\small\bfseries, align=right}, % 右对齐且加粗
-    type/.style={anchor=east, text width=2.5cm, align=right}, % 右对齐
-    reads/.style={anchor=east, text width=2cm, align=right}, % 右对齐
-    drug/.style={anchor=west, text width=3.5cm},
-    category/.style={font=\small\bfseries\color{customTeal}}
-]
-
-% 颜色定义
-\definecolor{customTeal}{RGB}{73, 175, 177}
-\definecolor{categoryColor}{RGB}{230, 240, 240}
-\definecolor{rowLineColor}{RGB}{230, 235, 235}
-\definecolor{containerBorder}{RGB}{240, 240, 240}
-
-% 基础尺寸
-\def\cardwidth{\textwidth}
-\def\cardheight{12}
-\def\margin{0.3}
-\def\rowspace{0.4} % 行间距参数
-
-% 容器背景
-\draw[rounded corners=8, fill=white, draw=containerBorder, line width=1pt]
-    (0,0) rectangle (\cardwidth,-\cardheight);
-
-% 标题栏
-\fill[customTeal, rounded corners=5] (0,0) rectangle (\cardwidth,0.8);
-\node[title, anchor=west] at (\margin,0.4) {\normalsize 来源菌株};
-\node[title, anchor=east] at (7.6,0.4) {\normalsize 耐药基因}; % 调整位置以右对齐
-\node[title, anchor=east] at (10,0.4) {\normalsize 耐药类型}; % 调整位置以右对齐
-\node[title, anchor=east] at (12.5,0.4) {\normalsize reads数量}; % 调整位置以右对齐
-\node[title, anchor=west] at (13.8,0.4) {\normalsize 具体耐药药物};
-
-% 氨基糖苷类
-\fill[customTealBg, rounded corners=5] (\margin,-0.1) rectangle (\cardwidth-\margin-6,-0.7); % 调整底部边缘
-\node[category, anchor=west] at (0.6,-0.45) {氨基糖苷类抗生素耐药基因};
-
-\foreach \bacteria/\gene/\type/\reads/\drug/\ypos in {
-    {Bacterium}/{aac(6')-E111}/{\text{氨基糖苷类}}/974/{阿米卡星/卡那霉素}/-1.2,
-    {Bacterium}/{aph(3')-IIIa}/{\text{氨基糖苷类}}/974/{阿米卡星/卡那霉素}/-2.0,
-    {Bacterium}/{aac(6')-Ie2}/{\text{氨基糖苷类}}/974/{阿米卡星/卡那霉素}/-2.8,
-    {Limosilactobacillus reuteri}/{aadE}/{\text{氨基糖苷类}}/76331/{链霉素}/-3.6,
-    {Limosilactobacillus reuteri}/{aad9}/{\text{氨基糖苷类}}/76331/{氨基糖苷类}/-4.4,
-    {Escherichia coli}/{npmA}/{\text{氨基糖苷类}}/8649/{氨基糖苷类}/-5.2,
-    {E. faecium EnGen0025}/{aac(6')-Ie}/{\text{氨基糖苷类}}/79765/{阿米卡星/卡那霉素}/-6.0,
-    {Lachnospiraceae}/{aac(6')-Im}/{\text{氨基糖苷类}}/8649/{阿米卡星/卡那霉素/妥布霉素}/-6.8,
-} {
-    \node[cell] at (\margin,\ypos) {\bacteria};
-    \node[gene] at (7.6,\ypos) {\gene}; % 调整位置以右对齐
-    \node[type] at (10,\ypos) {\type}; % 调整位置以右对齐
-    \node[reads] at (12.5,\ypos) {\reads}; % 调整位置以右对齐
-    \node[drug] at (13.8,\ypos) {\drug};
-    \draw[rowLineColor] (\margin,\ypos-\rowspace) -- (\cardwidth-\margin,\ypos-\rowspace);
-}
-
-% β-内酰胺类
-\fill[categoryColor, rounded corners=5] (\margin,-5.5) rectangle (\cardwidth-\margin-5,-6);
-\node[category, anchor=west] at (0.6,-5.2) {β-内酰胺类抗生素耐药基因};
-
-\foreach \bacteria/\gene/\type/\reads/\drug/\ypos in {
-    {Terrabacteria group}/{dfrF}/{\text{甲氧苄啶}}/28043/{甲氧苄啶}/-5.2,
-    {S. sp. GMQS-10BH}/{cat414}/{\text{氯霉素}}/1446/{氯霉素}/-6.0
-} {
-    \node[cell] at (\margin,\ypos) {\bacteria};
-    \node[gene] at (7.6,\ypos) {\gene};
-    \node[type] at (10,\ypos) {\type};
-    \node[reads] at (12.5,\ypos) {\reads};
-    \node[drug] at (13.8,\ypos) {\drug};
-    \draw[rowLineColor] (\margin,\ypos+\rowspace) -- (\cardwidth-\margin,\ypos+\rowspace);
-}
-
-% 大环内酯类
-\fill[categoryColor, rounded corners=5] (\margin,-6.4) rectangle (\cardwidth-\margin-5,-7.1);
-\node[category, anchor=west] at (0.6,-6.75) {大环内酯类抗生素耐药基因};
-
-\foreach \bacteria/\gene/\type/\reads/\drug/\ypos in {
-    {Firmicutes}/{mef(A)}/{\text{大环内酯}}/1476/{阿奇霉素/红霉素}/-7.5,
-    {Firmicutes}/{lnu(C)}/{\text{林可霉素}}/26567/{林可霉素}/-8.3,
-    {E. clostridioformis}/{vanS-D}/{\text{万古霉素}}/746/{万古霉素}/-9.1
-} {
-    \node[cell] at (\margin,\ypos) {\bacteria};
-    \node[gene] at (7.6,\ypos) {\gene};
-    \node[type] at (10,\ypos) {\type};
-    \node[reads] at (12.5,\ypos) {\reads};
-    \node[drug] at (13.8,\ypos) {\drug};
-    \draw[rowLineColor] (\margin,\ypos+\rowspace) -- (\cardwidth-\margin,\ypos+\rowspace);
-}
-
-\end{tikzpicture}
-\end{center}
-
 \newpage
 
 \begin{center}
@@ -8123,7 +8083,7 @@ leftcard/.style={   % 左侧小卡片样式
     note/.style={anchor=west, text width=4.5cm, align=left}
 ]
     \def\cardwidth{\textwidth}
-    \def\cardheight{22.5}
+    \def\cardheight{19.3}
     \def\barheight{0.25}
     \def\barwidth{1.5}
     \def\valuebarspace{0.4}
@@ -8146,13 +8106,13 @@ leftcard/.style={   % 左侧小卡片样式
     \def\currentpos{0.25}
 
     \foreach \zhname/\enname/\gene/\type/\reads/\drugs/\intro/\suggestion/\pos in {
-        {细菌}/{Bacterium}/{aac(6')-E111}/{\text{氨基糖苷类}}/974/{阿米卡星\\卡那霉素}/{耐药基因可能导致对氨基糖苷类抗生素产生耐药性，影响治疗效果。}/{建议在使用氨基糖苷类抗生素时进行耐药性检测。}/\currentpos,
-        {细菌}/{Bacterium}/{aph(3')-IIIa}/{\text{氨基糖苷类}}/974/{阿米卡星\\卡那霉素}/{该基因能使细菌对特定氨基糖苷类抗生素产生耐药性。}/{临床用药时需注意药物选择。}/\currentpos,
-        {细菌}/{Bacterium}/{aac(6')-Ie2}/{\text{氨基糖苷类}}/974/{阿米卡星\\卡那霉素}/{编码氨基糖苷修饰酶，可使细菌对多种氨基糖苷类抗生素产生耐药性。}/{建议进行药敏试验指导用药。}/\currentpos,
-        {罗伊氏乳杆菌}/{Limosilactobacillus reuteri}/{aadE}/{\text{氨基糖苷类}}/76331/{链霉素}/{该基因主要与链霉素耐药相关，在乳酸菌中较为常见。}/{使用链霉素时需注意耐药情况。}/\currentpos,
-        {罗伊氏乳杆菌}/{Limosilactobacillus reuteri}/{aad9}/{\text{氨基糖苷类}}/76331/{氨基糖苷类}/{能够使细菌对多种氨基糖苷类抗生素产生耐药性。}/{建议选择替代药物进行治疗。}/\currentpos,
+        {细菌}/{Bacterium}/{aac(6')-E111}/{\text{氨基糖苷类}}/974/{阿米卡星\\ \footnotesize 卡那霉素}/{耐药基因可能导致对氨基糖苷类抗生素产生耐药性，影响治疗效果。}/{建议在使用氨基糖苷类抗生素时进行耐药性检测。}/\currentpos,
+        {细菌}/{Bacterium}/{aph(3')-IIIa}/{\text{氨基糖苷类}}/974/{阿米卡星\\ \footnotesize 卡那霉素}/{该基因能使细菌对特定氨基糖苷类抗生素产生耐药性。}/{临床用药时需注意药物选择。}/\currentpos,
+        {细菌}/{Bacterium}/{aac(6')-Ie2}/{\text{氨基糖苷类}}/974/{阿米卡星\\ \footnotesize 卡那霉素}/{编码氨基糖苷修饰酶，可使细菌对多种氨基糖苷类抗生素产生耐药性。}/{建议进行药敏试验指导用药。}/\currentpos,
+        {罗伊氏乳杆菌}/{L. reuteri}/{aadE}/{\text{氨基糖苷类}}/76331/{链霉素}/{该基因主要与链霉素耐药相关，在乳酸菌中较为常见。}/{使用链霉素时需注意耐药情况。}/\currentpos,
+        {罗伊氏乳杆菌}/{L. reuteri}/{aad9}/{\text{氨基糖苷类}}/76331/{氨基糖苷类}/{能够使细菌对多种氨基糖苷类抗生素产生耐药性。}/{建议选择替代药物进行治疗。}/\currentpos,
         {大肠杆菌}/{Escherichia coli}/{npmA}/{\text{氨基糖苷类}}/8649/{氨基糖苷类}/{该基因可导致大肠杆菌对氨基糖苷类抗生素广谱耐药。}/{需进行耐药性监测和合理用药。}/\currentpos,
-        {粪肠球菌}/{E. faecium EnGen0025}/{aac(6')-Ie}/{\text{氨基糖苷类}}/79765/{阿米卡星\\ 卡那霉素}/{肠球菌中的耐药基因，可导致高水平氨基糖苷类耐药。}/{建议选择替代药物或联合用药。}/\currentpos,
+        {粪肠球菌}/{E. faecium EnGen0025}/{aac(6')-Ie}/{\text{氨基糖苷类}}/79765/{阿米卡星\\ \footnotesize 卡那霉素}/{肠球菌中的耐药基因，可导致高水平氨基糖苷类耐药。}/{建议选择替代药物或联合用药。}/\currentpos,
         {毛螺菌科}/{Lachnospiraceae}/{aac(6')-Im}/{\text{氨基糖苷类}}/8649/{阿米卡星，卡那霉素\\ {\footnotesize 妥布霉素}}/{该基因可导致对多种氨基糖苷类药物产生耐药性。}/{建议进行耐药性检测，合理选择抗生素。}/\currentpos
     }
     {
@@ -8403,106 +8363,102 @@ leftcard/.style={   % 左侧小卡片样式
 \end{minipage}
 \end{center}
 
+\newpage
 
 \begin{center}
 \begin{tikzpicture}[
     font=\small,
-    title/.style={font=\footnotesize\bfseries\color{white}},
-    value/.style={font=\scriptsize},
-    reference/.style={font=\scriptsize},
-    cell/.style={anchor=west, text width=4.2cm, text depth=0.25ex, text height=1.5ex}, % 调整文本框高度
-    gene/.style={anchor=west, text width=2.8cm, text depth=0.25ex, text height=1.5ex},
-    type/.style={anchor=center, text width=2.5cm, align=center, text depth=0.25ex, text height=1.5ex},
-    reads/.style={anchor=center, text width=2cm, align=center, text depth=0.25ex, text height=1.5ex},
-    drug/.style={anchor=west, text width=3.5cm, text depth=0.25ex, text height=1.5ex},
-    category/.style={font=\footnotesize\bfseries\color{customTeal}}
+    title/.style={font=\small\bfseries\color{white}},
+    value/.style={font=\small},
+    reference/.style={font=\small},
+    cell/.style={anchor=west, text width=4.2cm},
+    note/.style={anchor=west, text width=4.5cm, align=left}
 ]
-% \definecolor{customTeal}{RGB}{73, 175, 177}
-% \definecolor{categoryColor}{RGB}{242, 247, 247}
-\definecolor{categoryColor}{RGB}{230, 240, 240}
-\definecolor{rowLineColor}{RGB}{230, 235, 235}
-\definecolor{containerBorder}{RGB}{240, 240, 240}
+    \def\cardwidth{\textwidth}
+    \def\cardheight{19.3}
+    \def\barheight{0.25}
+    \def\barwidth{1.5}
+    \def\valuebarspace{0.4}
 
-\def\cardwidth{\textwidth}
-\def\cardheight{12}
-\def\margin{0.3}  % 统一的边距
+    % 容器和标题栏背景
+    \draw[rounded corners=5, fill=white, draw=gray!20]
+        (0,0) rectangle (\cardwidth,-\cardheight);
+    \path[fill=customTeal]
+        (0,0) [rounded corners=5] -- (\cardwidth,0) --
+        (\cardwidth,0.8) -- (0,0.8) -- cycle;
 
-% 创建容器
-\draw[rounded corners=8, fill=white, draw=containerBorder, line width=1pt]
-    (0,0) rectangle (\cardwidth,-\cardheight);
+    % 表头
+    \node[title, anchor=west] at (0.5, 0.4) {\textbf{来源菌株}};
+    \node[title] at (5, 0.4) {\textbf{耐受基因}};
+    \node[title] at (8.5, 0.4) {\textbf{耐受类型}};
+    \node[title] at (12, 0.4) {\textbf{reads数量}};
+    \node[title] at (16, 0.4) {\textbf{耐受金属}};
 
-% 标题栏背景
-\path[fill=customTeal]
-    (0,0) [rounded corners=5] -- (\cardwidth,0) --
-    (\cardwidth,0.8) -- (0,0.8) -- cycle;
+    % 初始化位置计数器
+    \def\currentpos{0.25}
 
-% 标题行
-\node[title, anchor=west] at (\margin,0.4) {\normalsize 来源菌株};
-\node[title, anchor=west] at (4.8,0.4) {\normalsize
-耐药基因};
-\node[title] at (8.5,0.4) {\normalsize reads数量};
-\node[title] at (11.5,0.4) {\normalsize 耐药类型};
-\node[title, anchor=west] at (13.8,0.4) {\normalsize 具体耐药药物};
+    \foreach \zhname/\enname/\gene/\type/\reads/\drugs/\intro/\suggestion/\pos in {
+        {肠杆菌科}/{Enterobacteriaceae}/{pcoD}/{金属}/1221/{铜离子}/{耐药基因可能导致对氨基糖苷类抗生素产生耐药性，影响治疗效果。}/{建议在使用氨基糖苷类抗生素时进行耐药性检测。}/\currentpos,
+        {肠杆菌科}/{Enterobacteriaceae}/{pcoC}/{金属}/1221/{铜离子}/{耐药基因可能导致对氨基糖苷类抗生素产生耐药性，影响治疗效果。}/{建议在使用氨基糖苷类抗生素时进行耐药性检测。}/\currentpos,
+        {肠杆菌科}/{Enterobacteriaceae}/{silS}/{金属}/939/{铜离子，银离子}/{该基因主要与链霉素耐药相关，在乳酸菌中较为常见。}/{使用链霉素时需注意耐药情况。}/\currentpos,
+        {友好柠檬酸杆菌}/{Citrobacter freundii}/{silR }/{金属}/534/{铜离子，银离子}/{编码氨基糖苷修饰酶，可使细菌对多种氨基糖苷类抗生素产生耐药性。}/{建议进行药敏试验指导用药。}/\currentpos,
+        {Gammaproteo}/{Gammaproteo}/{terZ}/{金属}/380/{碲离子}/{该基因可导致大肠杆菌对氨基糖苷类抗生素广谱耐药。}/{需进行耐药性监测和合理用药。}/\currentpos,
+        {细菌}/{Bacteria}/{pcoC}/{金属}/214/{铜离子}/{能够使细菌对多种氨基糖苷类抗生素产生耐药性。}/{建议选择替代药物进行治疗。}/\currentpos,
+        {肠杆菌目}/{Enterobacterales}/{arsD}/{金属}/0/{砷离子}/{肠球菌中的耐药基因，可导致高水平氨基糖苷类耐药。}/{建议选择替代药物或联合用药。}/\currentpos,
+        {C. freundii complex}/{C. freundii complex}/{fieF}/{金属}/0/{-}/{该基因可导致对多种氨基糖苷类药物产生耐药性。}/{建议进行耐药性检测，合理选择抗生素。}/\currentpos
+    }
+    {
+        % 计算当前行的基础位置
+        \pgfmathsetmacro{\basepos}{-2.8*\currentpos}
 
-% 氨基糖苷类分类背景
-\fill[categoryColor, rounded corners=5] (\margin,-0.2) rectangle (\cardwidth-\margin,-0.9);
-\node[category, anchor=west] at (0.6,-0.55) {\small 铜/铜离子(COPPER)相关};
+        % 来源菌株
+        \node[cell, align=left] at (0.5,\basepos) {
+            \small\textbf{\zhname}\\[-0.2em]
+            {\color{gray}\small\textit{\enname}}
+        };
 
-% 氨基糖苷类数据和行分割线
-\foreach \bacteria/\gene/\type/\reads/\drug/\ypos in {
-    {Enterobacteriaceae}/{silS}/{\text{氨基糖苷类}}/974/{阿米卡星/卡那霉素}/-1.3,
-    {Limosilactobacillus reuteri}/{aadE}/{\text{氨基糖苷类}}/76331/{链霉素}/-2.1,
-    {Escherichia coli}/{npmA}/{\text{氨基糖苷类}}/8649/{氨基糖苷类}/-2.9,
-    {Enterococcus faecium EnGen0025}/{aac(6')-Ie}/{\text{氨基糖苷类}}/79765/{阿米卡星/卡那霉素}/-3.7
-}
-{
-    \node[cell] at (\margin,\ypos) {\bacteria};
-    \node[gene] at (4.8,\ypos) {\gene};
-    \node[type] at (8.5,\ypos) {\type};
-    \node[reads] at (11.5,\ypos) {\reads};
-    \node[drug] at (13.8,\ypos) {\drug};
-    \draw[rowLineColor] (\margin,\ypos+0.25) -- (\cardwidth-\margin,\ypos+0.25);
-}
+        % 其余列
+        \node[reference] at (5,\basepos) {\footnotesize\gene};
+        \node[value] at (8.5,\basepos) {\footnotesize\type};
+        \node[value] at (12,\basepos) {\footnotesize\reads};
 
-% β-内酰胺类分类背景
-\fill[categoryColor, rounded corners=5] (\margin,-4.1) rectangle (\cardwidth-\margin,-4.8);
-\node[category, anchor=west] at (0.6,-4.45) {β-内酰胺类抗生素耐药基因};
+        % 修改耐药药物列的显示方式
+        \node[value, align=right] at (16,\basepos) {\footnotesize\drugs};
 
-% β-内酰胺类数据和行分割线
-\foreach \bacteria/\gene/\type/\reads/\drug/\ypos in {
-    {Terrabacteria group}/{dfrF}/{甲氧苄啶}/28043/{甲氧苄啶}/-5.2,
-    {Streptococcus sp. GMQS-10BH}/{cat414}/{氯霉素}/1446/{氯霉素}/-6.0
-}
-{
-    \node[cell] at (\margin,\ypos) {\bacteria};
-    \node[gene] at (4.8,\ypos) {\gene};
-    \node[type] at (8.5,\ypos) {\type};
-    \node[reads] at (11.5,\ypos) {\reads};
-    \node[drug] at (13.8,\ypos) {\drug};
-    \draw[rowLineColor] (\margin,\ypos+0.25) -- (\cardwidth-\margin,\ypos+0.25);
-}
+        % 添加卡片
+        \pgfmathsetmacro{\cardypos}{\basepos-0.5}
+        \begin{scope}[shift={(0,\cardypos)}]
+            % 卡片背景
+            \fill[rounded corners=5pt, customTeal!5, draw=gray!5]
+                (0.3,-1.0) rectangle (17.3,0);
 
-% 大环内酯类分类背景
-\fill[categoryColor, rounded corners=5] (\margin,-6.4) rectangle (\cardwidth-\margin,-7.1);
-\node[category, anchor=west] at (0.6,-6.75) {大环内酯类抗生素耐药基因};
+            % 基因说明图标和内容
+            \node[anchor=west] at (0.5,-0.3) {
+                \textbf{\color{gray!90}\footnotesize \textcolor{customTeal}{\faInfoCircle}}
+            };
+            \node[anchor=west, text width=16cm] at (0.9,-0.3) {
+                {\small\color{gray}\footnotesize \intro}
+            };
 
-% 大环内酯类数据和行分割线
-\foreach \bacteria/\gene/\type/\reads/\drug/\ypos in {
-    {Firmicutes}/{mef(A)}/{大环内酯}/1476/{阿奇霉素/红霉素}/-7.5,
-    {Firmicutes}/{lnu(C)}/{林可霉素}/26567/{林可霉素}/-8.3,
-    {Enterocloster clostridioformis}/{vanS-D}/{万古霉素}/746/{万古霉素}/-9.1
-}
-{
-    \node[cell] at (\margin,\ypos) {\bacteria};
-    \node[gene] at (4.8,\ypos) {\gene};
-    \node[type] at (8.5,\ypos) {\type};
-    \node[reads] at (11.5,\ypos) {\reads};
-    \node[drug] at (13.8,\ypos) {\drug};
-    \draw[rowLineColor] (\margin,\ypos+0.25) -- (\cardwidth-\margin,\ypos+0.25);
-}
+            % 建议内容
+            \node[anchor=west] at (0.5,-0.8) {
+                \textbf{\color{customTeal}\footnotesize \textcolor{customTeal}{\faLightbulb}}
+            };
+            \node[anchor=west, text width=16cm] at (0.9,-0.8) {
+                {\small\color{gray}\footnotesize \suggestion}
+            };
+        \end{scope}
+
+        % 分割线
+        \draw[gray!20] (0.2,\basepos-1.7) -- (\cardwidth-0.2,\basepos-1.7);
+
+        % 更新位置计数器
+        \pgfmathsetmacro{\nextpos}{\currentpos+0.85}
+        \xdef\currentpos{\nextpos}
+    }
+
 \end{tikzpicture}
 \end{center}
-
 
 \newpage
 
@@ -8601,6 +8557,96 @@ leftcard/.style={   % 左侧小卡片样式
         {\large\color{orange}\textbf{杀生物剂外排基因}}
     \end{tcolorbox}
 \end{minipage}
+\end{center}
+
+\newpage
+
+\begin{center}
+\begin{tikzpicture}[
+    font=\small,
+    title/.style={font=\small\bfseries\color{white}},
+    value/.style={font=\small},
+    reference/.style={font=\small},
+    cell/.style={anchor=west, text width=4.2cm},
+    note/.style={anchor=west, text width=4.5cm, align=left}
+]
+    \def\cardwidth{\textwidth}
+    \def\cardheight{3}
+    \def\barheight{0.25}
+    \def\barwidth{1.5}
+    \def\valuebarspace{0.4}
+
+    % 容器和标题栏背景
+    \draw[rounded corners=5, fill=white, draw=gray!20]
+        (0,0) rectangle (\cardwidth,-\cardheight);
+    \path[fill=customTeal]
+        (0,0) [rounded corners=5] -- (\cardwidth,0) --
+        (\cardwidth,0.8) -- (0,0.8) -- cycle;
+
+    % 表头
+    \node[title, anchor=west] at (0.5, 0.4) {\textbf{来源菌株}};
+    \node[title] at (5, 0.4) {\textbf{外排基因}};
+    \node[title] at (8.5, 0.4) {\textbf{基因类型}};
+    \node[title] at (12, 0.4) {\textbf{reads数量}};
+    \node[title] at (16, 0.4) {\textbf{外排药物}};
+
+    % 初始化位置计数器
+    \def\currentpos{0.25}
+
+    \foreach \zhname/\enname/\gene/\type/\reads/\drugs/\intro/\suggestion/\pos in {
+        {肠杆菌科}/{Enterobacteriaceae}/{SMR$_$efflux$_$emrE}/{外排}/234/{杀生物剂}/{耐药基因可能导致对氨基糖苷类抗生素产生耐药性，影响治疗效果。}/{建议在使用氨基糖苷类抗生素时进行耐药性检测。}/\currentpos
+    }
+    {
+        % 计算当前行的基础位置
+        \pgfmathsetmacro{\basepos}{-2.8*\currentpos}
+
+        % 来源菌株
+        \node[cell, align=left] at (0.5,\basepos) {
+            \small\textbf{\zhname}\\[-0.2em]
+            {\color{gray}\small\textit{\enname}}
+        };
+
+        % 其余列
+        \node[reference] at (5,\basepos) {\footnotesize\gene};
+        \node[value] at (8.5,\basepos) {\footnotesize\type};
+        \node[value] at (12,\basepos) {\footnotesize\reads};
+
+        % 修改耐药药物列的显示方式
+        \node[value, align=right] at (16,\basepos) {\footnotesize\drugs};
+
+        % 添加卡片
+        \pgfmathsetmacro{\cardypos}{\basepos-0.5}
+        \begin{scope}[shift={(0,\cardypos)}]
+            % 卡片背景
+            \fill[rounded corners=5pt, customTeal!5, draw=gray!5]
+                (0.3,-1.0) rectangle (17.3,0);
+
+            % 基因说明图标和内容
+            \node[anchor=west] at (0.5,-0.3) {
+                \textbf{\color{gray!90}\footnotesize \textcolor{customTeal}{\faInfoCircle}}
+            };
+            \node[anchor=west, text width=16cm] at (0.9,-0.3) {
+                {\small\color{gray}\footnotesize \intro}
+            };
+
+            % 建议内容
+            \node[anchor=west] at (0.5,-0.8) {
+                \textbf{\color{customTeal}\footnotesize \textcolor{customTeal}{\faLightbulb}}
+            };
+            \node[anchor=west, text width=16cm] at (0.9,-0.8) {
+                {\small\color{gray}\footnotesize \suggestion}
+            };
+        \end{scope}
+
+        % 分割线
+        \draw[gray!20] (0.2,\basepos-1.7) -- (\cardwidth-0.2,\basepos-1.7);
+
+        % 更新位置计数器
+        \pgfmathsetmacro{\nextpos}{\currentpos+0.85}
+        \xdef\currentpos{\nextpos}
+    }
+
+\end{tikzpicture}
 \end{center}
 
 \newpage
