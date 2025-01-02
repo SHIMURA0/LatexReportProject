@@ -1,8 +1,8 @@
-This is METAFONT, Version 2.71828182 (preloaded base=mf 2024.12.3)  19 DEC 2024 10:37
-**\mode:=ljfour; mag:=1; ; nonstopmode; input PingFangSC-Regular
+This is METAFONT, Version 2.71828182 (preloaded base=mf 2024.12.3)  2 JAN 2025 09:42
+**\mode:=ljfour; mag:=1; ; nonstopmode; input OT
 
 ! Emergency stop.
-<*> ...=1; ; nonstopmode; input PingFangSC-Regular
+<*> \mode:=ljfour; mag:=1; ; nonstopmode; input OT
                                                   
 *** (job aborted, file error in nonstop mode)
 

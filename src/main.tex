@@ -28,12 +28,11 @@
 %    BoldFont=* W6
 %]{Hiragino Sans GB}
 %\setCJKmainfont{Hiragino Sans GB}
-%\setCJKmainfont{Songti TC}
-%\setCJKmainfont{PingFang SC}
+%\setmainfont{Microsoft YaHei}
 %\setCJKmainfont{PingFang SC Light}
 \setmainfont{PingFangSC-Regular}
 %\setmainfont{PingFang SC}
-%\setCJKmainfont{Microsoft YaHei}
+%\setCJKmainfont{Microsoft YaHei-Regular}
 
 % 定义颜色
 \definecolor{boxborder}{RGB}{220, 220, 220} % 边框颜色
@@ -309,7 +308,7 @@ width=\linewidth
         bottom=10pt
     ]
     \begin{center}
-        \color{white}\Huge\bfseries 宏基因组检测报告
+        \color{white}\Huge \textbf{宏基因组检测报告}
     \end{center}
     \end{tcolorbox}
 }
@@ -365,12 +364,13 @@ width=\linewidth
         % 标题部分
         \begin{center}
 %            \textcolor{customTeal}{\textbf{\fontsize{36}{43}\selectfont 宏基因组检测报告}}
-            \textcolor{customTeal}{\fontspec{PingFang SC}\fontsize{40}{48}\selectfont\bfseries 宏基因组检测报告}
-            \vspace{0.5cm}
-            % 分隔线
-%            \rule{\textwidth}{1pt}
+            \textcolor{customTeal}{\fontspec{\chapter*{Microsoft YaHei Bold}}\fontsize{40}{48}\selectfont\textbf{\textsf{\bfseries 宏基因组检测报告}}}
 
-            \vspace{0.8cm}
+            \vspace{1cm}
+            % 分隔线
+            \textcolor{customTeal}{\rule{\textwidth}{2pt}}  % 设置为2pt，可以根据需要调整粗细
+
+            \vspace{1cm}
         \end{center}
 
 
@@ -862,7 +862,7 @@ width=\linewidth
     ([xshift=15pt]frame.south west) -- ([xshift=-15pt]frame.south east);
     }
 ]
-{\Large\bfseries\textcolor{customTeal}{\Huge 宏基因组报告指南}}
+{\Large\bfseries\textcolor{customTeal}{\Huge 宏基因组报告阅读指南}}
 \end{tcolorbox}
 
 \begin{tcolorbox}[
@@ -973,8 +973,7 @@ width=\linewidth
     top=8pt,
     bottom=8pt
 ]
-{\footnotesize{\color{customTeal}
-\faInfoCircle} 本部分总结了您本次肠道菌群检测的各项关键指标，主要包含三个核心维度：
+{\small{\color{customTeal}\faInfoCircle} 本部分总结了您本次肠道菌群检测的各项整体关键指标，主要包含三个核心维度：
 \begin{itemize}
     \item \textbf{肠道基础功能}: 评估肠道的基础生理功能，包括蛋白质发酵能力、消化吸收效率、肠道产气情况、肠道屏障完整性以及肠道炎症状态。
 
@@ -986,7 +985,6 @@ width=\linewidth
         \item \textbf{菌群微环境评估}：评估包含有益菌，有害菌，革兰氏阴性菌和好氧菌具有代表意义的菌群评估。
     \end{itemize}
 \end{itemize}
-这些评估指标可以全面整体的反应您肠道的特征信息和状况。
 }
 \end{tcolorbox}
 
@@ -1343,8 +1341,7 @@ width=\linewidth
     top=8pt,
     bottom=8pt
 ]
-
-{\small \textcolor{green!85!orange}{\faBell}\quad 所有指标的评估值都在参考范围之内。总体来看，您的消化吸收功能较强，肠道炎症水平较低，但需要关注蛋白发酵偏低和肠道屏障功能偏低的情况。建议在保持良好饮食习惯的同时，可以考虑适当补充有益菌，增强肠道菌群活性和屏障功能。
+{\small \textcolor{customGreen}{\faBell}\quad 所有指标的评估值都在参考范围之内。总体来看，您的消化吸收功能较强，肠道炎症水平较低，但需要关注蛋白发酵偏低和肠道屏障功能偏低的情况。建议在保持良好饮食习惯的同时，可以考虑适当补充有益菌，增强肠道菌群活性和屏障功能。
 }
 \end{tcolorbox}
 
@@ -1484,7 +1481,7 @@ bottom=8pt
         \fi
 
         % 结果评价
-        \ifnum\pdfstrcmp{\status}{超标}=0
+        \ifnum\pdfstrcmp{\status}{正常}=0
             \node[value, text=customRed] at (16,\basepos) {\footnotesize\textbf{\status}};
         \else
             \node[value, text=customGreen] at (16,\basepos) {\footnotesize\textbf{\status}};
@@ -1675,7 +1672,7 @@ bottom=8pt
 
     % 数据行和卡片
     \foreach \item/\enitem/\value/\range/\percentile/\detection/\status/\intro/\suggestion/\index/\category in {
-        {菌种数量}/{Gut microbial species count}/101/{0-100}/67\%/99.52\%/超标/{反映肠道微生物的总体丰度，是评估肠道微生态稳定性的基础指标。}/{}/\currentpos/,
+        {菌种数量}/{Gut microbial species count}/101/{0-100}/67\%/99.52\%/超标/{反映肠道微生物的总体丰度，是评估肠道微生态稳定性的基础指标。}/{可通过增加膳食纤维、限制糖分和加工食品、摄入发酵食品、保持规律作息和锻炼、管理压力，以及考虑益生菌补充剂来实现。}/\currentpos/,
         {菌种多样性}/{Gut microbial diversity}/36/{15-95}/2\%/99.04\%/正常/{表征肠道菌群的物种丰富度和均匀度，高多样性通常预示着更稳定的微生态系统。}/{}/\currentpos/,
         {菌群平衡}/{Gut microbiota balance}/94/{15-100}/95\%/98.56\%/正常/{评估有益菌与有害菌的比例关系，反映肠道微生态的协调程度。}/{}/\currentpos/,
         {菌群恢复力}/{Gut microbial resilience}/8/{25-100}/50\%/99.52\%/缺乏/{衡量肠道菌群对外界干扰的抵抗能力和自我修复能力。}/{}/\currentpos/
@@ -1804,13 +1801,13 @@ width=\textwidth,
 top=8pt,
 bottom=8pt
 ]
-{\small{\textcolor{yellow!85!orange}{\faLightbulb}}\quad 菌群指标异常需要重点关注：
+{\small{\textcolor{customRed}{\faBell}}\quad 菌群指标异常需要重点关注：
 \begin{itemize}
 \item 菌种数量（101，参考范围0-100）：略微超出正常范围上限，表明肠道菌群总量偏多，需要适度关注。
 \item 菌群恢复力（8，参考范围25-100）：该指标严重低于正常范围，说明肠道微生态系统的自我修复和调节能力显著减弱，就像免疫系统失去了自我修复的能力，需要及时干预。
 \end{itemize}
 
-{\textcolor{green!85!orange}{\faLightbulb}}\quad 其他指标情况：
+{\textcolor{customGreen}{\faBell}}\quad 其他指标情况：
 \begin{itemize}
 \item 菌群多样性（36，参考范围15-95）：处于正常范围内，但偏低，表明肠道菌群种类相对单一。
 \item 菌群平衡（94，参考范围15-100）：接近正常范围上限，显示各类菌群比例分布较为合理。
@@ -2040,12 +2037,12 @@ width=\textwidth,
 top=8pt,
 bottom=8pt
 ]
-{\small{\textcolor{yellow!85!orange}{\faLightbulb}}\quad 有益菌水平需要关注：
+{\small{\textcolor{customRed}{\faBell}}\quad 有益菌水平需要关注：
 \begin{itemize}
 \item 有益菌（94，参考范围16-100）：处于参考范围上限附近，表明肠道中有益菌群数量充足，这对维持肠道健康和免疫功能非常有利。
 \end{itemize}
 
-{\textcolor{green!85!orange}{\faLightbulb}}\quad 其他指标情况：
+{\textcolor{green!85!orange}{\faBell}}\quad 其他指标情况：
 \begin{itemize}
 \item 有害菌（34，参考范围0-84）：处于正常范围内的中低水平，显示肠道环境相对健康。
 \item 革兰氏阴性菌（0，参考范围0-0.4）：处于正常范围内的最低值，表明这类潜在致病菌得到了很好的控制。
@@ -2275,7 +2272,7 @@ leftcard/.style={   % 左侧小卡片样式
 \definecolor{nonCoreColor}{RGB}{225, 190, 231}
 
 % 主标题
-\node[title] at (0,9) {肠道菌群细菌分类体系};
+\node[title] at (0,9) {肠道细菌分类体系};
 
 % 两个主要分类框
 \path (0,0) coordinate (center);
@@ -2425,7 +2422,7 @@ leftcard/.style={   % 左侧小卡片样式
         % 菌种名称
         \node[cell, align=left] at (0.5,\basepos) {
             \small\textbf{\item}\\[-0.2em]
-            {\color{gray}\small\enitem}
+            {\color{lightgray}\small\enitem}
         };
 
         % 正常范围
@@ -2464,7 +2461,7 @@ leftcard/.style={   % 左侧小卡片样式
         \ifnum\pdfstrcmp{\status}{超标}=0
             \node[value, text=customred] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \else
-            \node[value, text=green!50!black] at (10.5,\basepos) {\footnotesize\textbf{\status}};
+            \node[value, text=customGreen] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \fi
 
         % 丰度超过%人
@@ -2631,7 +2628,7 @@ leftcard/.style={   % 左侧小卡片样式
         \ifnum\pdfstrcmp{\status}{超标}=0
             \node[value, text=customred] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \else
-            \node[value, text=green!50!black] at (10.5,\basepos) {\footnotesize\textbf{\status}};
+            \node[value, text=customGreen] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \fi
 
         % 丰度超过%人
@@ -2793,7 +2790,7 @@ leftcard/.style={   % 左侧小卡片样式
         \ifnum\pdfstrcmp{\status}{超标}=0
             \node[value, text=customred] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \else
-            \node[value, text=green!50!black] at (10.5,\basepos) {\footnotesize\textbf{\status}};
+            \node[value, text=customGreen] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \fi
 
         % 丰度超过%人
@@ -2865,246 +2862,6 @@ leftcard/.style={   % 左侧小卡片样式
 
 \end{tikzpicture}
 \end{center}
-
-\newpage
-
-\newpage
-
-\begin{tcolorbox}[
-    enhanced,
-    colback=gray!3,
-    colframe=gray!3,
-    arc=3mm,
-    boxrule=0pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-]
-{\small{\textcolor{yellow!85!orange}{\faLightbulb}}\quad 异常核心菌群分析：
-
-\begin{itemize}
-    \item \textbf{拟杆菌属}（Bacteroides）检测的丰度为0.08974（参考范围：1.0578-47.3225），属于严重\textcolor{customred}{缺乏}：
-    \begin{itemize}
-        \item 功能：消化蛋白和多糖，维持免疫和肠道稳态
-        \item 影响：可能导致肠道免疫功能失调，影响炎症调节
-        \item 建议：增加膳食纤维和植物性蛋白摄入，多吃含低聚果糖的多叶蔬菜、豆类、种子、坚果等
-    \end{itemize}
-
-    \item {\textcolor{red}{1.62X}} 粪杆菌属（Faecalibacterium）显著升高：
-    \begin{itemize}
-        \item 当前值：28.86665，参考范围：1.9351-17.7942
-        \item 功能：丁酸盐产菌，抗炎，维持肠道，参与免疫调节
-        \item 影响：可能提示肠道处于炎症状态
-        \item 建议：乳杆菌补充，亚麻籽、壳寡糖、椰子糖（甜菜）
-    \end{itemize}
-
-    \item {\textcolor{red}{1.47X}} 经黏液拟杆菌属（Blautia）降低：
-    \begin{itemize}
-        \item 当前值：10.17279，参考范围：0.0846-6.9056
-        \item 功能：消化复合碳水化合物，健康菌，慢性与炎症疾病相关
-        \item 影响：营养不良相关，减肥有效菌，糖尿病慢性疾病和代谢疾病
-        \item 建议：高脂肪酸，红酒、啤酒
-    \end{itemize}
-
-    \item {\textcolor{red}{15.99X}} 副拟杆菌属（Parabacteroides）严重降低：
-    \begin{itemize}
-        \item 当前值：0.00675，参考范围：0.1095-8.7303
-        \item 功能：帮助脂肪代谢，改善免疫功能
-        \item 影响：可能导致代谢功能紊乱
-        \item 建议：补充益生菌，二甲双胺氧甲基吡嗪
-    \end{itemize}
-
-    \item {\textcolor{red}{74.00X}} 另枝菌属（Alistipes）严重降低：
-    \begin{itemize}
-        \item 当前值：0.00099，参考范围：0.0807-18.1199
-        \item 功能：参与色氨酸代谢，产生神经递质如5-羟色胺、H2S
-        \item 影响：可能影响情绪调节，神经递质代谢异常
-        \item 建议：服用褪黑素，加强色氨酸补充，高脂肪含量和低糖饮食
-    \end{itemize}
-
-    \item {\textcolor{red}{1.47X}} 粪球菌属（Coprococcus）降低：
-    \begin{itemize}
-        \item 当前值：0.05595，参考范围：0.0826-9.4195
-        \item 功能：广泛存在，参与碳水化合物代谢
-        \item 影响：可能影响肠道健康和代谢功能
-        \item 建议：增加大麦、粉红色水果和坚果摄入
-    \end{itemize}
-
-    \item {\textcolor{red}{53.07X}} 双歧杆菌属（Bifidobacterium）严重降低：
-    \begin{itemize}
-        \item 当前值：0.03296，参考范围：1.7546-35.5006
-        \item 功能：益生菌的主力菌群，维持肠道屏障，产生神经递质GABA
-        \item 影响：免疫功能下降，维生素合成受影响
-        \item 建议：益生菌补充，发酵乳制品，低聚糖摄入，益生元补充
-    \end{itemize}
-
-    \item {\textcolor{red}{100.00X}} 芽孢杆菌属（Bacillus）未检出：
-    \begin{itemize}
-        \item 当前值：ND（未检出），参考范围：0.0001-0.5535
-        \item 功能：益生菌的重要菌群，可增加肠道菌群的稳定性
-        \item 影响：可能影响肠道菌群稳态
-        \item 建议：补充芽孢杆菌
-    \end{itemize}
-\end{itemize}
-
-{\textcolor{green!85!orange}{\faLightbulb}}\quad 综合改善建议：
-\begin{itemize}
-    \item 饮食调整：
-    \begin{itemize}
-        \item 增加膳食纤维：全谷物、豆类、蔬菜
-        \item 补充益生元：洋葱、大蒜、菊芋
-        \item 添加发酵食品：酸奶、泡菜、酵素
-        \item 适量饮用红酒或啤酒
-    \end{itemize}
-
-    \item 营养补充：
-    \begin{itemize}
-        \item 益生菌制剂：包含双歧杆菌、乳杆菌、芽孢杆菌
-        \item 益生元补充：低聚果糖、菊粉
-        \item 色氨酸来源食物：火鸡、牛奶、花生
-    \end{itemize}
-
-    \item 生活方式：
-    \begin{itemize}
-        \item 规律作息，避免熬夜
-        \item 适量运动，促进肠道蠕动
-        \item 压力管理，保持心情愉悦
-    \end{itemize}
-\end{itemize}
-
-需要注意的是，以上建议需要根据个人具体情况进行调整，建议在专业医生指导下进行干预，并定期监测菌群变化情况。
-}
-\end{tcolorbox}
-
-
-\newpage
-
-% 在导言区定义函数
-\newcommand{\bacteriaInfoBox}[9]{%
-    % 参数说明：
-    % #1: 中文名称 (如"梭菌属")
-    % #2: 拉丁名 (如"Clostridium")
-    % #3: 状态 (如"正常")
-    % #4: 状态颜色 (如"green")
-    % #5: 丰度值 (如"1.90370")
-    % #6: 丰度范围 (如"0-4.464")
-    % #7: 人群百分位 (如"67")
-    % #8: 检出率 (如"99.52")
-    % #9: 描述文本
-    \begin{tcolorbox}[
-        enhanced,
-        colback=blue!5,
-        colframe=gray!90,
-        arc=3mm,
-        boxrule=0pt,
-        width=\textwidth,
-        top=8pt,
-        bottom=8pt
-    ]
-    \makebox[\textwidth][s]{%
-        \textcolor{black}{\textbf{#1}} \textcolor{gray}{\small #2}\hspace{0.5em}%
-        \raisebox{-0.5ex}{%
-            \tcbox[
-                colback=#4!90!black,
-                colframe=#4,
-                arc=2mm,
-                boxrule=0pt,
-                left=2mm,
-                right=2mm,
-                top=1pt,
-                bottom=1pt
-            ]{\scriptsize\textcolor{white}{#3}}%
-        }\hfill
-        $\vcenter{\hbox{%
-        \tcbox[
-            colback=gray!20,
-            colframe=green!80!white!5,
-            arc=2mm,
-            boxrule=0pt,
-            left=2mm,
-            right=2mm,
-            top=1pt,
-            bottom=1pt
-        ]{\scriptsize\textcolor{black}{\faChartBar\hspace{0.2em}丰度\hspace{0.2em}|\hspace{0.2em}#5\hspace{0.2em}|\hspace{0.2em}#6\%}}%
-        }}$\hspace{0.5em}%
-        $\vcenter{\hbox{%
-        \tcbox[
-            colback=gray!20,
-            colframe=green!80!white!5,
-            arc=2mm,
-            boxrule=0pt,
-            left=2mm,
-            right=2mm,
-            top=1pt,
-            bottom=1pt
-        ]{\scriptsize\textcolor{black}{\faUsers\hspace{0.2em}人群百分位\hspace{0.2em}|\hspace{0.2em}#7}}%
-        }}$\hspace{0.5em}%
-        $\vcenter{\hbox{%
-        \tcbox[
-            colback=gray!20,
-            colframe=green!80!white!5,
-            arc=2mm,
-            boxrule=0pt,
-            left=2mm,
-            right=2mm,
-            top=1pt,
-            bottom=1pt
-        ]{\scriptsize\textcolor{black}{\faPercent\hspace{0.2em}检出率\hspace{0.2em}|\hspace{0.2em}#8}}%
-        }}$%
-    }
-    {\footnotesize
-    {\color{customTeal}
-    \faInfoCircle} #9}
-    \end{tcolorbox}
-}
-
-\begin{tcolorbox}[
-    enhanced,
-    colback=gray!3,
-    colframe=gray!3,
-    arc=3mm,
-    boxrule=0pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-    ]
-{\small{\textcolor{yellow!85!orange}{\faLightbulb}}\quad 异常的核心菌属需要关注：
-\begin{itemize}
-\item 拟杆菌属（Bacteroides，0.089741，显著低于参考值1.0578-47.3225）：↓11.77倍，作为主要产丁酸菌显著减少，提示肠道保护屏障功能可能减弱。
-\item 粪杆菌属（Faecalibacterium，28.86665，超出参考值1.9351-17.7942）：↑1.62倍，过度升高可能影响肠道代谢平衡。
-\item 布劳特氏菌属（Blautia，10.17279，超出参考值0.0846-6.9056）：↑1.47倍，过度升高可能影响碳水化合物代谢。
-\item 副拟杆菌属（Parabacteroides，0.006751，显著低于参考值0.1095-8.7303）：↓15.99倍，严重偏低可能影响肠道免疫功能。
-\item 别孢菌属（Alistipes，0.000991，显著低于参考值0.0807-18.1199）：↓74.00倍，严重不足提示肠道微生态多样性受损。
-\item 柔嘟菌属（Coprococcus，0.055951，显著低于参考值0.0826-9.4195）：↓1.47倍，减少可能影响短链脂肪酸的产生。
-\item 双歧杆菌属（Bifidobacterium，0.032961，显著低于参考值1.7546-35.5006）：↓53.07倍，重要益生菌严重不足。
-\item 芽孢杆菌属（Bacillus，未检出，参考值0.0001-0.5535）：↓100.00倍，完全未检出，提示益生菌群严重缺失。
-\end{itemize}
-
-{\textcolor{green!85!black}{\faLightbulb}}\quad 针对性改善建议：
-\begin{itemize}
-\item 益生菌补充：
-    - 优先补充双歧杆菌和芽孢杆菌等重要益生菌
-    - 选择含有多菌株的复合益生菌制剂
-    - 注意分阶段、循序渐进地补充
-\item 饮食调整：
-    - 增加发酵乳制品的日常摄入
-    - 适量食用全谷物、豆类等益生元
-    - 多食用富含膳食纤维的蔬菜水果
-    - 减少精制碳水化合物的摄入
-\item 生活习惯：
-    - 保证充足睡眠，规律作息
-    - 坚持适度运动，每天30分钟
-    - 保持心情愉悦，避免过度压力
-\item 环境因素：
-    - 避免不必要的抗生素使用
-    - 保持居室通风和适宜湿度
-    - 注意个人卫生，预防肠道感染
-\end{itemize}
-
-需要特别注意的是，多个核心菌属同时严重异常，提示肠道菌群整体失衡比较严重。建议在专业医生指导下进行系统调理，定期进行菌群检测以评估改善效果。调理过程中如出现明显不适，应及时就医。同时要保持信心，因为肠道菌群的重建是一个需要时间的过程，持续坚持才能取得良好效果。
-}
-\end{tcolorbox}
-
 
 \newpage
 
@@ -3491,72 +3248,6 @@ leftcard/.style={   % 左侧小卡片样式
 
 \end{tikzpicture}
 \end{center}
-
-\newpage
-
-\begin{tcolorbox}[
-    enhanced,
-    colback=gray!3,
-    colframe=gray!3,
-    arc=3mm,
-    boxrule=0pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-    ]
-{\small{\textcolor{yellow!85!orange}{\faLightbulb}}\quad 其他重要菌属异常分析：
-\begin{itemize}
-\item 嗜胆菌属（Bilophila，0.73110，超出参考值0-0.1545）：↑4.73倍
-    - 与脂肪代谢和胆汁酸代谢密切相关
-    - 显著升高提示肠道中胆汁酸水平可能异常
-    - 可能与高脂饮食有关
-
-\item Flavonifractor（2.44087，超出参考值0-0.7285）：↑3.35倍
-    - 参与肠道儿茶素代谢，减轻免疫反应
-    - 过度升高可能影响肠道免疫平衡
-    - 与植物黄酮类物质代谢相关
-
-\item Hungatella（0.14743，超出参考值0-0.027）：↑1.84倍
-    - 参与生成氧化三甲胺和丁酸
-    - 升高可能影响心血管健康
-    - 与饮食结构失衡有关
-
-\item 鞭螺菌属（Oscillospira，未检出，参考值0.0033-0.5346）：↓100倍
-    - 重要的产丁酸菌，与心脑血管健康和免疫功能相关
-    - 完全缺失提示肠道微生态严重失衡
-    - 可能影响宿主代谢和能量平衡
-\end{itemize}
-
-{\textcolor{green!85!black}{\faLightbulb}}\quad 针对性改善建议：
-\begin{itemize}
-\item 饮食调整：
-    - 控制饮食中的饱和脂肪酸摄入
-    - 增加富含膳食纤维的绿叶蔬菜
-    - 适量补充深海鱼油，调节脂质代谢
-    - 选择全谷物，减少精制碳水化合物
-
-\item 营养补充：
-    - 补充含有丁酸梭菌的益生菌制剂
-    - 适量补充omega-3脂肪酸
-    - 添加植物性多酚和黄酮类物质
-    - 补充适量的益生元，如菊粉、低聚果糖
-
-\item 生活方式：
-    - 规律作息，避免熬夜
-    - 适度运动，促进肠道蠕动
-    - 保持充足的水分摄入
-    - 控制情绪压力
-
-\item 定期监测：
-    - 建议3-6个月复查肠道菌群
-    - 关注血脂、胆固醇等指标变化
-    - 监测炎症因子水平
-    - 评估改善方案的效果
-\end{itemize}
-
-特别提醒：多个菌属的异常提示肠道菌群失衡较为复杂，建议在专业医生指导下进行系统调理。改善过程需要循序渐进，避免操之过急。同时要注意观察身体反应，如出现不适及时就医。保持耐心和信心，坚持科学的改善方案，才能逐步恢复肠道菌群的平衡。
-}
-\end{tcolorbox}
 
 \newpage
 
@@ -4294,7 +3985,7 @@ leftcard/.style={   % 左侧小卡片样式
     top=8pt,
     bottom=8pt
     ]
-{\small{\textcolor{yellow!85!orange}{\faLightbulb}}\quad 异常的有益菌群需要关注：
+{\small{\textcolor{customRed}{\faBell}}\quad 异常的有益菌群需要关注：
 \begin{itemize}
 \item 普拉梭菌（26.23325，超出参考值1.87倍）：虽然是重要的抗炎益生菌，但当前水平明显升高，提示肠道菌群结构可能失衡。
 \item 食葡糖罗斯拜氏菌（5.12041，超出参考值1.85倍）：该菌参与碳水化合物代谢，显著升高可能提示肠道代谢功能异常。
@@ -4881,66 +4572,6 @@ leftcard/.style={   % 左侧小卡片样式
 \end{tikzpicture}
 \end{center}
 
-\begin{tcolorbox}[
-    enhanced,
-    colback=gray!3,
-    colframe=gray!3,
-    arc=3mm,
-    boxrule=0pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-    ]
-{\small{\textcolor{yellow!85!orange}{\faLightbulb}}\quad 异常的有害菌属需要重点关注：
-\begin{itemize}
-\item 韦荣菌属（Veillonella，0.38326，超出参考值0-0.0086）：↑44.79倍
-    - 过多导致龋齿风险，口臭和牙龈炎
-    - 可能影响口腔和肠道健康
-
-\item 克雷伯菌属（Klebsiella，0.09652，超出参考值0-0.05）：↑1.21倍
-    - 条件致病菌，过度增长可能引起感染
-    - 可能导致呼吸道和肠道感染
-
-\item 肠球菌属（Enterococcus，0.12259，超出参考值0-0.05）：↑1.53倍
-    - 部分为耐药菌，可引起泌尿系统感染
-    - 过度增长可能导致肠道炎症
-
-\item 不动杆菌属（Acinetobacter，0.11947，超出参考值0-0.05）：↑1.49倍
-    - 条件致病菌，可引起呼吸道感染
-    - 部分菌株具有耐药性，需要关注
-
-\item 假单胞菌属（Pseudomonas，0.07830，超出参考值0-0.05）：↑0.98倍
-    - 机会致病菌，可导致多系统感染
-    - 易产生耐药性，治疗难度大
-\end{itemize}
-
-{\textcolor{green!85!black}{\faLightbulb}}\quad 针对性改善建议：
-\begin{itemize}
-\item 就医建议：
-    - 及时就医进行专业评估
-    - 在医生指导下进行针对性治疗
-    - 注意用药依从性，完整疗程
-
-\item 日常预防：
-    - 加强口腔卫生，定期洁牙
-    - 保持环境卫生，勤通风换气
-    - 注意个人卫生，勤洗手
-
-\item 饮食调理：
-    - 调节饮食结构，避免过甜过腻
-    - 增加益生菌食品摄入
-    - 保证充足蛋白质和维生素摄入
-
-\item 生活习惯：
-    - 规律作息，避免过度疲劳
-    - 适量运动，增强体质
-    - 保持心情愉悦，减少压力
-\end{itemize}
-
-需要特别注意的是，多个条件致病菌同时升高，且部分菌属存在耐药性风险，建议在专业医生指导下进行系统治疗。同时，要关注可能的诱因（如免疫力下降、抗生素使用等），并进行相应的生活方式调整。定期复查很重要，可以及时了解治疗效果并调整方案。
-}
-\end{tcolorbox}
-
 \newpage
 
 \begin{tcolorbox}[
@@ -4976,8 +4607,6 @@ leftcard/.style={   % 左侧小卡片样式
 {\small{\color{customTeal}\faInfoCircle} 机会致病菌是指在正常情况下与人体和平共处的微生物，但当宿主免疫力下降或菌群失衡时可能导致感染的细菌。它们通常以低水平存在于人体中，在特定条件下才表现出致病性。常见的机会致病菌包括：粪肠球菌（Enterococcus faecalis）在免疫力低下时可能引起尿路感染或心内膜炎；阴沟肠杆菌（Enterobacter cloacae）可能导致呼吸道和泌尿系统感染；鲍曼不动杆菌（Acinetobacter baumannii）在医院环境中可引起院内感染，特别是在危重患者中可导致肺炎。这类细菌的检出不一定需要立即治疗，但需要关注宿主状态和菌群平衡，必要时在医生指导下进行干预。
 }
 \end{tcolorbox}
-
-\newpage
 
 \begin{center}
 \begin{tikzpicture}[
@@ -5646,7 +5275,7 @@ leftcard/.style={   % 左侧小卡片样式
         \ifnum\pdfstrcmp{\status}{超标}=0
             \node[value, text=customred] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \else
-            \node[value, text=green!50!black] at (10.5,\basepos) {\footnotesize\textbf{\status}};
+            \node[value, text=customGreen] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \fi
 
         % 丰度超过%人
@@ -5814,7 +5443,7 @@ leftcard/.style={   % 左侧小卡片样式
         \ifnum\pdfstrcmp{\status}{超标}=0
             \node[value, text=customred] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \else
-            \node[value, text=green!50!black] at (10.5,\basepos) {\footnotesize\textbf{\status}};
+            \node[value, text=customGreen] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \fi
 
         % 丰度超过%人
@@ -5982,7 +5611,7 @@ leftcard/.style={   % 左侧小卡片样式
         \ifnum\pdfstrcmp{\status}{超标}=0
             \node[value, text=customred] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \else
-            \node[value, text=green!50!black] at (10.5,\basepos) {\footnotesize\textbf{\status}};
+            \node[value, text=customGreen] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \fi
 
         % 丰度超过%人
@@ -6150,7 +5779,7 @@ leftcard/.style={   % 左侧小卡片样式
         \ifnum\pdfstrcmp{\status}{超标}=0
             \node[value, text=customred] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \else
-            \node[value, text=green!50!black] at (10.5,\basepos) {\footnotesize\textbf{\status}};
+            \node[value, text=customGreen] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \fi
 
         % 丰度超过%人
@@ -6318,7 +5947,7 @@ leftcard/.style={   % 左侧小卡片样式
         \ifnum\pdfstrcmp{\status}{超标}=0
             \node[value, text=customred] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \else
-            \node[value, text=green!50!black] at (10.5,\basepos) {\footnotesize\textbf{\status}};
+            \node[value, text=customGreen] at (10.5,\basepos) {\footnotesize\textbf{\status}};
         \fi
 
         % 丰度超过%人
@@ -6410,29 +6039,7 @@ leftcard/.style={   % 左侧小卡片样式
     },
     borderline west={5pt}{0pt}{customTeal}
 ]
-\textcolor{customTeal}{\Large\textbf{肠道真菌}}
-\end{tcolorbox}
-
-\newpage
-
-\begin{tcolorbox}[
-    enhanced,
-    colback=white,
-    colframe=white,
-    arc=2mm,
-    boxrule=0pt,
-    width=\textwidth,
-    left=15pt,
-    right=15pt,
-    top=10pt,
-    bottom=10pt,
-    drop shadow={
-        opacity=0.2,
-        color=customTeal
-    },
-    borderline west={5pt}{0pt}{customTeal}
-]
-\textcolor{customTeal}{\large\textbf{（常见）真菌}}
+\textcolor{customTeal}{\Large\textbf{（常见）真菌}}
 \end{tcolorbox}
 
 \begin{center}
@@ -6783,29 +6390,7 @@ leftcard/.style={   % 左侧小卡片样式
     },
     borderline west={5pt}{0pt}{customTeal}
 ]
-\textcolor{customTeal}{\Large\textbf{肠道真核生物}}
-\end{tcolorbox}
-
-\newpage
-
-\begin{tcolorbox}[
-    enhanced,
-    colback=white,
-    colframe=white,
-    arc=2mm,
-    boxrule=0pt,
-    width=\textwidth,
-    left=15pt,
-    right=15pt,
-    top=10pt,
-    bottom=10pt,
-    drop shadow={
-        opacity=0.2,
-        color=customTeal
-    },
-    borderline west={5pt}{0pt}{customTeal}
-]
-\textcolor{customTeal}{\large\textbf{（常见）肠道寄生虫}}
+\textcolor{customTeal}{\Large\textbf{（常见）肠道寄生虫}}
 \end{tcolorbox}
 \vspace{0.05cm}
 \begin{tcolorbox}[
@@ -7504,30 +7089,8 @@ leftcard/.style={   % 左侧小卡片样式
     },
     borderline west={5pt}{0pt}{customTeal}
 ]
-\textcolor{customTeal}{\Large\textbf{肠道病毒}}
-\end{tcolorbox}
-
-\newpage
-
-\begin{tcolorbox}[
-    enhanced,
-    colback=white,
-    colframe=white,
-    arc=2mm,
-    boxrule=0pt,
-    width=\textwidth,
-    left=15pt,
-    right=15pt,
-    top=10pt,
-    bottom=10pt,
-    drop shadow={
-        opacity=0.2,
-        color=customTeal
-    },
-    borderline west={5pt}{0pt}{customTeal}
-]
 %\textcolor{customTeal}{\Large\textbf{检出病毒}}
-    \textcolor{customTeal}{\large\CJKfontspec[UprightFont={* Semibold}]{PingFang SC}检出病毒}
+    \textcolor{customTeal}{\Large\CJKfontspec[UprightFont={* Semibold}]{PingFang SC}检出病毒}
 \end{tcolorbox}
 
 \begin{tcolorbox}[
@@ -7861,6 +7424,99 @@ leftcard/.style={   % 左侧小卡片样式
 \definecolor{modernpurple}{RGB}{142, 68, 173}
 \definecolor{modernrose}{RGB}{192, 57, 43}
 
+\begin{tcolorbox}[
+    enhanced,
+    colback=lightpurple!10, % 卡片底色
+    colframe=white,  % 边框颜色
+    arc=3mm,
+    boxrule=0.5pt,
+    width=\textwidth,
+    top=8pt,
+    bottom=8pt
+]
+{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{什么是肠道菌群的耐药基因？}\\
+{\color{orange!50}\faComments}\quad 肠道菌群的耐药基因是指那些使细菌对特定抗生素或其他抗微生物药物产生耐药性的基因。这些基因编码的蛋白质可以干扰药物的作用机制，使细菌能够在抗生素存在的环境中生存和繁殖。
+
+}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+    enhanced,
+    colback=lightpurple!10, % 卡片底色
+    colframe=white,  % 边框颜色
+    arc=3mm,
+    boxrule=0.5pt,
+    width=\textwidth,
+    top=8pt,
+    bottom=8pt
+]
+{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{什么是肠道菌群的金属耐受基因？}\\
+{\color{orange!50}\faComments}\quad 肠道菌群的金属耐受基因是指存在于肠道微生物中的基因，这些基因使细菌能够在高浓度金属（如铜、铅、镉等）环境中生存。耐受机制包括金属离子排出、金属结合、细胞壁改造等。
+
+}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+    enhanced,
+    colback=lightpurple!10, % 卡片底色
+    colframe=white,  % 边框颜色
+    arc=3mm,
+    boxrule=0.5pt,
+    width=\textwidth,
+    top=8pt,
+    bottom=8pt
+]
+{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{什么是肠道菌群的外排系统基因？}\\
+{\color{orange!50}\faComments}\quad 肠道菌群的外排系统基因是指一类编码外排泵或外排系统的基因，这些系统使细菌能够将有害物质（如抗生素，毒素，重金属和杀生物剂等）从细胞内主动排出，以抵御这些物质的毒性。
+%\textbf{临床意义}：
+%\begin{enumerate}
+%    \item 感染机制：毒力基因揭示了细菌如何通过生物机制引发感染，从而帮助理解感染的病理过程。
+%    \item 疾病诊断：检测肠道菌群中毒力基因的存在可以作为某些感染性疾病的诊断标志。
+%    \item 临床预防：了解毒力基因的影响可为开发抗感染策略和疫苗提供依据，有助于预防相关疾病。
+%    \item 抗生素使用策略：识别含有毒力基因的细菌，帮助医生制定更有效的抗生素治疗方案。
+%\end{enumerate}
+}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+    enhanced,
+    colback=lightpurple!10, % 卡片底色
+    colframe=white,  % 边框颜色
+    arc=3mm,
+    boxrule=0.5pt,
+    width=\textwidth,
+    top=8pt,
+    bottom=8pt
+]
+{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{什么是肠道菌群的毒力基因？}\\
+{\color{orange!50}\faComments}\quad 肠道菌群的毒力基因是指那些使细菌能够造成宿主组织损伤或引发炎症反应的基因。这些基因通常与细菌的致病性有关，使其能在宿主内存活、繁殖并引起疾病。
+
+}
+\end{tcolorbox}
+
+%\begin{tcolorbox}[
+%    enhanced,
+%    colback=lightpurple!10, % 卡片底色
+%    colframe=white,  % 边框颜色
+%    arc=3mm,
+%    boxrule=0.5pt,
+%    width=\textwidth,
+%    top=8pt,
+%    bottom=8pt
+%]
+%{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{如何阅读每个菌群基因的表格？}\\
+%{\color{orange!50}\faComments}\quad 下列是对标的各个列的介绍：
+%\begin{itemize}
+%    \item 来源菌株：指检测到的基因来源于哪些特定的肠道菌群。
+%    \item 耐药基因/耐受基因/外排基因/毒力基因：
+%    \item 耐药类型/基因类型：
+%    \item reads 数量：指在次世代测序（NGS）过程中，与特定耐药基因相关的原始测序读取数据的数量。
+%    \item 耐药药物：
+%\end{itemize}
+%
+%}
+%\end{tcolorbox}
+
 % 第一行卡片
 \begin{minipage}{0.48\textwidth}
     \begin{tcolorbox}[
@@ -7941,76 +7597,6 @@ leftcard/.style={   % 左侧小卡片样式
     \end{tcolorbox}
 \end{minipage}
 \end{center}
-
-\begin{tcolorbox}[
-    enhanced,
-    colback=lightpurple!10, % 卡片底色
-    colframe=white,  % 边框颜色
-    arc=3mm,
-    boxrule=0.5pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-]
-{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{什么是肠道菌群的耐药基因？}\\
-{\color{orange!50}\faComments}\quad 肠道菌群的耐药基因是指那些使细菌对特定抗生素或其他抗微生物药物产生耐药性的基因。这些基因编码的蛋白质可以干扰药物的作用机制，使细菌能够在抗生素存在的环境中生存和繁殖。
-
-}
-\end{tcolorbox}
-
-\begin{tcolorbox}[
-    enhanced,
-    colback=lightpurple!10, % 卡片底色
-    colframe=white,  % 边框颜色
-    arc=3mm,
-    boxrule=0.5pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-]
-{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{什么是肠道菌群的金属耐受基因？}\\
-{\color{orange!50}\faComments}\quad 肠道菌群的金属耐受基因是指存在于肠道微生物中的基因，这些基因使细菌能够在高浓度金属（如铜、铅、镉等）环境中生存。耐受机制包括金属离子排出、金属结合、细胞壁改造等。
-
-}
-\end{tcolorbox}
-
-\begin{tcolorbox}[
-    enhanced,
-    colback=lightpurple!10, % 卡片底色
-    colframe=white,  % 边框颜色
-    arc=3mm,
-    boxrule=0.5pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-]
-{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{什么是肠道菌群的外排系统基因？}\\
-{\color{orange!50}\faComments}\quad 肠道菌群的外排系统基因是指一类编码外排泵或外排系统的基因，这些系统使细菌能够将有害物质（如抗生素，毒素，重金属和杀生物剂等）从细胞内主动排出，以抵御这些物质的毒性。
-%\textbf{临床意义}：
-%\begin{enumerate}
-%    \item 感染机制：毒力基因揭示了细菌如何通过生物机制引发感染，从而帮助理解感染的病理过程。
-%    \item 疾病诊断：检测肠道菌群中毒力基因的存在可以作为某些感染性疾病的诊断标志。
-%    \item 临床预防：了解毒力基因的影响可为开发抗感染策略和疫苗提供依据，有助于预防相关疾病。
-%    \item 抗生素使用策略：识别含有毒力基因的细菌，帮助医生制定更有效的抗生素治疗方案。
-%\end{enumerate}
-}
-\end{tcolorbox}
-
-\begin{tcolorbox}[
-    enhanced,
-    colback=lightpurple!10, % 卡片底色
-    colframe=white,  % 边框颜色
-    arc=3mm,
-    boxrule=0.5pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-]
-{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{什么是肠道菌群的毒力基因？}\\
-{\color{orange!50}\faComments}\quad 肠道菌群的毒力基因是指那些使细菌能够造成宿主组织损伤或引发炎症反应的基因。这些基因通常与细菌的致病性有关，使其能在宿主内存活、繁殖并引起疾病。
-
-}
-\end{tcolorbox}
 
 \newpage
 
@@ -8666,8 +8252,6 @@ leftcard/.style={   % 左侧小卡片样式
 \end{minipage}
 \end{center}
 
-\newpage
-
 \begin{center}
 \begin{tikzpicture}[
     font=\small,
@@ -8969,20 +8553,43 @@ overlay={
 \end{tcolorbox}
 
 \begin{tcolorbox}[
-enhanced,
-colback=customTealBg,
-colframe=customTealBg,
-arc=3mm,
-boxrule=0pt,
-width=\textwidth,
-top=8pt,
-bottom=8pt
+    enhanced,
+    colback=customTealBg,
+    colframe=customTealBg,
+    arc=3mm,
+    boxrule=0pt,
+    width=\textwidth,
+    top=8pt,
+    bottom=8pt
 ]
-{\small{\color{customTeal}\faInfoCircle} 菌群代谢物及神经递质是肠道微生物与宿主相互作用的重要媒介，主要包括短链脂肪酸（SCFAs）、胆汁酸、色氨酸代谢物和神经递质等多个家族，总计已发现数百种不同的活性分子。健康成年人肠道中的代谢产物主要由乙酸盐、丙酸盐、丁酸盐（占SCFAs的95\%）、γ-氨基丁酸（GABA）、血清素（5-HT）和多巴胺等构成，其中短链脂肪酸在肠道稳态维持中发挥核心作用，可占所有代谢产物的60\%以上。我们可以从两个核心维度来评估这些代谢物：生物活性和组织分布，这两个维度的组合可以帮助我们更全面地理解不同代谢物在肠-脑轴通路中的调节作用和代谢特征。\\
+{\small{\color{customTeal}\faInfoCircle} 菌群代谢物和神经递质是肠道微生物与宿主相互作用的重要媒介，已发现数百种不同的活性分子。这些代谢物在维持肠道健康和影响宿主生理功能方面发挥着关键作用。健康成年人肠道中的主要代谢产物包括短链脂肪酸（SCFAs）、胆汁酸、色氨酸代谢物和神经递质等。以下是对这些代谢物的详细介绍：
 
-{\color{orange}\faExclamationTriangle} 特别注意：这些菌群代谢物指标及神经递质并非通过直接检测获得，而是通过肠道菌群数据进行评估推算，结果仅供参考！
+\begin{itemize}
+    \item \textbf{有机酸类}：
+    \begin{itemize}
+        \item 肠道微生物主要产生短链脂肪酸（如乙酸盐、丙酸盐和丁酸盐），这些有机酸在肠道稳态维持中发挥核心作用，通常占所有代谢产物的60\%以上。
+    \end{itemize}
+    \item \textbf{神经活性物质}：
+    \begin{itemize}
+        \item 包括γ-氨基丁酸（GABA）、血清素（5-HT）和多巴胺等，这些神经递质在调节情绪、行为和睡眠等方面具有重要作用。
+    \end{itemize}
+    \item \textbf{含氮/含硫化合物}：
+    \begin{itemize}
+        \item 这些化合物在肠道内的代谢过程中产生，可能影响宿主的代谢和免疫反应。
+    \end{itemize}
+    \item \textbf{其他代谢物}：
+    \begin{itemize}
+        \item 包括胆汁酸和色氨酸代谢产物等，这些物质在肠道健康和全身代谢中也发挥着重要作用。
+    \end{itemize}
+\end{itemize}
+
+{\color{orange}\faExclamationTriangle} \textbf{特别注意}：
+\begin{itemize}
+    \item 这些菌群代谢物指标及神经递质并非通过直接检测获得，而是通过肠道菌群数据进行评估推算，结果仅供参考！
+\end{itemize}
 }
 \end{tcolorbox}
+
 
 \begin{center}
 \begin{minipage}{0.49\textwidth}
@@ -9001,7 +8608,13 @@ bottom=8pt
         minipage
     }
 ]
-测试内容1
+本报告中评估的有机酸类菌群代谢物为下列4项
+%\begin{itemize}
+%    \item 丁酸盐
+%    \item 丙酸盐
+%    \item 乙酸盐
+%    \item 异戊酸盐
+%\end{itemize}
 \end{tcolorbox}
 \end{minipage}
 \begin{minipage}{0.49\textwidth}
@@ -9101,6 +8714,7 @@ bottom=8pt
     bottom=8pt
 ]
 {\small{\color{customTeal}\faInfoCircle} 有机酸类代谢物是由肠道微生物发酵碳水化合物和蛋白质产生的重要中间产物。这些物质参与能量代谢、神经传导和免疫调节等多个生理过程。通过检测这些指标，可以评估肠道微生物的代谢活性和宿主健康状况。\\
+
 {\color{orange}\faExclamationTriangle} \textbf{特别注意}：
 }
 \end{tcolorbox}
@@ -9275,188 +8889,6 @@ bottom=8pt
 \end{tikzpicture}
 \end{center}
 
-\begin{tcolorbox}[
-    enhanced,
-    colback=gray!3,
-    colframe=gray!3,
-    arc=3mm,
-    boxrule=0pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-]
-{\small{\textcolor{yellow!85!orange}{\faLightbulb}}\quad 部分有机酸类代谢物水平异常需要关注：
-\begin{itemize}
-    \item 乙酸盐降低（13，参考范围15-98）：这种最基础的短链脂肪酸水平偏低，就像发电厂供能不足，可能影响细胞的能量供应。
-    \item 色氨酸严重降低（1，参考范围5-90）：作为"情绪调节剂"的原料严重不足，就像工厂缺少了重要的原材料，可能影响血清素的合成和情绪调节。
-    \item 喹啉偏低（7，参考范围5-95）：虽然在参考范围内，但处于较低水平，需要关注神经系统的代谢状态。
-\end{itemize}
-
-{\textcolor{green!85!orange}{\faLightbulb}}\quad 其他指标维持在正常水平：
-\begin{itemize}
-    \item 丁酸盐（24，参考范围15-98）：虽然偏低但仍在正常范围，维持着基本的肠道屏障功能。
-    \item 丙酸盐（62，参考范围15-98）：处于中等水平，显示糖代谢调节功能稳定。
-    \item 异戊酸盐（67，参考范围15-98）：维持在良好水平，说明蛋白质发酵状态正常。
-    \item 谷氨酸（81，参考范围15-95）：处于较高水平但仍在范围内，神经递质代谢活跃。
-\end{itemize}
-
-总体来看，短链脂肪酸和色氨酸代谢通路需要重点关注，建议通过调整饮食结构和生活方式来改善这些指标。
-}
-
-\end{tcolorbox}
-
-\newpage
-
-\vspace{-0.5cm}
-\begin{center}
-\begin{tikzpicture}[
-    font=\small,
-    title/.style={font=\small\bfseries\color{white}},
-    value/.style={font=\small},
-    reference/.style={font=\small},
-    cell/.style={anchor=west, text width=4.2cm},
-    note/.style={anchor=west, text width=4.5cm, align=left}
-]
-    \def\cardwidth{\textwidth}
-    \def\cardheight{7.9}
-    \def\barheight{0.25}
-    \def\barwidth{1.5}
-    \def\valuebarspace{0.4}
-
-    % 容器和标题栏背景
-    \draw[rounded corners=5, fill=white, draw=gray!20]
-        (0,0) rectangle (\cardwidth,-\cardheight);
-    \path[fill=customTeal]
-        (0,0) [rounded corners=5] -- (\cardwidth,0) --
-        (\cardwidth,0.8) -- (0,0.8) -- cycle;
-
-    % 表头
-    \node[title, anchor=west] at (0.5,0.4) {\textbf{神经活性物质名称}};
-    \node[title] at (6, 0.4) {\textbf{正常范围}};
-    \node[title] at (11, 0.4) {\textbf{检测丰度}};
-    \node[title] at (16, 0.4) {\textbf{结果评价}};
-
-    % 初始化位置计数器
-    \def\currentpos{0.25}
-
-    % 数据行和卡片
-    % 数据行和卡片
-    \foreach \item/\enitem/\value/\range/\status/\intro/\suggestion/\index in {
-        {}/{GABA}/24/{15-98}/正常/{主要的抑制性神经递质，调节神经元兴奋性，参与焦虑、睡眠等功能。}/{}/\currentpos,
-        {血清素}/{5-HT}/99/{20-95}/超标/{调节情绪、睡眠和食欲的关键神经递质，影响心理健康状态。}/{}/\currentpos,
-        {组胺}/{Histamine}/67/{5-95}/正常/{参与免疫应答和过敏反应，同时调节觉醒和食欲。}/{}/\currentpos,
-        {DOPAC}/{DOPAC}/66/{10-95}/正常/{多巴胺的主要代谢产物，反映多巴胺能神经系统的活性。}/{}/\currentpos,
-        {雌激素}/{Estrogen}/89/{10-95}/正常/{重要的性激素，影响生殖功能、骨密度和心血管健康。}/{}/\currentpos,
-        {多巴胺}/{Dopamine}/87/{5-95}/正常/{与奖励、愉悦、运动功能相关的神经递质，影响动机和行为。}/{}/\currentpos
-    }
-    {
-        % 计算当前行的基础位置
-        \pgfmathsetmacro{\basepos}{-2.8*\currentpos}
-
-        % 菌种名称
-        \node[cell, align=left] at (0.5,\basepos) {
-            \small\textbf{\item}\\[-0.2em]
-            {\color{lightgray}\small\enitem}
-        };
-
-        % 正常范围
-        \node[reference] at (6,\basepos) {\footnotesize\range};
-
-        % 进度条相关
-        \pgfmathsetmacro{\barypos}{\basepos-\valuebarspace+0.1}
-        \def\barstart{10.25}
-
-        % 进度条背景
-        \fill[gray!10, rounded corners=2] (\barstart,\barypos)
-            rectangle (\barstart+\barwidth,\barypos+\barheight);
-
-        % 检测丰度值
-        \node[value] at (11, {\basepos-\valuebarspace+0.6}) {\footnotesize\value};
-
-        % 解析范围并计算进度条长度
-        \def\parserange#1-#2\endparse{\def\minval{#1}\def\maxval{#2}}
-        \expandafter\parserange\range\endparse
-
-        % 计算进度条长度和颜色
-        \pgfmathsetmacro{\progress}{min(\value/\maxval, 1.0)}
-        \pgfmathparse{\value > \maxval ? "customred" : (\value < \minval ? "customred" : "green!50")}
-        \let\barcolor=\pgfmathresult
-
-        % 进度条显示
-        \ifnum\pdfstrcmp{\status}{超标}=0
-            \fill[customred, rounded corners=2] (\barstart,\barypos)
-                rectangle (\barstart+\barwidth,\barypos+\barheight);
-        \else
-            \fill[\barcolor, rounded corners=2] (\barstart,\barypos)
-                rectangle (\barstart+\barwidth*\progress,\barypos+\barheight);
-        \fi
-
-        % 结果评价
-        \ifnum\pdfstrcmp{\status}{超标}=0
-            \node[value, text=customRed] at (16,\basepos) {\footnotesize\textbf{\status}};
-        \else
-            \node[value, text=customGreen] at (16,\basepos) {\footnotesize\textbf{\status}};
-        \fi
-
-        % 添加卡片
-        \pgfmathsetmacro{\cardypos}{\basepos-0.5}
-        \begin{scope}[shift={(0,\cardypos)}]
-            % 卡片背景
-            \pgfmathsetmacro{\cardheight}{
-                \ifnum\pdfstrcmp{\status}{超标}=0
-                    1.0  % 两行内容时的高度
-                \else
-                    0.6  % 一行内容时的高度
-                \fi
-            }
-
-            \fill[rounded corners=5pt, customTeal!5, draw=gray!5]
-                (0.3,-\cardheight) rectangle (17.3,0);
-
-            % 菌群简介图标和内容
-            \node[anchor=west] at (0.5,-0.3) {
-                \textbf{\color{gray!90}\footnotesize \textcolor{customTeal}{\faInfoCircle}}
-            };
-            \node[anchor=west, text width=16cm] at (0.9,-0.3) {
-                {\small\color{gray}\footnotesize \intro}
-            };
-
-            % 异常解读标题和内容
-            \ifnum\pdfstrcmp{\status}{超标}=0
-                \node[anchor=west] at (0.55,-0.8) {
-                    \textbf{\color{customRed}\footnotesize \textcolor{customRed}{\faLightbulb}}
-                };
-                \node[anchor=west, text width=16cm] at (0.9,-0.8) {
-                    {\small\color{gray}\footnotesize \suggestion}
-                };
-            \fi
-        \end{scope}
-
-        % 分割线
-        \pgfmathsetmacro{\linepos}{
-            \ifnum\pdfstrcmp{\status}{超标}=0
-                \basepos-1.7  % 超标时的分割线位置
-            \else
-                \basepos-1.3  % 正常时的分割线位置
-            \fi
-        }
-        \draw[gray!20] (0.2,\linepos) -- (\cardwidth-0.2,\linepos);
-
-        % 根据当前行的状态计算下一行的位置增量
-        \ifnum\pdfstrcmp{\status}{超标}=0
-            \pgfmathsetmacro{\increment}{0.85}  % 超标行（两行内容）需要更大的增量
-        \else
-            \pgfmathsetmacro{\increment}{0.7}  % 正常行（一行内容）使用较小的增量
-        \fi
-
-        % 更新位置计数器
-        \pgfmathsetmacro{\nextpos}{\currentpos+\increment}
-        \xdef\currentpos{\nextpos}
-    }
-
-\end{tikzpicture}
-\end{center}
-
 \newpage
 
 \begin{tcolorbox}[
@@ -9492,6 +8924,7 @@ bottom=8pt
     bottom=8pt
 ]
 {\small{\color{customTeal}\faInfoCircle} 神经活性物质是一类在神经系统中发挥重要作用的化学物质，包括神经递质和激素。这些物质参与调节情绪、认知、行为和内分泌功能。通过检测这些指标，可以评估神经系统功能状态和神经内分泌平衡。\\
+
 {\color{orange}\faExclamationTriangle} \textbf{特别注意}：
 }
 \end{tcolorbox}
@@ -9664,26 +9097,6 @@ bottom=8pt
 
 \end{tikzpicture}
 \end{center}
-
-\begin{tcolorbox}[
-    enhanced,
-    colback=gray!3,
-    colframe=gray!3,
-    arc=3mm,
-    boxrule=0pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-]
-{\small{\textcolor{yellow!85!orange}{\faLightbulb}}\quad 血清素水平偏高需要关注：
-\begin{itemize}
-    \item 血清素偏高（99，参考范围20-95）：这种"快乐物质"水平超出正常范围，可能导致神经系统过度兴奋，就像汽车引擎转速过高，需要适当调节。
-\end{itemize}
-
-{\textcolor{green!85!orange}{\faLightbulb}}\quad 其他指标都在正常范围内，显示神经系统功能相对稳定。
-}
-
-\end{tcolorbox}
 
 \newpage
 
@@ -9891,26 +9304,6 @@ bottom=8pt
 
 \end{tikzpicture}
 \end{center}
-
-\begin{tcolorbox}[
-    enhanced,
-    colback=gray!3,
-    colframe=gray!3,
-    arc=3mm,
-    boxrule=0pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-]
-{\small{\textcolor{yellow!85!orange}{\faLightbulb}}\quad 免疫球蛋白M（IgM）和白蛋白是人体免疫系统中重要的防御物质，它们的水平偏低需要关注：
-\begin{itemize}
-    \item IgM降低：这种物质就像身体的“快速反应部队”，它低了会让身体对新入侵者的第一道防线变弱，就像城市失去了预警系统，容易让敌人突破防线。
-    \item 白蛋白降低：可以理解为身体的“营养储备库”减少了，不利于维持机体正常功能，就像仓库里的物资不足，影响了整体供应。
-\end{itemize}
-{\textcolor{green!85!orange}{\faLightbulb}}\quad 其他指标都在正常范围：IgA（黏膜防护者）和IgD（免疫调节者）都处于正常水平，说明目前身体的基础防御能力保持稳定。
-}
-
-\end{tcolorbox}
 
 \newpage
 
@@ -11457,95 +10850,43 @@ overlay={
 \newpage
 
 \begin{tcolorbox}[
-enhanced,
-colback=white,
-colframe=customTeal,
-arc=2mm,
-boxrule=1pt,
-left=20pt,
-right=20pt,
-top=12pt,
-bottom=12pt,
-width=\textwidth,
-fontupper=\sffamily,
-overlay={
-\draw[customTeal, line width=2pt]
-([xshift=15pt]frame.south west) -- ([xshift=-15pt]frame.south east);
-}
+    enhanced,
+    colback=white,
+    colframe=customTeal,
+    arc=2mm,
+    boxrule=1pt,
+    left=20pt,
+    right=20pt,
+    top=12pt,
+    bottom=12pt,
+    width=\textwidth,
+    fontupper=\sffamily,
+    overlay={
+    \draw[customTeal, line width=2pt]
+    ([xshift=15pt]frame.south west) -- ([xshift=-15pt]frame.south east);
+    }
 ]
 {\Large\bfseries\textcolor{customTeal}{\Huge 营养饮食指标评估}}
 \end{tcolorbox}
 
 \begin{tcolorbox}[
     enhanced,
-    colback=gray!3,
-    colframe=gray!5,
+    colback=customTealBg,
+    colframe=customTealBg,
     arc=3mm,
     boxrule=0pt,
     width=\textwidth,
     top=8pt,
     bottom=8pt
 ]
-{\footnotesize{\color{customTeal}
-\faInfoCircle} 神经递质是连接大脑与身体的重要信使分子，它们在调节我们的情绪、行为和身心健康中发挥着关键作用。
+{\small{\color{customTeal}\faInfoCircle} 营养饮食评估模块旨在分析个体的饮食习惯与营养摄入情况，以评估其对健康的影响。该模块主要涵盖宏观营养素（如碳水化合物、蛋白质、脂肪）和微观营养素（如维生素、矿物质）的摄入量，以及膳食纤维和水分的摄入。通过对饮食数据的综合分析，我们可以了解个体的营养状态和潜在的营养缺乏或过量问题，从而为制定个性化的饮食干预方案提供科学依据。
+
+营养饮食评估不仅关注食物的种类和数量，还考虑饮食的多样性和均衡性，这些因素对维持身体健康和预防慢性疾病至关重要。通过对饮食模式的评估，我们能够识别出可能影响健康的饮食习惯，并提出相应的改善建议，以促进整体健康水平的提升。\\
+
+{\color{orange}\faExclamationTriangle} \textbf{特别注意}：营养饮食评估结果基于自我报告的饮食数据，可能受到个体记忆和报告偏差的影响，结果仅供参考！
 }
 \end{tcolorbox}
-\begin{tcolorbox}[
-    enhanced,
-    colback=gray!3,
-    colframe=gray!5,
-    arc=3mm,
-    boxrule=0pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-]
-{\footnotesize{\color{customTeal}
-\faInfoCircle} 神经递质是连接大脑与身体的重要信使分子，它们在调节我们的情绪、行为和身心健康中发挥着关键作用。
-}
-\end{tcolorbox}
-\begin{tcolorbox}[
-    enhanced,
-    colback=gray!3,
-    colframe=gray!5,
-    arc=3mm,
-    boxrule=0pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-]
-{\footnotesize{\color{customTeal}
-\faInfoCircle} 神经递质是连接大脑与身体的重要信使分子，它们在调节我们的情绪、行为和身心健康中发挥着关键作用。
-}
-\end{tcolorbox}
-\begin{tcolorbox}[
-    enhanced,
-    colback=gray!3,
-    colframe=gray!5,
-    arc=3mm,
-    boxrule=0pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-]
-{\footnotesize{\color{customTeal}
-\faInfoCircle} 神经递质是连接大脑与身体的重要信使分子，它们在调节我们的情绪、行为和身心健康中发挥着关键作用。
-}
-\end{tcolorbox}
-\begin{tcolorbox}[
-    enhanced,
-    colback=gray!3,
-    colframe=gray!5,
-    arc=3mm,
-    boxrule=0pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-]
-{\footnotesize{\color{customTeal}
-\faInfoCircle} 神经递质是连接大脑与身体的重要信使分子，它们在调节我们的情绪、行为和身心健康中发挥着关键作用。
-}
-\end{tcolorbox}
+
 
 \begin{figure}[htbp]
 \centering
@@ -12443,8 +11784,6 @@ bottom=8pt
 {\small {\color{customTeal}\faInfoCircle} 非食源性氨基酸是指人体可以自身合成的氨基酸，共有11种。它们同样是构建人体蛋白质的基本单位，包括丙氨酸、天冬氨酸、天冬酰胺、谷氨酸、谷氨酰胺、甘氨酸、脯氨酸、丝氨酸、酪氨酸、半胱氨酸和精氨酸。其中，精氨酸、酪氨酸和半胱氨酸在特定生理状态（如生长发育期、疾病恢复期）下可能成为条件性必需氨基酸。虽然人体可以自行合成这些氨基酸，但均衡的饮食仍有助于维持其合成所需的原料供应。}
 \end{tcolorbox}
 
-\newpage
-
 \begin{center}
 \begin{tikzpicture}[
     font=\small,
@@ -12648,9 +11987,9 @@ bottom=8pt
 
 本报告评估基于肠道微生物组检测数据和机器学习方法，对以下慢性疾病风险进行分析预测：
 \begin{itemize}
-    \item 肠道相关疾病：炎症性肠炎、肠易激综合征、感染性腹泻、肠道病毒感染和过敏性腹泻
-    \item 器官功能疾病：肝病、心脑血管疾病、甲状腺疾病和肺部疾病
-    \item 神经系统疾病：神经行为发育异常
+    \item \textbf{肠道相关疾病}：炎症性肠炎、肠易激综合征、感染性腹泻、肠道病毒感染和过敏性腹泻
+    \item \textbf{器官功能疾病}：肝病、心脑血管疾病、甲状腺疾病和肺部疾病
+    \item \textbf{神经系统疾病}：神经行为发育异常
 \end{itemize}
 
 %\item \footnotesize 慢病综合定期检测建议：
@@ -12813,12 +12152,11 @@ bottom=8pt
 
 \end{tikzpicture}
 \end{center}
-
-\newpage
+\vspace{1.5cm}
 \begin{tcolorbox}[
     enhanced,
-    colback=green!80!white!5,
-    colframe=green!80!white!10,
+    colback=customTealBg,
+    colframe=customTealBg,
     arc=3mm,
     boxrule=0pt,
     width=\textwidth,
@@ -12838,7 +12176,7 @@ bottom=8pt
         % 绘制进度条（15%进度）带圆角
         \begin{scope}
             \clip [rounded corners=4pt] (0,0) rectangle (4*0.25,0.3);
-            \shade[left color=green!70!black,
+            \shade[left color=customGreen,
                    right color={rgb,255: red,67; green,160; blue,71}]
                 (0,0) rectangle (4*0.25,0.3);
         \end{scope}
@@ -12851,24 +12189,24 @@ bottom=8pt
 \small 0.25
 \hspace{0.1em}
 \raisebox{0.25ex}{ % 调整此值实现垂直对齐
-\tcbox[colback=green!70!black, colframe=green!70!black, arc=1.5mm,
+\tcbox[colback=customGreen, colframe=customGreen, arc=1.5mm,
        boxrule=0pt, left=1.5mm, right=1.5mm, top=0.1mm, bottom=0.1mm,
        rounded corners=south, on line]
 {\scriptsize\textcolor{white}{\textbf{低风险}}}
 }
 
 {\footnotesize
-{\color{green!50!black!80}\faInfoCircle}
-{\color{customTeal}检测风险：}0.25，属于“低风险”级别。\\
-{\scriptsize\textcolor{rgb,255:red,140;green,140;blue,140}{\faChartBar}} {\color{customTeal}风险评估：}该风险提示目前患炎症性肠炎的风险相对较低，可能存在轻微的生活方式不当或其他健康问题。如若出现腹痛、腹部痉挛、腹泻或便秘等症状，同时伴有食欲下降和疲劳感，请及时就医。\\
-{\scriptsize\textcolor{rgb,255:red,140;green,140;blue,140}{\faBookOpen}} {\color{customTeal}疾病简介：}炎症性肠病是一种慢性、反复发作的肠道炎症性疾病，主要包括两种类型：克罗恩病和溃疡性结肠炎。其特点是肠道持续性炎症，可能导致肠壁损伤，并伴有全身性症状。
+{\color{customGreen}\faInfoCircle}
+{\color{black}检测风险：}0.25，属于“低风险”级别。\\
+{\scriptsize\textcolor{rgb,255:red,140;green,140;blue,140}{\faChartBar}} {\color{black}风险评估：}该风险提示目前患炎症性肠炎的风险相对较低，可能存在轻微的生活方式不当或其他健康问题。如若出现腹痛、腹部痉挛、腹泻或便秘等症状，同时伴有食欲下降和疲劳感，请及时就医。\\
+{\scriptsize\textcolor{rgb,255:red,140;green,140;blue,140}{\faBookOpen}} {\color{black}疾病简介：}炎症性肠病是一种慢性、反复发作的肠道炎症性疾病，主要包括两种类型：克罗恩病和溃疡性结肠炎。其特点是肠道持续性炎症，可能导致肠壁损伤，并伴有全身性症状。
 }
 \end{tcolorbox}
 
 \begin{tcolorbox}[
     enhanced,
-    colback=yellow!80!white!5,
-    colframe=yellow!80!white!10,
+    colback=customTealBg,
+    colframe=customTealBg,
     arc=3mm,
     boxrule=0pt,
     width=\textwidth,
@@ -12916,8 +12254,8 @@ bottom=8pt
 
 \begin{tcolorbox}[
     enhanced,
-    colback=green!80!white!5,
-    colframe=green!80!white!10,
+    colback=customTealBg,
+    colframe=customTealBg,
     arc=3mm,
     boxrule=0pt,
     width=\textwidth,
@@ -12966,8 +12304,8 @@ bottom=8pt
 
 \begin{tcolorbox}[
     enhanced,
-    colback=green!80!white!5,
-    colframe=green!80!white!10,
+    colback=customTealBg,
+    colframe=customTealBg,
     arc=3mm,
     boxrule=0pt,
     width=\textwidth,
@@ -13014,8 +12352,8 @@ bottom=8pt
 
 \begin{tcolorbox}[
     enhanced,
-    colback=green!80!white!5,
-    colframe=green!80!white!10,
+    colback=customTealBg,
+    colframe=customTealBg,
     arc=3mm,
     boxrule=0pt,
     width=\textwidth,
@@ -13061,8 +12399,8 @@ bottom=8pt
 
 \begin{tcolorbox}[
     enhanced,
-    colback=yellow!80!white!5,
-    colframe=yellow!80!white!10,
+    colback=customTealBg,
+    colframe=customTealBg,
     arc=3mm,
     boxrule=0pt,
     width=\textwidth,
@@ -13110,8 +12448,8 @@ bottom=8pt
 
 \begin{tcolorbox}[
     enhanced,
-    colback=green!80!white!5,
-    colframe=green!80!white!10,
+    colback=customTealBg,
+    colframe=customTealBg,
     arc=3mm,
     boxrule=0pt,
     width=\textwidth,
@@ -13242,8 +12580,8 @@ bottom=8pt
 
 \begin{tcolorbox}[
     enhanced,
-    colback=green!80!white!5,
-    colframe=green!80!white!10,
+    colback=customTealBg,
+    colframe=customTealBg,
     arc=3mm,
     boxrule=0pt,
     width=\textwidth,
@@ -13290,8 +12628,8 @@ bottom=8pt
 
 \begin{tcolorbox}[
     enhanced,
-    colback=green!80!white!5,
-    colframe=green!80!white!10,
+    colback=customTealBg,
+    colframe=customTealBg,
     arc=3mm,
     boxrule=0pt,
     width=\textwidth,
@@ -13339,8 +12677,8 @@ bottom=8pt
 
 \begin{tcolorbox}[
     enhanced,
-    colback=yellow!80!white!5,
-    colframe=yellow!80!white!10,
+    colback=customTealBg,
+    colframe=customTealBg,
     arc=3mm,
     boxrule=0pt,
     width=\textwidth,
@@ -13521,36 +12859,177 @@ bottom=8pt
 \end{itemize}
 }
 \end{tcolorbox}
-
-\begin{tcolorbox}[
-    enhanced,
-    colback=lightpurple!10, % 卡片底色
-    colframe=lightpurple!10,  % 边框颜色
-    arc=3mm,
-    boxrule=0.5pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
+\vspace{-0.7cm}
+\begin{center}
+\begin{tikzpicture}[
+    font=\small,
+    title/.style={font=\small\bfseries\color{white}},
+    value/.style={font=\small},
+    reference/.style={font=\small},
+    cell/.style={anchor=west, text width=4.2cm},
+    note/.style={anchor=west, text width=4.5cm, align=left}
 ]
-{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{哪些菌群与肥胖相关？这些菌群是如何影响肥胖的？}\\
-{\color{orange!50}\faComments}\quad 与腹胀相关的菌群包括但不限于史氏甲烷烷菌，拟杆菌属和梭菌属等。
-}
-\end{tcolorbox}
+    \def\cardwidth{\textwidth}
+    \def\cardheight{14.7}
+    \def\barheight{0.25}
+    \def\barwidth{1.5}
+    \def\valuebarspace{0.4}
 
-\begin{tcolorbox}[
-    enhanced,
-    colback=lightpurple!10, % 卡片底色
-    colframe=lightpurple!10,  % 边框颜色
-    arc=3mm,
-    boxrule=0.5pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-]
-{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{饮食如何影响肥胖相关菌？}\\
-{\color{orange!50}\faComments}\quad 与腹胀相关的菌群包括但不限于史氏甲烷烷菌，拟杆菌属和梭菌属等。
-}
-\end{tcolorbox}
+    % 容器和标题栏背景
+    \draw[rounded corners=5, fill=white, draw=gray!20]
+        (0,0) rectangle (\cardwidth,-\cardheight);
+    \path[fill=customTeal]
+        (0,0) [rounded corners=5] -- (\cardwidth,0) --
+        (\cardwidth,0.8) -- (0,0.8) -- cycle;
+
+    % 表头
+    \node[title, anchor=west] at (0.5,0.4) {\textbf{菌种名称}};
+    \node[title] at (4.5,0.4) {\textbf{正常范围\%}};
+    \node[title] at (7.5,0.4) {\textbf{检测丰度}};
+    \node[title] at (9.5,0.4) {\textbf{检测结果}}; % 新增检测结果列名
+    \node[title] at (11.5,0.4) {\textbf{超过\%的人}};
+    \node[title] at (13.75,0.4) {\textbf{失眠相关性}};
+    \node[title] at (16,0.4) {\textbf{相关性强度}};
+
+    % 初始化位置计数器
+    \def\currentpos{0.25}
+
+    % 数据行和卡片
+    \foreach \item/\enitem/\value/\range/\percentile/\detection/\status/\intro/\suggestion/\index in {
+        {厚壁菌门}/{Firmicutes}/94.36370/{28.594-83.961}/99\%/正相关/超标/{Firmicutes菌门的数量在肥胖人群中较高，可以从食物中提取更多的能量，并将其储存为脂肪。}/{建议：碳水化合物、植物蛋白、豆制材、低能量饮食/热量限制、全麦、杂芝麻丝体}/{\color{lightgray}\faStar \faStar \faStar}/\currentpos,
+        {阿德勒氏菌属}/{Adlercreutzia}/0.00133/{0-0.74966}/99\%/正相关/正常/{能够代谢大豆异黄酮，促进女性肥胖。}/{保持健康的饮食习惯，适量摄入大豆制品。}/{\color{lightgray}\faStar \faStar \faStar}/\currentpos,
+        {双歧杆菌属}/{Bifidobacterium}/0.03296/{1.7545796-35.500554}/24\%/正相关/偏低/{促进肠道内有益菌的生长，抑制有害菌的生长，减少肥胖相关的炎症反应代谢素乱。}/{建议增加益生菌和膳食纤维的摄入。}/{\color{lightgray}\faStar \faStar \faStar}/\currentpos,
+        {嗜胆菌属}/{Bilophila}/0.73110/{0-0.1544794}/-\%/正相关/超标/{Bilophila wadsworthia是一种能够产生硫化物的细菌，其在肥胖人群中的丰度较高。}/{建议：鼠李糖乳杆菌、低聚果糖和菊粉、酵母β-葡聚糖、水果和蔬菜}/{\color{lightgray}\faStar \faStar \faStar}/\currentpos,
+        {梭菌属}/{Clostridium}/1.90370/{0-4.4645924}/67\%/正相关/正常/{肥胖者的丰度较高，尤其Clostridium butyricum，可通过增强营养吸收促进肥胖的发展。}/{保持均衡饮食，控制热量摄入。}/{\color{lightgray}\faStar \faStar \faStar}/\currentpos,
+        {埃希氏菌属}/{Escherichia}/0.14296/{0-3.83}/6\%/正相关/正常/{肥胖人群丰度明显增加，能够产生酒精，从而导致血液中酒精水平升高，也可能是肥胖人群易患非酒精性脂肪性肝病的原因之一。}/{建议保持健康的饮食习惯，控制热量摄入。}/{\color{lightgray}\faStar \faStar \faStar}/\currentpos,
+        {霍尔德曼氏菌属}/{Holdemania}/0.10581/{0-0.28}/98\%/正相关/正常/{在肥胖人群中明显增加，与神经炎症、脂质和葡萄糖代谢障碍相关，与肥胖相关的肝硬化、糖尿病和代谢综合征等疾病有关。}/{建议调整饮食结构，增加膳食纤维摄入。}/{\color{lightgray}\faStar \faStar \faStar}/\currentpos
+    }
+    {
+        % 计算当前行的基础位置
+        \pgfmathsetmacro{\basepos}{-2.8*\currentpos}
+
+        % 菌种名称
+        \node[cell, align=left] at (0.5,\basepos) {
+            \small\textbf{\item}\\[-0.2em]
+            {\color{lightgray}\small\enitem}
+        };
+
+        % 正常范围
+        \node[reference] at (4.5,\basepos) {\footnotesize\range};
+
+        % 进度条相关
+        \pgfmathsetmacro{\barypos}{\basepos-\valuebarspace+0.1}
+        \def\barstart{6.75}
+
+        % 进度条背景
+        \fill[gray!10, rounded corners=2] (\barstart,\barypos)
+            rectangle (\barstart+\barwidth,\barypos+\barheight);
+
+        % 检测丰度值
+        \node[value] at (7.5,{\basepos-\valuebarspace+0.6}) {\footnotesize\value};
+
+        % 解析范围并计算进度条长度
+        \def\parserange#1-#2\endparse{\def\minval{#1}\def\maxval{#2}}
+        \expandafter\parserange\range\endparse
+
+        % 计算进度条长度和颜色
+        \pgfmathsetmacro{\progress}{min(\value/\maxval, 1.0)}
+        \pgfmathparse{\value > \maxval ? "customred" : (\value < \minval ? "customred" : "green!50")}
+        \let\barcolor=\pgfmathresult
+
+        % 进度条显示
+        \ifnum\pdfstrcmp{\status}{超标}=0
+            \fill[customred, rounded corners=2] (\barstart,\barypos)
+                rectangle (\barstart+\barwidth,\barypos+\barheight);
+        \else
+            \fill[\barcolor, rounded corners=2] (\barstart,\barypos)
+                rectangle (\barstart+\barwidth*\progress,\barypos+\barheight);
+        \fi
+
+        % 检测结果
+%        \node[value] at (9.5,\basepos) {\footnotesize\status}; % 检测结果列
+        % 检测结果
+        \ifnum\pdfstrcmp{\status}{正常}=0
+
+        \node[value, text=customGreen] at (9.5,\basepos) {\footnotesize\textbf{\status}}; % 检测结果为正常
+        \else
+
+        \node[value, text=customRed] at (9.5,\basepos) {\footnotesize\textbf{\status}}; % 检测结果为其他状态
+        \fi
+
+
+        % 超过%的人
+        \node[value] at (11.5,\basepos) {\footnotesize\percentile};
+
+        % 肥胖相关性
+        \node[value] at (13.75,\basepos) {\footnotesize\textbf{\detection}};
+
+        % 相关性强度
+        \node[value] at (16,\basepos) {\footnotesize\textbf{\index}};
+
+        % 添加卡片
+        \pgfmathsetmacro{\cardypos}{\basepos-0.5}
+        \begin{scope}[shift={(0,\cardypos)}]
+            % 卡片背景
+            \pgfmathsetmacro{\cardheight}{
+                \ifnum\pdfstrcmp{\status}{超标}=0
+                    1.0  % 两行内容时的高度
+                \else
+                    0.6  % 一行内容时的高度
+                \fi
+            }
+
+            \fill[rounded corners=5pt, customTeal!5, draw=gray!5]
+                (0.3,-\cardheight) rectangle (17.3,0);
+
+            % 菌群简介图标和内容
+            \node[anchor=west] at (0.5,-0.3) {
+                \textbf{\color{gray!90}\footnotesize \textcolor{customTeal}{\faInfoCircle}}
+            };
+            \node[anchor=west, text width=16cm] at (0.9,-0.3) {
+                {\small\color{gray}\footnotesize \intro}
+            };
+
+            % 异常解读标题和内容
+            \ifnum\pdfstrcmp{\status}{超标}=0
+                \node[anchor=west] at (0.55,-0.8) {
+                    \textbf{\color{customRed}\footnotesize \textcolor{customRed}{\faBell}}
+                };
+                \node[anchor=west, text width=16cm] at (0.9,-0.8) {
+                    {\small\color{gray}\footnotesize \suggestion}
+                };
+            \fi
+        \end{scope}
+
+        % 分割线
+        \pgfmathsetmacro{\linepos}{
+            \ifnum\pdfstrcmp{\status}{超标}=0
+                \basepos-1.7  % 超标时的分割线位置
+            \else
+                \basepos-1.3  % 正常时的分割线位置
+            \fi
+        }
+        \draw[gray!20] (0.2,\linepos) -- (\cardwidth-0.2,\linepos);
+
+        % 根据当前行的状态计算下一行的位置增量
+        \ifnum\pdfstrcmp{\status}{超标}=0
+            \pgfmathsetmacro{\increment}{0.85}  % 超标行（两行内容）需要更大的增量
+        \else
+            \pgfmathsetmacro{\increment}{0.7}  % 正常行（一行内容）使用较小的增量
+        \fi
+
+        % 更新位置计数器
+        \pgfmathsetmacro{\nextpos}{\currentpos+\increment}
+        \xdef\currentpos{\nextpos}
+    }
+
+    % 最后一行的处理，消除多余的空白
+    \pgfmathsetmacro{\lastincrement}{2}  % 最后一行的增量
+    \pgfmathsetmacro{\nextpos}{\currentpos+\lastincrement}
+    \xdef\currentpos{\nextpos}
+
+\end{tikzpicture}
+\end{center}
 
 \newpage
 
@@ -14413,11 +13892,16 @@ bottom=8pt
     top=8pt,
     bottom=8pt
 ]
-{\small{\color{customTeal}\faInfoCircle} 肠道菌群与便秘的发生发展密切相关。菌群失衡可影响肠道蠕动、水分代谢和神经递质的产生，进而影响排便功能。\\
-{\color{orange}\faExclamationTriangle} \textbf{特别注意}：在本报告中，与便秘相关的某些肠道菌群可能会出现超标。然而，值得注意的是，这些细菌的超标并不一定会导致个体出现便秘的症状。这是因为便秘的发生通常涉及多种因素，包括个体的生理状态、饮食习惯、活动量、压力水平以及整体的肠道健康状况。
-为了更好地规避潜在的风险，您应结合以下的菌群情况以及您自身的病史、饮食习惯和生活作息等来综合评估便秘问题。在出现便秘或其他消化不适症状时，应及时咨询专业医生，以获取准确的诊断和进一步的治疗建议。
+{\small{\color{customTeal}\faInfoCircle} 肠道菌群与便秘的关系研究日益受到重视。研究表明，特定肠道菌群的丰度水平与便秘的发生和发展密切相关。通过分析个体的肠道菌群，我们能够更好地理解便秘的风险及病因，以及如何通过调节肠道微生态来预防和改善症状。\\
+
+{\color{orange}\faExclamationTriangle} \textbf{特别注意}：
+\begin{itemize}
+    \item 在本报告中，某些与便秘相关的肠道菌群可能会显示出异常水平。然而，需要指出的是，即使这些菌群的丰度不正常，也并不一定意味着个体会经历便秘症状。便秘的发生通常是多因素综合作用的结果，包括饮食结构、生活方式、情绪状态以及其他健康问题等。
+    \item 为了有效预防和改善便秘，建议您综合考虑肠道菌群检测结果以及个人饮食习惯、运动情况、压力管理等因素。同时，若出现持续的便秘症状，应及时咨询专业医生或营养师以获取适当的干预和建议。
+\end{itemize}
 }
 \end{tcolorbox}
+
 
 \begin{tcolorbox}[
     enhanced,
@@ -14429,40 +13913,18 @@ bottom=8pt
     top=8pt,
     bottom=8pt
 ]
-{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{哪些菌群与便秘相关？这些菌群是如何影响便秘的？}\\
-{\color{orange!50}\faComments}\quad 与腹胀相关的菌群包括但不限于史氏甲烷烷菌，拟杆菌属和梭菌属等。
+{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{肠道菌群是如何影响便秘的？}\\
+{\color{orange!50}\faComments}\quad 肠道菌群与便秘之间的关系涉及多种机制和因素，以下是一些主要方面：
+\begin{itemize}
+    \item \textbf{菌群构成}：益生菌与有害菌：健康的肠道菌群中含有大量的益生菌（如双歧杆菌、乳酸菌），它们能促进肠道蠕动，帮助消化和排便。相反，有害菌（如某些致病菌）的过度繁殖可能抑制正常的肠道功能，导致便秘。
+    \item \textbf{代谢产物}：短链脂肪酸（SCFAs）：肠道细菌通过发酵膳食纤维产生 SCFAs（如醋酸、丁酸和丙酸），这些物质不仅是肠道上皮细胞的重要能量来源，还能促进肠道运动，增加肠道的蠕动，从而改善便秘情况。
+    \item \textbf{腹腔神经和内分泌系统}：信号传递：肠道菌群的代谢物可以调节肠道神经系统和内分泌反应，影响肠道的运动模式。通过释放神经递质和激素（如肠促胰液素、胃动素等），这些信号可以增强肠道的蠕动。
+    \item \textbf{免疫系统}：免疫调节：肠道菌群能够影响局部和全身免疫反应。健康的菌群平衡有助于维持肠道的免疫稳定性，预防炎症。如果炎症发生，可能会影响肠道的正常功能，导致便秘。
+    \item \textbf{纤维素摄入与菌群交互}：膳食纤维：膳食纤维是维持肠道菌群平衡的重要因素。丰富的膳食纤维能促进有益菌的生长，同时为其提供发酵的底物，增加粪便体积，促进排便。
+\end{itemize}
+肠道菌群通过影响肠道动力、代谢产物的产生、免疫反应及综合的生活方式因素，对便秘的发生有显著影响。但是需要注意的是，不同个体的肠道菌群组成可能因遗传、饮食、生活方式和环境等因素而异，导致便秘的易感性也不同。一些人可能对特定的饮食或菌群变化更敏感。
 }
 \end{tcolorbox}
-
-\begin{tcolorbox}[
-    enhanced,
-    colback=lightpurple!10, % 卡片底色
-    colframe=lightpurple!10,  % 边框颜色
-    arc=3mm,
-    boxrule=0.5pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-]
-{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{饮食如何影响便秘相关菌？}\\
-{\color{orange!50}\faComments}\quad 与腹胀相关的菌群包括但不限于史氏甲烷烷菌，拟杆菌属和梭菌属等。
-}
-\end{tcolorbox}
-
-\textbf{关键菌群及其作用}
-\begin{itemize}[]
-\item 双歧杆菌(Bifidobacterium)：促进肠道蠕动，产生短链脂肪酸
-\item 乳酸菌(Lactobacillus)：改善肠道环境，维持正常蠕动功能
-\item 产丁酸菌：提供能量，维护肠道屏障功能
-\item 拟杆菌(Bacteroides)：参与纤维素降解，促进排便
-\end{itemize}
-
-\textbf{菌群失衡表现}
-\begin{itemize}[]
-\item 有益菌减少：肠道蠕动减弱，水分吸收增加
-\item 产气菌增多：导致腹胀，影响正常排便
-\item 致病菌增加：影响肠道神经系统功能
-\end{itemize}
 
 \newpage
 
@@ -14828,64 +14290,16 @@ bottom=8pt
     top=8pt,
     bottom=8pt
 ]
-{\small{\color{customTeal}\faInfoCircle}
-腹胀症状与肠道菌群的发酵过程和气体产生密切相关。菌群结构失衡可导致过度发酵和气体积聚。\\
-{\color{orange}\faExclamationTriangle} \textbf{特别注意}：在本报告中，与腹胀相关的某些肠道菌群可能会出现超标。然而，值得注意的是，细菌的超标并不一定会致使个体出现腹胀的症状。这是因为腹胀的发生通常涉及多种因素，包括个体的生理状态、饮食习惯、压力水平和整体的肠道健康状况。
-为了更好地规避潜在的风险，您应结合一下的菌群情况和您自身的病史，饮食习惯和生活作息等来总体评估腹胀问题。
-在出现腹胀或其他消化不适症状时，应咨询专业医生，以获得准确的诊断和治疗建议。
-}
-\end{tcolorbox}
+{\small{\color{customTeal}\faInfoCircle} 肠道菌群与腹胀的关系已逐渐引起医学研究的关注。大量研究表明，特定的肠道菌群组成与个体的腹胀症状密切相关，肠道微生态的失衡可能导致气体生成增加，从而引发腹胀感。\\
 
-\begin{tcolorbox}[
-    enhanced,
-    colback=lightpurple!10, % 卡片底色
-    colframe=lightpurple!10,  % 边框颜色
-    arc=3mm,
-    boxrule=0.5pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-]
-{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{哪些菌群与腹胀相关？}\\
-{\color{orange!50}\faComments}\quad 与腹胀相关的菌群包括但不限于史氏甲烷烷菌，拟杆菌属和梭菌属等。
-}
-\end{tcolorbox}
-
-\begin{tcolorbox}[
-    enhanced,
-    colback=lightpurple!10, % 卡片底色
-    colframe=lightpurple!10,  % 边框颜色
-    arc=3mm,
-    boxrule=0.5pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-]
-{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{这些菌群是如何影响腹胀的？}\\
-{\color{orange!50}\faComments}\quad 这些菌群通过发酵未消化的食物产生气体，增加肠道内气体的积聚，从而导致腹胀。
+{\color{orange}\faExclamationTriangle} \textbf{特别注意}：
 \begin{itemize}
-    \item 梭菌属 (Clostridium)：过度增殖会产生大量气体。
-    \item 肠杆菌科：发酵产气，影响肠道舒适度。
-    \item 史氏甲烷短杆菌：甲烷产生增加，加重腹胀。
-    \item 乳酸菌：帮助维持菌群平衡，减少异常发酵。
+    \item 在本报告中，与腹胀相关的某些肠道菌群可能会出现异常丰度。然而，需要强调的是，这些菌群的丰度变化并不一定会直接导致腹胀症状的出现。腹胀的表现通常与多种因素有关，包括个体的饮食选择、消化能力、生活方式、压力水平及其他健康状况等。
+    \item 为了有效降低腹胀的发生风险，建议您综合考虑肠道菌群检测结果以及自身的饮食习惯、运动情况、心理状态等因素。在出现持续的腹胀症状时，应及时咨询专业医生或营养师，以获得合适的建议和对策。
 \end{itemize}
 }
 \end{tcolorbox}
 
-\begin{tcolorbox}[
-    enhanced,
-    colback=lightpurple!10, % 卡片底色
-    colframe=lightpurple!10,  % 边框颜色
-    arc=3mm,
-    boxrule=0.5pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-]
-{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{饮食如何影响腹胀相关菌群？}\\
-{\color{orange!50}\faComments}\quad 高纤维、高糖或高脂肪饮食可能促进某些菌群的生长，增加气体产生，进而加重腹胀。
-}
-\end{tcolorbox}
 
 \begin{tcolorbox}[
     enhanced,
@@ -14897,26 +14311,20 @@ bottom=8pt
     top=8pt,
     bottom=8pt
 ]
-{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{如何阅读以下的腹胀相关菌的检测表格？}\\
-{\color{orange!50}\faComments}\quad 以下是表格各列的解释
+{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{肠道菌群是如何影响腹胀的？}\\
+{\color{orange!50}\faComments}\quad 肠道菌群与腹胀之间的关系涉及多个机制，以下是一些主要方面：
 \begin{itemize}
-    \item \textbf{菌种名称}：腹胀相关的肠道菌群的中文学术名和拉丁名。
-    \item \textbf{正常范围}：该菌种在健康人群中的丰度范围。
-    \item \textbf{检测丰度}：实际检测到的该菌种的数量，其中ND代表该菌属的丰度过低未检测到。
-    \item \textbf{结果评价}：根据检测丰度与正常范围的比较，给出的健康状态评估。
-    \item \textbf{超过\%的人}：表示您肠道检测的该菌属的丰度值比人群中\%的人要高。（-\%代表该菌属的丰度超标过高）
-    \item \textbf{腹胀相关性}：该菌种和腹胀的相关性，正相关指的是该菌种的丰度增加可能会加剧腹胀表现，负相关指的是该菌种丰都的降低可能会加剧腹胀的表现。
-    \item \textbf{相关性强度}：该菌种和腹胀相关性的证据支持强度。相关性强度以{\small\color{lightgray}\faStar}到{\small\color{lightgray}\faStar \faStar \faStar}依次递增来评定。
-    \begin{itemize}
-        \item \small{\color{lightgray}\faStar}：来自单篇论文或人群数据差异统计。
-        \item \small{\color{lightgray}\faStar\faStar}：大规模人群样本统计和至少单篇论文。
-        \item \small{\color{lightgray}\faStar\faStar\faStar}：大量研究论文证实。
-    \end{itemize}
+    \item \textbf{菌群组成}：益生菌与有害菌：健康的肠道菌群中包含一些益生菌（如乳酸菌、双歧杆菌），这些细菌能有效分解食物并产生气体，适当的气体量是正常的消化过程。然而，过量的有害菌（如某些致病菌）的生长可能导致气体产生增加，从而引起腹胀。
+    \item \textbf{发酵过程}：膳食纤维的发酵：肠道细菌会发酵膳食纤维，产生气体和短链脂肪酸。虽然短链脂肪酸对肠道健康有益，但如果发酵产生的气体超出肠道的处理能力，就可能导致腹胀。
+    \item \textbf{肠道运动}：肠道动力和神经调节：肠道菌群的代谢产物可以影响肠道的运动状态，促进或抑制蠕动。如果肠道运动减缓，食物在肠道内停留时间过长，可能会导致气体积聚和腹胀。
+    \item \textbf{免疫反应}：炎症与肠道健康：肠道微生物失调可能导致局部炎症反应。炎症可能影响肠道的消化能力和气体处理能力，进而引发腹胀。
+    \item \textbf{饮食习惯与菌群的相互作用}：特定食物对微生物群落的影响：摄入某些食物（如豆类、洋葱等）会促进特定细菌的繁殖，这些细菌在发酵过程中产生大量气体，可能加重腹胀的程度。
 \end{itemize}
-建议在异常丰度的菌群中重点关注那些与腹胀正相关的超标菌群，因为他们的增加超标可能会引发腹胀或者导致现有的腹胀症状更为严重。
+肠道菌群通过影响气体生成、肠道运动、免疫反应和饮食习惯等方面，对腹胀的产生有显著影响。然而，不同个体的肠道菌群组成受遗传、饮食、生活方式和环境的影响，各人的腹胀敏感性也可能存在差异。
 }
 \end{tcolorbox}
 
+\newpage
 
 \begin{center}
 \begin{tikzpicture}[
@@ -15280,22 +14688,12 @@ bottom=8pt
     top=8pt,
     bottom=8pt
 ]
-{\small{\color{customTeal}\faInfoCircle}
-肠道菌群通过调节免疫系统功能，影响过敏反应的发生和发展。菌群多样性的降低与过敏风险增加相关。\\
+{\small{\color{customTeal}\faInfoCircle} 肠道菌群与过敏反应之间的关系已成为现代医学研究的热点。越来越多的证据表明，肠道菌群的组成和多样性与个体的免疫系统密切相关，某些肠道菌群的失调可能会促使过敏反应的发生。\\
 
-\textbf{免疫调节机制}
-\begin{itemize}[]
-\item 克氏菌(Klebsiella)：过度生长可能触发免疫反应
-\item 双歧杆菌：调节T细胞功能，抑制过敏反应
-\item 厚壁菌门：参与免疫耐受的建立
-\item 阿克曼氏菌：维护肠道屏障，减少过敏原进入
-\end{itemize}
-
-\textbf{预防策略}
-\begin{itemize}[]
-\item 维持菌群多样性：减少过敏风险
-\item 增加益生菌摄入：强化免疫调节
-\item 避免抗生素滥用：保护有益菌群
+{\color{orange}\faExclamationTriangle} \textbf{特别注意}：
+\begin{itemize}
+    \item 在本报告中，与过敏相关的某些肠道菌群可能会显示出异常水平。然而，重要的是要注意，这些菌群的丰度异常并不一定会直接引发过敏症状。过敏的发生往往是由多种复杂因素共同作用的结果，包括遗传因素、环境影响、饮食习惯和个体特殊的免疫反应等。
+    \item 为了有效降低过敏的发生风险，建议您结合肠道菌群检测结果以及自身的生活习惯、过敏史等因素进行综合评估。在出现过敏症状时，应及时咨询专业医生或过敏专家，以获取适当的诊断和治疗建议。
 \end{itemize}
 }
 \end{tcolorbox}
@@ -15310,23 +14708,16 @@ bottom=8pt
     top=8pt,
     bottom=8pt
 ]
-{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{哪些菌群与过敏相关？这些菌群是如何影响过敏的？}\\
-{\color{orange!50}\faComments}\quad 与腹胀相关的菌群包括但不限于史氏甲烷烷菌，拟杆菌属和梭菌属等。
-}
-\end{tcolorbox}
-
-\begin{tcolorbox}[
-    enhanced,
-    colback=lightpurple!10, % 卡片底色
-    colframe=lightpurple!10,  % 边框颜色
-    arc=3mm,
-    boxrule=0.5pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-]
-{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{饮食如何影响过敏相关菌？}\\
-{\color{orange!50}\faComments}\quad 与腹胀相关的菌群包括但不限于史氏甲烷烷菌，拟杆菌属和梭菌属等。
+{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{肠道菌群是如何影响过敏的？}\\
+{\color{orange!50}\faComments}\quad 肠道菌群与过敏之间的关系涉及多个机制，以下是一些主要方面：
+\begin{itemize}
+    \item \textbf{免疫调节}：肠道菌群在调节免疫反应方面发挥重要作用。健康的肠道菌群能够增强免疫耐受，帮助机体适应普通过敏原，而失调的菌群则可能使机体对某些物质产生过度敏感，导致过敏反应的发生。
+    \item \textbf{细菌代谢产物}：短链脂肪酸（SCFAs）：肠道细菌通过发酵纤维素产生的短链脂肪酸可以调节免疫细胞，促进免疫系统的平衡，降低过敏的发展风险。若SCFAs产量不足，可能会导致过敏症状的加重。
+    \item \textbf{肠道屏障功能}：肠道菌群有助于维持肠道屏障的完整性，防止有害物质和过敏原进入血液循环。若肠道屏障受损，可能导致系统性炎症反应和过敏的发展。
+    \item \textbf{菌群多样性}：多样性较高的肠道菌群通常与更好的免疫功能相关。而单一或减少的菌群多样性则可能与过敏反应的增加相关。
+    \item \textbf{饮食和生活方式}：饮食结构、抗生素使用、环境暴露等生活方式因素对肠道菌群的组成产生持续影响，进而影响个体对过敏的易感性。
+\end{itemize}
+肠道菌群通过调节免疫系统、产生代谢产物、维护肠道屏障等方式对过敏的发生具有重要影响。然而，不同个体的肠道菌群组成受多种因素影响，包括遗传、饮食和环境，导致过敏的易感性存在差异。
 }
 \end{tcolorbox}
 
@@ -15854,25 +15245,23 @@ bottom=8pt
 \begin{tcolorbox}[
     enhanced,
     colback=customTealBg,
-    colframe=gray!3,
+    colframe=customTealBg,
     arc=3mm,
     boxrule=0pt,
     width=\textwidth,
     top=8pt,
     bottom=8pt
 ]
-{\small
-{\color{customTeal}\faInfoCircle}
-肠道菌群通过复杂的肠-脑轴机制深度参与抑郁症发病过程，构建了神经-内分泌-免疫的多维调控网络。菌群通过代谢产物、神经递质和免疫调节，显著影响大脑功能和情绪稳态。\\
+{\small{\color{customTeal}\faInfoCircle} 肠道菌群与抑郁症之间的关系正受到越来越多的关注。研究显示，肠道菌群的组成和多样性可能影响大脑功能和心理状态，某些肠道菌群失衡可能与抑郁症状的出现相关。通过调节肠道微生态，可能有助于改善抑郁症状。\\
 
-{\color{orange}\faExclamationTriangle}
-\textbf{特别注意}：
+{\color{orange}\faExclamationTriangle} \textbf{特别注意}：
 \begin{itemize}
-    \item 在本报告中，与抑郁症相关的某些肠道菌群可能会出现异常水平。然而，值得注意的是，这些菌群的丰度水平的异常并不一定会导致个体出现抑郁症的症状。这是因为抑郁症的发生通常涉及多种复杂因素，包括个体的神经生理状态、压力水平、遗传因素、饮食习惯、睡眠质量以及整体的心理和身体健康状况。
-    \item 为了更好地规避潜在的心理健康风险，您应结合以下菌群情况以及自身的心理状态、生活习惯和病史等因素来综合评估抑郁风险。在出现情绪低落、持续疲劳或其他心理困扰时，应及时咨询专业心理医生或精神科医生，以获取准确的评估和进一步的治疗建议。
+    \item 在本报告中，与抑郁症相关的某些肠道菌群可能会出现异常水平。但是，需要强调的是，这些菌群的丰度异常并不一定直接导致抑郁症状的发展。抑郁症的发生通常涉及遗传因素、环境压力、社会支持以及个体的生活方式等多重因素。
+    \item 为了有效降低抑郁症的发生风险，建议您结合肠道菌群检测结果以及自身的心理状态、饮食习惯、锻炼情况等因素进行综合评估。如果出现持续的抑郁症状，应及时寻求专业心理医生或精神健康专家的建议和支持。
 \end{itemize}
 }
 \end{tcolorbox}
+
 
 \begin{tcolorbox}[
     enhanced,
@@ -15885,37 +15274,18 @@ bottom=8pt
     bottom=8pt
 ]
 {\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{肠道菌群是如何影响抑郁的？}\\
-{\color{orange!50}\faComments}\quad 肠道菌群通过肠-脑轴（Gut-Brain Axis）的双向交流系统影响大脑，这一过程涉及神经、免疫和代谢多个途径。以下是肠道菌群如何影响抑郁的主要机制：
-\begin{enumerate}
-    \item \textbf{影响神经递质的产生}: 肠道菌群可以直接或间接调控关键的神经递质，例如：
-    \begin{itemize}
-        \item 血清素（Serotonin）：血清素的前体物质色氨酸主要由肠道细胞产生并受到菌群调控（如双歧杆菌和乳酸杆菌）。血清素是调节情绪、愉悦感的关键，对抗抑郁至关重要。
-        \item $\gamma$-氨基丁酸（GABA）：一些益生菌（如乳酸杆菌属）可以直接产生 GABA，这是一种具有镇静和抗焦虑作用的神经递质。
-        \item 多巴胺(Dopamine)：肠道菌群通过代谢作用也可以间接控制多巴胺的生成，影响动机和奖励系统。
-    \end{itemize}
-    \item 调节脑部炎症
-    \item 通过短链脂肪酸（SCFAs）间接调控
-    \item 调节下丘脑-垂体-肾上腺（HPA）轴
-    \item 影响色氨酸代谢路径
-    \item 调节肠道微生物多样性
-\end{enumerate}
+{\color{orange!50}\faComments}\quad 肠道菌群与抑郁之间的关系涉及多个机制，以下是一些主要方面：
+\begin{itemize}
+    \item \textbf{神经递质的合成}：肠道细菌能合成多种神经递质，如血清素。这些神经递质在调节情绪和行为中扮演重要角色，而肠道菌群的失衡可能会导致这些物质的产生不足，从而影响情绪。
+    \item \textbf{炎症反应}：肠道菌群的失调可能导致局部和全身性炎症增加。炎症因子可以影响大脑功能，研究表明，慢性炎症与抑郁症的发生相关，肠道菌群的健康有助于维持低水平的炎症。
+    \item \textbf{肠-脑轴}：肠道和大脑之间存在复杂的双向交流（肠-脑轴），肠道菌群通过代谢产物和细菌信号影响脑功能。健康的菌群能够促进良好的心理健康，而失调的菌群可能通过这一通路影响抑郁。
+    \item \textbf{微生物群多样性}：研究发现，多样性较高的肠道菌群通常与较好的心理健康相关。相反，低多样性的菌群与抑郁症状存在关联，表明肠道微生物的多样性可能是情绪健康的重要指标。
+    \item \textbf{生活方式因素}：饮食、运动和压力管理对肠道菌群的组成具有显著影响，而这些因素也与抑郁症的风险密切相关。健康的生活方式可以促进有益菌的增长，从而改善心理健康。
+\end{itemize}
+肠道菌群通过影响神经递质合成、炎症反应、肠-脑轴和生活方式等多个方面，对抑郁的发生具有重要影响。然而，个体差异（如遗传、生活习惯和环境）使得不同人群在抑郁症状出现时，肠道菌群的作用可能存在显著差异。
 }
 \end{tcolorbox}
 
-\begin{tcolorbox}[
-    enhanced,
-    colback=lightpurple!10, % 卡片底色
-    colframe=lightpurple!10,  % 边框颜色
-    arc=3mm,
-    boxrule=0.5pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-]
-{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{饮食如何影响抑郁相关菌？}\\
-{\color{orange!50}\faComments}\quad 与腹胀相关的菌群包括但不限于史氏甲烷烷菌，拟杆菌属和梭菌属等。
-}
-\end{tcolorbox}
 
 \begin{center}
 \begin{tikzpicture}[
@@ -16428,51 +15798,19 @@ bottom=8pt
     bottom=8pt
 ]
 
-{\small \textcolor{green!85!orange}{\faBell}\quad 所有指标的评估值都在参考范围之内：
-
-\begin{itemize}
-\item \small 蛋白发酵（3，参考范围0-70）处于较低水平，表明肠道菌群对蛋白质的分解能力较弱
-\item \small 消化效率偏高（99，参考范围25-100）：这个指标反映了肠道对各类营养物质的消化吸收能力，包括碳水化合物、脂肪和蛋白质的处理效率。当前数值接近参考范围上限，表明消化系统的吸收功能非常活跃。
-\item \small 肠道产气（47，参考范围0-70）处于中等水平，显示肠道微生态平衡状态尚可
-\item \small 肠道屏障（28，参考范围25-100）虽然在正常范围内，但处于较低水平，建议关注肠道屏障功能
-\item \small 肠道炎症（18，参考范围0-75）处于较低水平，说明肠道炎症反应程度轻微
-\end{itemize}
-总体来看，您的消化吸收功能较强，肠道炎症水平较低，但需要关注蛋白发酵偏低和肠道屏障功能偏低的情况。建议在保持良好饮食习惯的同时，可以考虑适当补充有益菌，增强肠道菌群活性和屏障功能。
+{\small \textcolor{green!85!orange}{\faBell}\quad 解读：
 }
 \end{tcolorbox}
 
-\reference{1}{Exposure to concentrated ambient PM2.5 alters the composition of gut microbiota in a murine model.}{Wang, W. et al.}{Part Fibre Toxicol \textbf{15}, 17}{2018}
+\newpage
 
-\subsection*{1.Faecalibacterium}
-\begin{itemize}
-\item \reference{1}{The gut microbiome and depression: a systematic review.}{Dinan, T. G. et al.}{Psychosom Med \textbf{80}, 1-10}{2018}
-\item \reference{2}{Faecalibacterium prausnitzii: a key player in gut health and disease.}{Miquel, S. et al.}{Front Microbiol \textbf{7}, 1-10}{2016}
-\end{itemize}
-\subsection*{2.Lactobacillus}
-\begin{itemize}
-\item \reference{3}{Probiotics and prebiotics in mental health: a systematic review.}{Sarris, J. et al.}{Nutritional Neuroscience \textbf{20}, 1-10}{2017}
-\item \reference{4}{Lactobacillus and its role in the gut-brain axis: a review.}{Messaoudi, M. et al.}{Psychopharmacology \textbf{233}, 1-10}{2016}
-\end{itemize}
-\subsection*{3.Roseburia}
-\begin{itemize}
-\item \reference{5}{Gut microbiota and depression: a review of the literature.}{Miller, A. H. et al.}{Biol Psychiatry \textbf{80}, 1-10}{2016}
-\item \reference{6}{The role of gut microbiota in the development of depression: a review.}{Zheng, P. et al.}{Frontiers in Psychiatry \textbf{10}, 1-10}{2019}
-\end{itemize}
-\subsection*{4.Bacteroides}
-\begin{itemize}
-\item \reference{7}{Gut microbiota's effect on mental health: a systematic review.}{Sampson, T. R. et al.}{Nature Microbiol \textbf{3}, 1-10}{2016}
-\item \reference{8}{Bacteroides and their role in gut health and disease.}{Kau, A. L. et al.}{Nature Reviews Microbiology \textbf{10}, 1-10}{2012}
-\end{itemize}
-\subsection*{5.Eubacterium}
-\begin{itemize}
-\item \reference{9}{The gut microbiome and its role in mental health.}{Dinan, T. G. et al.}{Nature Reviews Gastroenterology & Hepatology \textbf{15}, 1-10}{2018}
-\item \reference{10}{Eubacterium and its implications in gut health.}{Rios-Covian, D. et al.}{Frontiers in Microbiology \textbf{7}, 1-10}{2016}
-\end{itemize}
-\subsection*{6.Prevotella}
-\begin{itemize}
-\item \reference{11}{Microbiome and depression: a review of the evidence.}{Rao, Y. et al.}{Neurosci Biobehav Rev \textbf{104}, 1-10}{2019}
-\item \reference{12}{Prevotella and its role in gut-brain interactions.}{Zhang, X. et al.}{Frontiers in Microbiology \textbf{8}, 1-10}{2017}
-\end{itemize}
+\large \textbf{文献支持}
+\vspace{0.5cm}
+
+\reference{1}{Exposure to concentrated ambient PM2.5 alters the composition of gut microbiota in a murine model.}{Wang, W. et al.}{Part Fibre Toxicol \textbf{15}, 17}{2018}
+\reference{2}{The gut microbiome and depression: a systematic review.}{Dinan, T. G. et al.}{Psychosom Med \textbf{80}, 1-10}{2018}
+\reference{3}{Faecalibacterium prausnitzii: a key player in gut health and disease.}{Miquel, S. et al.}{Front Microbiol \textbf{7}, 1-10}{2016}
+\reference{4}{Probiotics and prebiotics in mental health: a systematic review.}{Sarris, J. et al.}{Nutritional Neuroscience \textbf{20}, 1-10}{2017}
 
 
 
@@ -16513,87 +15851,46 @@ bottom=8pt
 \begin{tcolorbox}[
     enhanced,
     colback=customTealBg,
-    colframe=gray!3,
+    colframe=customTealBg,
     arc=3mm,
     boxrule=0pt,
     width=\textwidth,
     top=8pt,
     bottom=8pt
 ]
-{\small{\color{customTeal}\faInfoCircle}
-肠道菌群在调节睡眠-觉醒周期中发挥着重要作用，这主要是通过影响褪黑激素和多种神经递质的合成来实现的。研究表明，肠道微生物群的失衡与睡眠质量的下降存在显著相关性，具体表现为入睡困难、夜间觉醒频繁及整体睡眠时间的减少。\\
+{\small{\color{customTeal}\faInfoCircle} 肠道菌群与失眠之间的关系正在受到越来越多的关注。研究表明，肠道微生态的健康状况与睡眠质量密切相关，特定的肠道菌群失衡可能会导致睡眠问题，从而导致失眠的发生。调节肠道菌群可能为改善睡眠提供新的途径。\\
 
-\textbf{调节通路}
-\begin{itemize}[]
-    \item \textbf{产色氨酸菌}：这些细菌能够通过色氨酸的代谢途径促进褪黑激素的合成，后者是调节昼夜节律的关键激素。色氨酸的供给和转化率直接影响褪黑激素的分泌，从而影响睡眠质量。
-    \item \textbf{双歧杆菌}：研究表明，双歧杆菌在调节神经递质γ-氨基丁酸（GABA）的水平方面发挥重要作用。GABA是一种抑制性神经递质，对于平衡神经活动、促进放松和入睡至关重要，双歧杆菌的充足有助于提升整体睡眠质量。
-    \item \textbf{乳酸菌}：乳酸菌通过改善肠道环境来促进修复作用，减少炎症反应，从而降低夜间觉醒的次数。其代谢产物还能调节肠-脑轴，影响睡眠的深度和持续性。
-    \item \textbf{肠杆菌科}：肠杆菌科细菌的过度生长与肠道菌群失衡有关，研究显示其可能会干扰生物钟，通过调节褪黑激素和其他生物节律相关物质的产生，进而影响昼夜节律.
-\end{itemize}
-
-\textbf{改善策略}
-\begin{itemize}[]
-    \item \textbf{调节作息}：确保规律的作息时间，促进肠道菌群的昼夜节律，与身体生物钟保持一致，从而优化细菌群落结构及其功能。
-    \item \textbf{饮食调整}：减少刺激性食物（如咖啡因、辛辣食物和高糖食品）的摄入，同时增加富含纤维的食物（如全谷物、水果和蔬菜）以支持有益菌群的生长。
-    \item \textbf{益生菌补充}：定期摄入含有多种益生菌的补充剂或发酵食品，有助于恢复和维持肠道微生物的平衡，进而改善睡眠质量。
-    \item \textbf{压力管理}：通过冥想、瑜伽或适度的运动等方法管理压力，减少其对肠道菌群的负面影响，从而有助于改善睡眠质量和整体心理健康。
+{\color{orange}\faExclamationTriangle} \textbf{特别注意}：
+\begin{itemize}
+    \item 在本报告中，与失眠相关的某些肠道菌群可能会出现异常水平。然而，这些菌群的丰富度异常并不一定直接导致失眠的发生。失眠通常是由多重因素引起的，包括心理压力、生活方式、环境因素和生理健康等。
+    \item 为了改善睡眠质量，建议您结合肠道菌群检测结果和自身的生活习惯、作息规律、压力水平等因素进行综合评估。如果出现持续的失眠问题，应及时咨询专业医生或睡眠专家以获取有效的支持和建议。
 \end{itemize}
 }
 \end{tcolorbox}
 
-%\begin{tcolorbox}[
-%    enhanced,
-%    colback=customTealBg,
-%    colframe=gray!3,
-%    arc=3mm,
-%    boxrule=0pt,
-%    width=\textwidth,
-%    top=8pt,
-%    bottom=8pt
-%]
-%{\small{\color{customRed}\faQuestion}
-%报告中的“正常范围”是什么意思？\\
-%{\color{green}\faComment}
-%正常范围是指在健康人群中，特定细菌的常见比例。您的检测结果与这个范围的比较可以帮助我们判断您的肠道菌群是否处于健康状态。
-%}
-%\end{tcolorbox}
-
-% 定义颜色
-\definecolor{iceCreamPink}{RGB}{255,182,193} % 粉色
-\definecolor{iceCreamMint}{RGB}{173,255,47}  % 薄荷绿
-\definecolor{iceCreamBrown}{RGB}{210,180,140} % 棕色
-\definecolor{iceCreamYellow}{RGB}{255,255,224} % 浅黄色
-
 \begin{tcolorbox}[
     enhanced,
-    colback=white, % 卡片底色
-    colframe=white,  % 边框颜色
+    colback=lightpurple!10, % 卡片底色
+    colframe=lightpurple!10,  % 边框颜色
     arc=3mm,
     boxrule=0.5pt,
     width=\textwidth,
     top=8pt,
     bottom=8pt
 ]
-{\small{\color{iceCreamPink}\faQuestion}\quad \textbf{报告中的“正常范围”是什么意思？}\\
-{\color{orange!50}\faComment}\quad 正常范围是指在健康人群中，特定细菌的常见比例。您的检测结果与这个范围的比较可以帮助我们判断您的肠道菌群是否处于健康状态。
+{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{肠道菌群是如何影响失眠的？}\\
+{\color{orange!50}\faComments}\quad 肠道菌群与失眠之间的关系涉及多个机制，以下是一些主要方面：
+\begin{itemize}
+    \item \textbf{神经递质的合成}：肠道细菌能合成多种神经递质，如血清素和γ-氨基丁酸（GABA），这些物质在调节情绪与睡眠中起到重要作用。肠道菌群的失衡可能导致这些神经递质的合成不足，进而影响睡眠质量。
+    \item \textbf{炎症反应}：肠道菌群的失调可能导致局部和全身性炎症的增加，炎症因子能够影响中枢神经系统的功能，进而影响睡眠模式。慢性炎症与失眠密切相关。
+    \item \textbf{微生物群多样性}：多样性较高的肠道菌群通常与更好的心理与生理健康相关，低多样性的菌群则可能与失眠症状的发生有关，显示肠道微生物的多样性可能是睡眠健康的一个指标。
+    \item \textbf{肠-脑轴}：肠道与大脑之间的双向联系（肠-脑轴）使得肠道菌群通过代谢产物和信号分子影响脑功能和情绪，改变睡眠模式。
+    \item \textbf{生活方式因素}：饮食、运动及压力管理等生活方式因素显著影响肠道菌群的组成，从而间接影响睡眠质量。健康的生活方式有助于促进睡眠。
+\end{itemize}
+肠道菌群通过影响神经递质合成、炎症反应、肠-脑轴及生活方式等多个方面，对失眠的发生起到重要作用。然而，不同个体的肠道菌群组成受遗传、环境和生活习惯等多种因素影响，因而每个人在失眠问题上可能表现出不同的敏感性。
 }
 \end{tcolorbox}
-
-\begin{tcolorbox}[
-    enhanced,
-    colback=white, % 卡片底色
-    colframe=white,  % 边框颜色
-    arc=3mm,
-    boxrule=0.5pt,
-    width=\textwidth,
-    top=8pt,
-    bottom=8pt
-]
-{\small{\color{iceCreamPink}\faQuestion}\quad \textbf{报告中的“相关性”是什么意思}\\
-{\color{iceCreamMint}\faComment}\quad 相关性指的是特定细菌与睡眠质量之间的关系。负相关表示该细菌的增加可能会缓解失眠等睡眠问题（获得更好的睡眠质量），而正相关则表示该细菌的丰度的增加可能会增加失眠等睡眠问题。
-}
-\end{tcolorbox}
-
+\vspace{-0.7cm}
 \begin{center}
 \begin{tikzpicture}[
     font=\small,
@@ -16604,7 +15901,7 @@ bottom=8pt
     note/.style={anchor=west, text width=4.5cm, align=left}
 ]
     \def\cardwidth{\textwidth}
-    \def\cardheight{22.5}
+    \def\cardheight{7}
     \def\barheight{0.25}
     \def\barwidth{1.5}
     \def\valuebarspace{0.4}
@@ -16630,17 +15927,178 @@ bottom=8pt
 
     % 数据行和卡片
     \foreach \item/\enitem/\value/\range/\percentile/\detection/\status/\intro/\suggestion/\index in {
-        {阿克曼氏菌属}/{Akkermansia}/0.00460/{0-5.7984096}/44\%/负相关/正常/{参与肠道代谢，改善肠道健康，可能与睡眠质量相关。}/{}/{\color{lightgray}\faStar \faStar}/\currentpos,
         {拟杆菌属}/{Bacteroides}/0.08974/{1.0578-47.3225}/2\%/正相关/偏低/{重要的肠道共生菌，参与碳水化合物代谢，维持肠道稳态，可能影响睡眠。}/{建议增加膳食纤维摄入，如全谷物、蔬菜水果等}/{\color{lightgray}\faStar \faStar \faStar}/\currentpos,
         {梭菌目}/{Clostridiales}/87.70725/{6.2649-69.865}/90\%/正相关/超标/{梭菌目是一类革兰氏阳性厌氧菌，通过肠-脑轴影响神经递质和炎症因子分泌，其失衡可直接导致睡眠质量下降和失眠症状。}/{梭菌目超标，建议多吃富含膳食纤维的绿色蔬菜和全麦食品，搭配酸奶、泡菜等发酵食品，同时减少糖和油腻食物的摄入。}/{\color{lightgray}\faStar \faStar \faStar}/\currentpos,
-        {长双歧杆菌}/{B. longum}/0.01861/{0-6.854}/99\%/负相关/正常/{产生短链脂肪酸，参与胆固醇代谢，具有抗炎作用，可能影响睡眠。}/{}/{\color{lightgray}\faStar \faStar}/\currentpos,
-        {经黏液真杆菌属}/{Blautia}/10.17279/{0.0846204-6.9055608}/75\%/正相关/超标/{经黏液真杆菌属是肠道关键菌种，通过神经递质和炎症调节，可直接影响褪黑激素分泌，导致失眠和睡眠质量下降。}/{推荐食用如洋葱、大蒜、香蕉等益生元食物，搭配酸奶、泡菜等发酵食品，并选择如苹果、芦笋、莲藕等纤维丰富的蔬果。}/{\color{lightgray}\faStar \faStar}/\currentpos,
+        {经黏液真杆菌属}/{Blautia}/10.17279/{0.0846204-6.9055608}/75\%/正相关/超标/{经黏液真杆菌属是肠道关键菌种，通过神经递质和炎症调节，可直接影响褪黑激素分泌，导致失眠和睡眠质量下降。}/{推荐食用如洋葱、大蒜、香蕉等益生元食物，搭配酸奶、泡菜等发酵食品，并选择如苹果、芦笋、莲藕等纤维丰富的蔬果。}/{\color{lightgray}\faStar \faStar}/\currentpos
+    }
+    {
+        % 计算当前行的基础位置
+        \pgfmathsetmacro{\basepos}{-2.8*\currentpos}
+
+        % 菌种名称
+        \node[cell, align=left] at (0.5,\basepos) {
+            \small\textbf{\item}\\[-0.2em]
+            {\color{lightgray}\small\enitem}
+        };
+
+        % 正常范围
+        \node[reference] at (4.5,\basepos) {\footnotesize\range};
+
+        % 进度条相关
+        \pgfmathsetmacro{\barypos}{\basepos-\valuebarspace+0.1}
+        \def\barstart{6.75}
+
+        % 进度条背景
+        \fill[gray!10, rounded corners=2] (\barstart,\barypos)
+            rectangle (\barstart+\barwidth,\barypos+\barheight);
+
+        % 检测丰度值
+        \node[value] at (7.5,{\basepos-\valuebarspace+0.6}) {\footnotesize\value};
+
+        % 解析范围并计算进度条长度
+        \def\parserange#1-#2\endparse{\def\minval{#1}\def\maxval{#2}}
+        \expandafter\parserange\range\endparse
+
+        % 计算进度条长度和颜色
+        \pgfmathsetmacro{\progress}{min(\value/\maxval, 1.0)}
+        \pgfmathparse{\value > \maxval ? "customred" : (\value < \minval ? "customred" : "green!50")}
+        \let\barcolor=\pgfmathresult
+
+        % 进度条显示
+        \ifnum\pdfstrcmp{\status}{超标}=0
+            \fill[customred, rounded corners=2] (\barstart,\barypos)
+                rectangle (\barstart+\barwidth,\barypos+\barheight);
+        \else
+            \fill[\barcolor, rounded corners=2] (\barstart,\barypos)
+                rectangle (\barstart+\barwidth*\progress,\barypos+\barheight);
+        \fi
+
+        % 检测结果
+        \ifnum\pdfstrcmp{\status}{正常}=0
+
+        \node[value, text=customGreen] at (9.5,\basepos) {\footnotesize\textbf{\status}}; % 检测结果为正常
+        \else
+
+        \node[value, text=customRed] at (9.5,\basepos) {\footnotesize\textbf{\status}}; % 检测结果为其他状态
+        \fi
+
+        % 超过%的人
+        \node[value] at (11.5,\basepos) {\footnotesize\percentile};
+
+        % 失眠相关性
+        \node[value] at (13.75,\basepos) {\footnotesize\textbf{\detection}};
+
+        % 相关性强度
+        \node[value] at (16,\basepos) {\footnotesize\index};
+
+        % 添加卡片
+        \pgfmathsetmacro{\cardypos}{\basepos-0.5}
+        \begin{scope}[shift={(0,\cardypos)}]
+            % 卡片背景
+            \pgfmathsetmacro{\cardheight}{
+                \ifnum\pdfstrcmp{\status}{超标}=0
+                    1.0  % 两行内容时的高度
+                \else
+                    0.6  % 一行内容时的高度
+                \fi
+            }
+
+            \fill[rounded corners=5pt, customTeal!5, draw=gray!5]
+                (0.3,-\cardheight) rectangle (17.3,0);
+
+            % 菌群简介图标和内容
+            \node[anchor=west] at (0.5,-0.3) {
+                \textbf{\color{gray!90}\footnotesize \textcolor{customTeal}{\faInfoCircle}}
+            };
+            \node[anchor=west, text width=16cm] at (0.9,-0.3) {
+                {\small\color{gray}\footnotesize \intro}
+            };
+
+            % 异常解读标题和内容
+            \ifnum\pdfstrcmp{\status}{超标}=0
+                \node[anchor=west] at (0.55,-0.8) {
+                    \textbf{\color{customRed}\footnotesize \textcolor{customRed}{\faBell}}
+                };
+                \node[anchor=west, text width=16cm] at (0.9,-0.8) {
+                    {\small\color{gray}\footnotesize \suggestion}
+                };
+            \fi
+        \end{scope}
+
+        % 分割线
+        \pgfmathsetmacro{\linepos}{
+            \ifnum\pdfstrcmp{\status}{超标}=0
+                \basepos-1.7  % 超标时的分割线位置
+            \else
+                \basepos-1.3  % 正常时的分割线位置
+            \fi
+        }
+        \draw[gray!20] (0.2,\linepos) -- (\cardwidth-0.2,\linepos);
+
+        % 根据当前行的状态计算下一行的位置增量
+        \ifnum\pdfstrcmp{\status}{超标}=0
+            \pgfmathsetmacro{\increment}{0.85}  % 超标行（两行内容）需要更大的增量
+        \else
+            \pgfmathsetmacro{\increment}{0.7}  % 正常行（一行内容）使用较小的增量
+        \fi
+
+        % 更新位置计数器
+        \pgfmathsetmacro{\nextpos}{\currentpos+\increment}
+        \xdef\currentpos{\nextpos}
+    }
+
+    % 最后一行的处理，消除多余的空白
+    \pgfmathsetmacro{\lastincrement}{2}  % 最后一行的增量
+    \pgfmathsetmacro{\nextpos}{\currentpos+\lastincrement}
+    \xdef\currentpos{\nextpos}
+
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[
+    font=\small,
+    title/.style={font=\small\bfseries\color{white}},
+    value/.style={font=\small},
+    reference/.style={font=\small},
+    cell/.style={anchor=west, text width=4.2cm},
+    note/.style={anchor=west, text width=4.5cm, align=left}
+]
+    \def\cardwidth{\textwidth}
+    \def\cardheight{16.25}
+    \def\barheight{0.25}
+    \def\barwidth{1.5}
+    \def\valuebarspace{0.4}
+
+    % 容器和标题栏背景
+    \draw[rounded corners=5, fill=white, draw=gray!20]
+        (0,0) rectangle (\cardwidth,-\cardheight);
+    \path[fill=customTeal]
+        (0,0) [rounded corners=5] -- (\cardwidth,0) --
+        (\cardwidth,0.8) -- (0,0.8) -- cycle;
+
+    % 表头
+    \node[title, anchor=west] at (0.5,0.4) {\textbf{菌种名称}};
+    \node[title] at (4.5,0.4) {\textbf{正常范围\%}};
+    \node[title] at (7.5,0.4) {\textbf{检测丰度}};
+    \node[title] at (9.5,0.4) {\textbf{检测结果}}; % 新增检测结果列名
+    \node[title] at (11.5,0.4) {\textbf{超过\%的人}};
+    \node[title] at (13.75,0.4) {\textbf{失眠相关性}};
+    \node[title] at (16,0.4) {\textbf{相关性强度}};
+
+    % 初始化位置计数器
+    \def\currentpos{0.25}
+
+    % 数据行和卡片
+    \foreach \item/\enitem/\value/\range/\percentile/\detection/\status/\intro/\suggestion/\index in {
         {梭菌属}/{Clostridium}/1.90370/{0-4.4645924}/67\%/正相关/正常/{具有益生功能，可产生多种酶类和抗菌物质，增强免疫力，可能影响睡眠。}/{建议适当补充含芽孢杆菌的益生菌制剂}/{\color{lightgray}\faStar \faStar}/\currentpos,
-        {粪杆菌属}/{Faecalibacterium}/28.86665/{1.9350868-17.7942438}/99\%/负相关/超标/{厌氧菌，与肠道健康密切相关，参与多糖代谢，可能影响睡眠。}/{摄入富含益生元的绿色蔬菜和水果，如菊苣、大蒜、洋葱，同时选择发酵食品如酸奶和泡菜，并适度减少精制碳水化合物的摄入。}/{\color{lightgray}\faStar \faStar \faStar}/\currentpos,
-        {Lachnoclostridium}/{Lachnoclostridium}/0.17516/{0-0.2086068}/8\%/负相关/正常/{重要的益生菌，产生丁酸，具有抗炎作用，维持肠道健康，可能与睡眠质量相关。}/{建议适当调整饮食结构，增加膳食纤维摄入}/{\color{lightgray}\faStar \faStar}/\currentpos,
-        {普雷沃氏菌属}/{Prevotella}/0.04290/{0-67.8009886}/50\%/正相关/正常/{代谢碳水化合物，产生短链脂肪酸，与多种肠道疾病相关，可能影响睡眠。}/{}/{\color{lightgray}\faStar}/\currentpos,
+        {链球菌属}/{Streptococcus}/0.31690/{0-0.3495704}/13\%/正相关/正常/{产生丁酸，抗炎，维持肠道健康，可能与睡眠质量相关。}/{}/{\color{lightgray}\faStar \faStar}/\currentpos,
         {龙包茨氏菌属}/{Romboutsia}/0.01546/{0-0.021404}/73\%/正相关/正常/{龙包茨氏菌属是一类重要的革兰氏阴性厌氧菌，其失衡可能与炎症反应、免疫调节和代谢紊乱密切相关。}/{}/{\color{lightgray}\faStar}/\currentpos,
-        {链球菌属}/{Streptococcus}/0.31690/{0-0.3495704}/13\%/正相关/正常/{产生丁酸，抗炎，维持肠道健康，可能与睡眠质量相关。}/{}/{\color{lightgray}\faStar \faStar}/\currentpos
+        {普雷沃氏菌属}/{Prevotella}/0.04290/{0-67.8009886}/50\%/正相关/正常/{代谢碳水化合物，产生短链脂肪酸，与多种肠道疾病相关，可能影响睡眠。}/{}/{\color{lightgray}\faStar}/\currentpos,
+        {粪杆菌属}/{Faecalibacterium}/28.86665/{1.9350868-17.7942438}/99\%/负相关/超标/{厌氧菌，与肠道健康密切相关，参与多糖代谢，可能影响睡眠。}/{摄入富含益生元的绿色蔬菜和水果，如菊苣、大蒜、洋葱，同时选择发酵食品如酸奶和泡菜，并适度减少精制碳水化合物的摄入。}/{\color{lightgray}\faStar \faStar \faStar}/\currentpos,
+        {阿克曼氏菌属}/{Akkermansia}/0.00460/{0-5.7984096}/44\%/负相关/正常/{参与肠道代谢，改善肠道健康，可能与睡眠质量相关。}/{}/{\color{lightgray}\faStar \faStar}/\currentpos,
+        {长双歧杆菌}/{B. longum}/0.01861/{0-6.854}/99\%/负相关/正常/{产生短链脂肪酸，参与胆固醇代谢，具有抗炎作用，可能影响睡眠。}/{}/{\color{lightgray}\faStar \faStar}/\currentpos,
+        {Lachnoclostridium}/{Lachnoclostridium}/0.17516/{0-0.2086068}/8\%/负相关/正常/{重要的益生菌，产生丁酸，具有抗炎作用，维持肠道健康，可能与睡眠质量相关。}/{建议适当调整饮食结构，增加膳食纤维摄入}/{\color{lightgray}\faStar \faStar}/\currentpos
     }
     {
         % 计算当前行的基础位置
@@ -16722,7 +16180,7 @@ bottom=8pt
             % 异常解读标题和内容
             \ifnum\pdfstrcmp{\status}{超标}=0
                 \node[anchor=west] at (0.55,-0.8) {
-                    \textbf{\color{customRed}\footnotesize \textcolor{customRed}{\faLightbulb}}
+                    \textbf{\color{customRed}\footnotesize \textcolor{customRed}{\faBell}}
                 };
                 \node[anchor=west, text width=16cm] at (0.9,-0.8) {
                     {\small\color{gray}\footnotesize \suggestion}
@@ -16760,45 +16218,45 @@ bottom=8pt
 \end{tikzpicture}
 \end{center}
 
-\newpage
-
 \begin{tcolorbox}[
     enhanced,
-    colback=customRed!10,
-    colframe=gray!3,
+    colback=gray!5,
+    colframe=gray!5,
     arc=3mm,
     boxrule=0pt,
     width=\textwidth,
     top=8pt,
     bottom=8pt
 ]
-{\small{\color{customRed}\faBell}
-肠道菌群通过影响褪黑激素和神经递质的产生，参与睡眠-觉醒周期的调节。菌群失衡可能导致睡眠质量下降。
+{\small \textbf{解读}：
 }
 \end{tcolorbox}
+
+\newpage
+
+\large \textbf{文献支持}
+\vspace{0.5cm}
 
 \reference{1}{Exposure to concentrated ambient PM2.5 alters the composition of gut microbiota in a murine model.}{Wang, W. et al.}{Part Fibre Toxicol \textbf{15}, 17}{2018}
 
 \newpage
 
-\newpage
-
 \begin{tcolorbox}[
-enhanced,
-colback=white,
-colframe=customTeal,
-arc=2mm,
-boxrule=1pt,
-left=20pt,
-right=20pt,
-top=12pt,
-bottom=12pt,
-width=\textwidth,
-fontupper=\sffamily,
-overlay={
-\draw[customTeal, line width=2pt]
-([xshift=15pt]frame.south west) -- ([xshift=-15pt]frame.south east);
-}
+    enhanced,
+    colback=white,
+    colframe=customTeal,
+    arc=2mm,
+    boxrule=1pt,
+    left=20pt,
+    right=20pt,
+    top=12pt,
+    bottom=12pt,
+    width=\textwidth,
+    fontupper=\sffamily,
+    overlay={
+    \draw[customTeal, line width=2pt]
+    ([xshift=15pt]frame.south west) -- ([xshift=-15pt]frame.south east);
+    }
 ]
 {\Large\bfseries\textcolor{customTeal}{\Huge 个性化食物推荐}}
 \end{tcolorbox}
@@ -16817,24 +16275,24 @@ overlay={
 
 \textbf{推荐原理}
 \begin{itemize}
-\item 基于您的肠道菌群构成、营养状况和疾病风险进行综合评估
-\item 计算每种食物的营养构成与您当前营养状况的匹配程度
-\item 考虑特定疾病需要避免的食物
-\item 正分值表示建议增加摄入，负分值表示建议减少摄入
-\item 对于营养缺乏的成分，含该营养较高的食物会获得更高的推荐分值
+    \item 基于您的肠道菌群构成、营养状况和疾病风险进行综合评估
+    \item 计算每种食物的营养构成与您当前营养状况的匹配程度
+    \item 考虑特定疾病需要避免的食物
+    \item 正分值表示建议增加摄入，负分值表示建议减少摄入
+    \item 对于营养缺乏的成分，含该营养较高的食物会获得更高的推荐分值
 \end{itemize}
 \textbf{使用说明}
 \begin{itemize}
-\item 本推荐适用于成年人，不适合2岁以下婴幼儿
-\item 母乳喂养期间，可作为母亲的膳食参考
-\item 建议2个月后重新检测更新建议，以适应健康状况变化
+    \item 本推荐适用于成年人，不适合2岁以下婴幼儿
+    \item 母乳喂养期间，可作为母亲的膳食参考
+    \item 建议2个月后重新检测更新建议，以适应健康状况变化
 \end{itemize}
 \textbf{数据来源}
 \begin{itemize}
-\item 基于大规模人群营养饮食调查
-\item 参考2017中国居民膳食指南
-\item 采用机器学习和统计方法计算
-\item 营养成分数据来自USDA食品成分数据库
+    \item 基于大规模人群营养饮食调查
+    \item 参考2017中国居民膳食指南
+    \item 采用机器学习和统计方法计算
+    \item 营养成分数据来自USDA食品成分数据库
 \end{itemize}
 
 }
@@ -18403,6 +17861,20 @@ overlay={
     }
 ]
 {\Large\bfseries\textcolor{customTeal}{\Huge 检出肠道菌群}}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+    enhanced,
+    colback=customTealBg,
+    colframe=customTealBg,
+    arc=3mm,
+    boxrule=0pt,
+    width=\textwidth,
+    top=8pt,
+    bottom=8pt
+]
+{\small{\color{customTeal}\faInfoCircle} 本部分会列出在您肠道中实际检测出的肠道细菌，真菌和真核生物。
+}
 \end{tcolorbox}
 
 \newpage
