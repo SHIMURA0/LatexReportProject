@@ -1,8 +1,8 @@
-This is METAFONT, Version 2.71828182 (preloaded base=mf 2024.12.3)  2 JAN 2025 09:42
-**\mode:=ljfour; mag:=1; ; nonstopmode; input OT
+This is METAFONT, Version 2.71828182 (preloaded base=mf 2024.12.3)  3 JAN 2025 10:04
+**\mode:=ljfour; mag:=1; ; nonstopmode; input MSYH
 
 ! Emergency stop.
-<*> \mode:=ljfour; mag:=1; ; nonstopmode; input OT
+<*> ...:=ljfour; mag:=1; ; nonstopmode; input MSYH
                                                   
 *** (job aborted, file error in nonstop mode)
 

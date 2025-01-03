@@ -22,15 +22,18 @@
 %    UprightFeatures={FontIndex=5},  % 把原来的 Bold 样式用于普通文本
 %    BoldFeatures={FontIndex=2}      % 把原来的 Regular 样式用于加粗文本
 %]{Songti SC}
-%\setCJKmainfont[
-%    Path=/System/Library/Fonts/Hiragino Sans GB.ttc,
+%\setmainfont[
+%    Path=/System/Library/Fonts/MSYH.TTC,
 %    UprightFont=* W3,
 %    BoldFont=* W6
-%]{Hiragino Sans GB}
+%]{Microsoft YaHei UI}
 %\setCJKmainfont{Hiragino Sans GB}
-%\setmainfont{Microsoft YaHei}
+\setCJKmainfont{Microsoft YaHei UI}
+\setCJKmonofont{Microsoft YaHei}
+\setCJKsansfont{Microsoft YaHei}
+\setmainfont{Microsoft YaHei}
 %\setCJKmainfont{PingFang SC Light}
-\setmainfont{PingFangSC-Regular}
+%\setmainfont{PingFangSC-Regular}
 %\setmainfont{PingFang SC}
 %\setCJKmainfont{Microsoft YaHei}
 %\setCJKmainfont[Weight=Regular]{Microsoft YaHei}
@@ -1995,7 +1998,7 @@ bottom=8pt
                 \textbf{\color{black!80}\small \textcolor{customTeal}{\faInfoCircle}}
             };
             \node[anchor=west, text width=16cm] at (0.9,-0.3) {
-                {\small\color{gray}\small \intro}
+                {\small\color{black!80}\small \intro}
             };
 
             % 异常解读标题和内容
