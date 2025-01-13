@@ -4,6 +4,7 @@
 \usepackage[margin=2cm]{geometry}
 \usepackage[skins]{tcolorbox}
 \usepackage{tikz}
+\usetikzlibrary{shapes, positioning}
 \tcbuselibrary{breakable}
 % \setmainfont{Times New Roman}
 \usepackage{pgfplots}    % 绘图包
@@ -47,6 +48,7 @@
 \definecolor{customred}{RGB}{255, 99, 71}
 
 \definecolor{lightpurple}{RGB}{200, 162, 200} % 浅紫色
+\definecolor{bigpurple}{RGB}{160, 120, 160} % 稍微浓一点的紫色
 \definecolor{lightgreen}{RGB}{162, 200, 162} % 浅绿色
 
 \definecolor{customTeal}{RGB}{0,178,180}
@@ -1166,7 +1168,7 @@ $\fontsize{30}{31}\selectfont\textbf{肠道菌群整体评估}$
     top=8pt,
     bottom=8pt
 ]
-{\small{\color{customTeal}\faInfoCircle} 肠道基础功能是反映消化系统健康状况的重要指标，包括消化吸收、代谢转化和防御屏障等核心功能。通过这些指标的评估，可以全面了解肠道的工作状态和功能完整性。
+{\normalsize{\color{customTeal}\faInfoCircle} 肠道基础功能是反映消化系统健康状况的重要指标，包括消化吸收、代谢转化和防御屏障等核心功能。通过这些指标的评估，可以全面了解肠道的工作状态和功能完整性。
 }
 \end{tcolorbox}
 
@@ -1180,7 +1182,7 @@ $\fontsize{30}{31}\selectfont\textbf{肠道菌群整体评估}$
     top=8pt,
     bottom=8pt
 ]
-{\small{\color{lightpurple}\faQuestionCircle}\quad \textbf{肠道基础功能评估有什么临床意义？}\\
+{\normalsize{\color{lightpurple}\faQuestionCircle}\quad \textbf{肠道基础功能评估有什么临床意义？}\\
 {\color{orange!50}\faComments}\quad 肠道基础功能评估的临床意义包括但不限于以下方面：
 \begin{itemize}
     \item 蛋白发酵：评估蛋白质在肠道内的代谢过程及其产物的影响可以指导优化蛋白质摄取，调节饮食结构。
@@ -2071,136 +2073,200 @@ bottom=8pt
 \newpage
 
 \begin{tcolorbox}[
-enhanced,
-colback=white,
-colframe=customTeal,
-arc=2mm,
-boxrule=1pt,
-left=20pt,
-right=20pt,
-top=12pt,
-bottom=12pt,
-width=\textwidth,
-fontupper=\sffamily,
-overlay={
-\draw[customTeal, line width=2pt]
-([xshift=15pt]frame.south west) -- ([xshift=-15pt]frame.south east);
+    enhanced,
+    colback=white,
+    colframe=customTeal,
+    arc=2mm,
+    boxrule=1pt,
+    left=20pt,
+    right=20pt,
+    top=12pt,
+    bottom=12pt,
+    width=\textwidth,
+    fontupper=\sffamily,
+    overlay={
+    \draw[customTeal, line width=2pt]
+    ([xshift=15pt]frame.south west) -- ([xshift=-15pt]frame.south east);
 }
 ]
 {\Large\bfseries\textcolor{customTeal}{\Huge 肠道菌群检测}}
 \end{tcolorbox}
 
+\definecolor{bar1}{RGB}{41,128,185}
+\definecolor{bar2}{RGB}{46,204,113}
+\definecolor{bar3}{RGB}{155,89,182}
+\definecolor{bar4}{RGB}{243,156,18}
+\definecolor{bar5}{RGB}{231,76,60}
+
 \begin{tcolorbox}[
     enhanced,
     colback=customTealBg,
-    colframe=customTealBg,
+    colframe=customTeal,
     arc=3mm,
     boxrule=0pt,
     width=\textwidth,
     top=8pt,
     bottom=8pt
 ]
-{\small{\color{customTeal}\faInfoCircle} 肠道菌群可以大分类成细菌，病毒，真菌，原生生物和寄生虫5个类别，下列是对各项组成部分的介绍及他们在您肠道中的分布比例图。
+{\normalsize{\color{customTeal}\faInfoCircle} 肠道菌群可以大分类成细菌，病毒，真菌，原生生物和寄生虫5个类别，下列是对各项组成部分的介绍及他们在您肠道中的分布比例图。
 \begin{itemize}
-    \item \textbf{细菌}：占肠道菌群的98\%以上。细菌是肠道微生物的主要组成部分，包含： - 益生菌（如乳酸杆菌、双歧杆菌）：占肠道细菌的20\% - 30\%；对消化、营养吸收和免疫功能具有正面影响。 - 病原菌：数量较少（通常不超过1\%），如某些致病性大肠杆菌和沙门氏菌，但其存在可能导致肠道感染。 - 中性菌：占大约70\% - 80\%，在肠道中有助于维持微生物平衡和生态稳定。
-    \item \textbf{病毒}：大约占肠道微生物的1\% - 5\%。病毒，尤其是噬菌体，在调节细菌的种类和数量方面扮演重要角色。它们既可以抑制有害细菌的生长，也可以推动微生物群落的多样性。
-    \item \textbf{真菌}：占肠道微生物的0.1\% - 1\%。主要包括酵母菌（如白色念珠菌），在数量较少时是正常的一部分，但当免疫系统受损时，可能会因其快速繁殖而导致感染或其它问题。
-    \item \textbf{原生生物}：通常占0.1\%以下。虽然数量较少，但原生生物如变形虫和细胞虫有时会影响肠道环境，参与营养循环和分解。
-    \item \textbf{寄生虫}：在健康个体中，寄生虫的数量极少，通常小于0.1\%。常见的肠道寄生虫如蛔虫和鞭虫，虽然数量较少，但在某些情况下可能导致消化不良和腹痛等健康问题。
-
+    \item \textcolor{bar1}{\textbf{细菌}}：细菌是肠道微生物的主要组成部分，
+    \item \textcolor{bar2}{\textbf{病毒}}：病毒，尤其是噬菌体，在调节细菌的种类和数量方面扮演重要角色。它们既可以抑制有害细菌的生长，也可以推动微生物群落的多样性。
+    \item \textcolor{bar3}{\textbf{真菌}}：主要包括酵母菌（如白色念珠菌），在数量较少时是正常的一部分，但当免疫系统受损时，可能会因其快速繁殖而导致感染或其它问题。
+    \item \textcolor{bar4}{\textbf{原生生物}}：数量较少，但原生生物如变形虫和细胞虫有时会影响肠道环境，参与营养循环和分解。
+    \item \textcolor{bar5}{\textbf{寄生虫}}：常见的肠道寄生虫如蛔虫和鞭虫，虽然数量较少，但在某些情况下可能导致消化不良和腹痛等健康问题。
 \end{itemize}
-
 }
 \end{tcolorbox}
 
-\begin{center}
-\begin{tikzpicture}[
-    boxLeft/.style={
-        rounded corners=15pt,  % 增加圆角
-        fill=#1!6,  % 降低填充色深度
-        inner sep=14pt,  % 增加内边距
-        drop shadow={
-            shadow xshift=1.5mm,
-            shadow yshift=-1.5mm,
-            fill=gray!20,
-            opacity=0.2
-        },
-        line width=0.4pt,  % 添加细边框
-        draw=#1!30  % 边框颜色
-    },
-    boxRight/.style={
-        rounded corners=15pt,
-        fill=#1!6,
-        inner sep=14pt,
-        drop shadow={
-            shadow xshift=1.5mm,
-            shadow yshift=-1.5mm,
-            fill=gray!20,
-            opacity=0.2
-        },
-        line width=0.4pt,
-        draw=#1!30
-    },
-    title/.style={
-        font=\bfseries,
-        text=#1!95  % 增加文字颜色深度
-    },
-    percentage/.style={
-        font=\bfseries,
-        text=#1!95
-    }
+%\begin{center}
+%\begin{tikzpicture}[
+%    boxLeft/.style={
+%        rounded corners=15pt,  % 增加圆角
+%        fill=#1!6,  % 降低填充色深度
+%        inner sep=14pt,  % 增加内边距
+%        drop shadow={
+%            shadow xshift=1.5mm,
+%            shadow yshift=-1.5mm,
+%            fill=gray!20,
+%            opacity=0.2
+%        },
+%        line width=0.4pt,  % 添加细边框
+%        draw=#1!30  % 边框颜色
+%    },
+%    boxRight/.style={
+%        rounded corners=15pt,
+%        fill=#1!6,
+%        inner sep=14pt,
+%        drop shadow={
+%            shadow xshift=1.5mm,
+%            shadow yshift=-1.5mm,
+%            fill=gray!20,
+%            opacity=0.2
+%        },
+%        line width=0.4pt,
+%        draw=#1!30
+%    },
+%    title/.style={
+%        font=\bfseries,
+%        text=#1!95  % 增加文字颜色深度
+%    },
+%    percentage/.style={
+%        font=\bfseries,
+%        text=#1!95
+%    }
+%]
+%    \path (-0.5\textwidth, 0) -- (0.5\textwidth, 0);
+%
+%    % 背景装饰（可选）
+%%    \fill[blue!2] (-0.65\textwidth,-0.5) rectangle (0.65\textwidth,9);
+%
+%    % 左侧细菌区域
+%    \begin{scope}[local bounding box=bacteria]
+%        % 添加光晕效果
+%        \node[boxLeft=blue!80, minimum width=0.59\textwidth, minimum height=9.5cm, opacity=0.1] at (-0.3\textwidth,4.05) {};
+%        \node[boxLeft=blue, minimum width=0.59\textwidth, minimum height=9.5cm] at (-0.3\textwidth,4) {};
+%
+%        % 标题和比例
+%        \node[title=blue, anchor=west] at (-0.57\textwidth,7.7) {\Huge\sffamily 细菌};  % 使用无衬线字体
+%        \node[percentage=blue, anchor=east] at (-0.03\textwidth,7.7) {\Huge\sffamily 90\%};
+%    \end{scope}
+%
+%    % 右侧区域
+%    \begin{scope}[xshift=0.2\textwidth]
+%        % 病毒区域
+%        \node[boxRight=purple!90, minimum width=0.40\textwidth, minimum height=2.8cm, opacity=0.1] at (0,7.35) {};
+%        \node[boxRight=purple, minimum width=0.40\textwidth, minimum height=2.8cm] at (0,7.3) {};
+%        \node[title=purple, anchor=west] at (-0.18\textwidth,7.8) {\huge\sffamily 病毒};
+%        \node[percentage=purple, anchor=east] at (0.18\textwidth,7.8) {\huge\sffamily 5\%};
+%
+%        % 真菌区域
+%        \node[boxRight=green!90, minimum width=0.4\textwidth, minimum height=2.6cm, opacity=0.1] at (0,4.55) {};
+%        \node[boxRight=green, minimum width=0.4\textwidth, minimum height=2.6cm] at (0,4.5) {};
+%        \node[title=green, anchor=west] at (-0.18\textwidth,4.7) {\Large\sffamily 真菌};
+%        \node[percentage=green, anchor=east] at (0.18\textwidth,4.7) {\Large\sffamily 3\%};
+%
+%        % 真核生物区域
+%        \node[boxRight=orange!90, minimum width=0.40\textwidth, minimum height=1.8cm, opacity=0.1] at (0,2.15) {};
+%        \node[boxRight=orange, minimum width=0.40\textwidth, minimum height=1.8cm] at (0,2.1) {};
+%        \node[title=orange, anchor=west] at (-0.18\textwidth,2.1) {\large\sffamily 原生生物};
+%        \node[percentage=orange, anchor=east] at (0.18\textwidth,2.1) {\large\sffamily 1\%};
+%
+%        % 寄生虫区域
+%        \node[boxRight=red!90, minimum width=0.40\textwidth, minimum height=1.8cm, opacity=0.1] at (0,0.25) {};
+%        \node[boxRight=red, minimum width=0.40\textwidth, minimum height=1.8cm] at (0,0.2) {};
+%        \node[title=red, anchor=west] at (-0.18\textwidth,0.2) {\large\sffamily 寄生虫};
+%        \node[percentage=red, anchor=east] at (0.18\textwidth,0.2) {\large\sffamily 1\%};
+%    \end{scope}
+%
+%    % 添加装饰性元素
+%    \foreach \i in {1,...,5} {
+%        \fill[blue!10, opacity=0.1] (-0.65\textwidth + \i*0.2\textwidth, -0.5)
+%            circle (0.5mm);
+%    }
+%
+%\end{tikzpicture}
+%\end{center}
+
+\begin{tcolorbox}[
+    enhanced,
+    colback=white,
+    colframe=white,
+    arc=3mm,
+    boxrule=0pt,
+    width=\textwidth,
+    top=8pt,
+    bottom=8pt
 ]
-    \path (-0.5\textwidth, 0) -- (0.5\textwidth, 0);
+{\normalsize 下列是对各项组成部分的介绍及他们在您肠道中的分布比例图。
+}
+\end{tcolorbox}
+\vspace{0.5cm}
 
-    % 背景装饰（可选）
-%    \fill[blue!2] (-0.65\textwidth,-0.5) rectangle (0.65\textwidth,9);
+\centering
+\hspace{-1cm}
+\begin{tikzpicture}[scale=0.8]
+    % 定义颜色
+%    \definecolor{bar1}{RGB}{41,128,185}
+%    \definecolor{bar2}{RGB}{46,204,113}
+%    \definecolor{bar3}{RGB}{155,89,182}
+%    \definecolor{bar4}{RGB}{243,156,18}
+%    \definecolor{bar5}{RGB}{231,76,60}
 
-    % 左侧细菌区域
-    \begin{scope}[local bounding box=bacteria]
-        % 添加光晕效果
-        \node[boxLeft=blue!80, minimum width=0.59\textwidth, minimum height=9.5cm, opacity=0.1] at (-0.3\textwidth,4.05) {};
-        \node[boxLeft=blue, minimum width=0.59\textwidth, minimum height=9.5cm] at (-0.3\textwidth,4) {};
+    % 背景网格
+%    \foreach \y in {1,2,3,4,5}
+%    {
+%        \draw[gray!20] (0,\y*3) -- (\textwidth,\y*3);
+%    }
 
-        % 标题和比例
-        \node[title=blue, anchor=west] at (-0.57\textwidth,7.7) {\Huge\sffamily 细菌};  % 使用无衬线字体
-        \node[percentage=blue, anchor=east] at (-0.03\textwidth,7.7) {\Huge\sffamily 90\%};
-    \end{scope}
+    % 绘制圆角条形图（增加高度）
+    \fill[bar1,rounded corners=4pt] (0,15) rectangle (0.9*\textwidth,16.8);
+    \fill[bar2,rounded corners=4pt] (0,12) rectangle (0.05*\textwidth,13.8);
+    \fill[bar3,rounded corners=4pt] (0,9) rectangle (0.03*\textwidth,10.8);
+    \fill[bar4,rounded corners=4pt] (0,6) rectangle (0.01*\textwidth,7.8);
+    \fill[bar5,rounded corners=4pt] (0,3) rectangle (0.01*\textwidth,4.8);
 
-    % 右侧区域
-    \begin{scope}[xshift=0.2\textwidth]
-        % 病毒区域
-        \node[boxRight=purple!90, minimum width=0.40\textwidth, minimum height=2.8cm, opacity=0.1] at (0,7.35) {};
-        \node[boxRight=purple, minimum width=0.40\textwidth, minimum height=2.8cm] at (0,7.3) {};
-        \node[title=purple, anchor=west] at (-0.18\textwidth,7.8) {\huge\sffamily 病毒};
-        \node[percentage=purple, anchor=east] at (0.18\textwidth,7.8) {\huge\sffamily 5\%};
+    % 添加标签（带背景框）
+    \node[anchor=east,fill=white,inner sep=2pt,text=bar1] at (-0.2,15.9) {\Large\textbf{细菌}};
+    \node[anchor=east,fill=white,inner sep=2pt,text=bar2] at (-0.2,12.9) {\Large\textbf{病毒}};
+    \node[anchor=east,fill=white,inner sep=2pt,text=bar3] at (-0.2,9.9) {\Large\textbf{真菌}};
+    \node[anchor=east,fill=white,inner sep=2pt,text=bar4] at (-0.2,6.9) {\Large\textbf{原生生物}};
+    \node[anchor=east,fill=white,inner sep=2pt,text=bar5] at (-0.2,3.9) {\Large\textbf{寄生虫}};
 
-        % 真菌区域
-        \node[boxRight=green!90, minimum width=0.4\textwidth, minimum height=2.6cm, opacity=0.1] at (0,4.55) {};
-        \node[boxRight=green, minimum width=0.4\textwidth, minimum height=2.6cm] at (0,4.5) {};
-        \node[title=green, anchor=west] at (-0.18\textwidth,4.7) {\Large\sffamily 真菌};
-        \node[percentage=green, anchor=east] at (0.18\textwidth,4.7) {\Large\sffamily 3\%};
+    % 添加百分比（带背景）
+    \node[anchor=west,fill=white,inner sep=2pt,text=bar1] at (0.92*\textwidth,15.9) {\Large\textbf{90\%}};
+    \node[anchor=west,fill=white,inner sep=2pt,text=bar2] at (0.07*\textwidth,12.9) {\Large\textbf{5\%}};
+    \node[anchor=west,fill=white,inner sep=2pt,text=bar3] at (0.05*\textwidth,9.9) {\Large\textbf{3\%}};
+    \node[anchor=west,fill=white,inner sep=2pt,text=bar4] at (0.03*\textwidth,6.9) {\Large\textbf{1\%}};
+    \node[anchor=west,fill=white,inner sep=2pt,text=bar5] at (0.03*\textwidth,3.9) {\Large\textbf{1\%}};
 
-        % 真核生物区域
-        \node[boxRight=orange!90, minimum width=0.40\textwidth, minimum height=1.8cm, opacity=0.1] at (0,2.15) {};
-        \node[boxRight=orange, minimum width=0.40\textwidth, minimum height=1.8cm] at (0,2.1) {};
-        \node[title=orange, anchor=west] at (-0.18\textwidth,2.1) {\large\sffamily 原生生物};
-        \node[percentage=orange, anchor=east] at (0.18\textwidth,2.1) {\large\sffamily 1\%};
-
-        % 寄生虫区域
-        \node[boxRight=red!90, minimum width=0.40\textwidth, minimum height=1.8cm, opacity=0.1] at (0,0.25) {};
-        \node[boxRight=red, minimum width=0.40\textwidth, minimum height=1.8cm] at (0,0.2) {};
-        \node[title=red, anchor=west] at (-0.18\textwidth,0.2) {\large\sffamily 寄生虫};
-        \node[percentage=red, anchor=east] at (0.18\textwidth,0.2) {\large\sffamily 1\%};
-    \end{scope}
-
-    % 添加装饰性元素
-    \foreach \i in {1,...,5} {
-        \fill[blue!10, opacity=0.1] (-0.65\textwidth + \i*0.2\textwidth, -0.5)
-            circle (0.5mm);
-    }
-
+%    % 添加底部刻度
+%    \foreach \x in {0,10,...,90}
+%    {
+%        \draw[gray!50] (\x/100*\textwidth,2.4) -- (\x/100*\textwidth,3);
+%        \node[below] at (\x/100*\textwidth,2.4) {\small \x\%};
+%    }
 \end{tikzpicture}
-\end{center}
 
 \newpage
 
@@ -2373,12 +2439,14 @@ leftcard/.style={   % 左侧小卡片样式
     },
     borderline west={5pt}{0pt}{customTeal}
 ]
-\textcolor{customTeal}{\large\textbf{核心菌属}}
+\textcolor{customTeal}{\large\faBacteria\textbf{核心菌属}}
 \end{tcolorbox}
+
 \vspace{0.05cm}
+
 \begin{tcolorbox}[
     enhanced,
-    colback=customTealBg,
+    colback=customTeal!15,
     colframe=customTealBg,
     arc=3mm,
     boxrule=0pt,
@@ -2386,7 +2454,7 @@ leftcard/.style={   % 左侧小卡片样式
     top=8pt,
     bottom=8pt
 ]
-{\small{\color{customTeal}\faInfoCircle} 核心菌属是指在肠道菌群中丰度（相对数量）较高、具有重要生理功能的优势菌群，它们在维持肠道健康、参与营养物质代谢、调节免疫系统等方面发挥着主导作用，是构成肠道微生态系统的基石。主要包括拟杆菌属（Bacteroides）、普雷沃氏菌属（Prevotella）和瘤胃球菌属（Ruminococcus）等，这些菌群在正常情况下能帮助消化纤维、产生短链脂肪酸、维持肠道屏障功能。如果这些核心菌属丰度异常（过高或过低），可能导致肠道菌群失衡，引发炎症反应、免疫功能紊乱，甚至增加肥胖、糖尿病等代谢性疾病的风险。
+{\normalsize{\color{customTeal}\faInfoCircle} 核心菌属是指在肠道菌群中丰度（相对数量）较高、具有重要生理功能的优势菌群，它们在维持肠道健康、参与营养物质代谢、调节免疫系统等方面发挥着主导作用，是构成肠道微生态系统的基石。主要包括拟杆菌属（Bacteroides）、普雷沃氏菌属（Prevotella）和瘤胃球菌属（Ruminococcus）等，这些菌群在正常情况下能帮助消化纤维、产生短链脂肪酸、维持肠道屏障功能。如果这些核心菌属丰度异常（过高或过低），可能导致肠道菌群失衡，引发炎症反应、免疫功能紊乱，甚至增加肥胖、糖尿病等代谢性疾病的风险。
 \begin{itemize}
     \item 在本报告中，核心菌属指的是在90\%人群中可被检测出，且人群平均丰度在1\%以上的菌属。
 \end{itemize}
@@ -2395,10 +2463,10 @@ leftcard/.style={   % 左侧小卡片样式
 \vspace{-0.5cm}
 \begin{center}
 \begin{tikzpicture}[
-    font=\small,
-    title/.style={font=\small\bfseries\color{white}},
-    value/.style={font=\small},
-    reference/.style={font=\small},
+    font=\normalsize,
+    title/.style={font=\fontsize{8}{48}\selectfont\bfseries\color{white}},
+    value/.style={font=\fontsize{5}{48}},
+    reference/.style={font=\fontsize{5}{48}},
     cell/.style={anchor=west, text width=4.2cm},
     note/.style={anchor=west, text width=4.5cm, align=left}
 ]
@@ -2431,7 +2499,7 @@ leftcard/.style={   % 左侧小卡片样式
         {梭菌属}/{Clostridium}/1.90370/{0-4.464}/67\%/99.52\%/正常/{厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用}/{}/\currentpos,
         {普雷沃氏菌属}/{Prevotella}/0.04290/{0-67.8009}/50\%/99.52\%/正常/{革兰氏阴性厌氧菌，专门降解植物多糖和黏蛋白的菌群，产生琥珀酸和乙酸，与植物性饮食密切相关}/{}/\currentpos,
         {瘤胃球菌属}/{Ruminococcus}/9.84521/{0.0544-19.7985}/44\%/99.52\%/正常/{专性厌氧菌，是肠道主要的纤维素降解菌，能产生乙酸和丁酸，对维持结肠上皮细胞健康至关重要}/{}/\currentpos,
-        {拟杆菌属}/{Bacteroides}/0.08974/{1.0578-47.3225}/2\%/99.04\%/偏低/{革兰氏阴性厌氧菌，能降解复杂碳水化合物，产生丙酸盐，参与胆固醇代谢，调节宿主免疫系统}/{建议增加全谷物、豆类等膳食纤维摄入}/\currentpos,
+        {拟杆菌属}/{Bacteroides}/0.08974/{1.0578-47.3225}/2\%/99.04\%/偏低$\downarrow$/{革兰氏阴性厌氧菌，能降解复杂碳水化合物，产生丙酸盐，参与胆固醇代谢，调节宿主免疫系统}/{建议增加全谷物、豆类等膳食纤维摄入}/\currentpos,
         {真杆菌属}/{Eubacterium}/5.75186/{0.1146-9.4883}/95\%/98.56\%/正常/{专性厌氧菌，主要产生丁酸盐，具有抗炎作用，参与胆固醇转化和胆汁酸代谢，维持肠道屏障完整性}/{}/\currentpos,
         {乳酸杆菌属}/{Lactobacillus}/0.00660/{0-0.4302}/8\%/91.83\%/正常/{革兰氏阳性兼性厌氧菌，产生乳酸和抗菌物质，增强肠道屏障功能，调节免疫系统，抑制有害菌生长}/{}/\currentpos,
         {芽孢杆菌属}/{Bacillus}/ND/{0.0001-0.5535}/27\%/77.88\%/未检出/{革兰氏阳性需氧菌，能形成芽孢，产生多种水解酶和抗菌肽，增强肠道免疫功能，改善肠道微生态平衡}/{建议适当补充含芽孢杆菌的活性益生菌制剂}/\currentpos,
@@ -2443,12 +2511,12 @@ leftcard/.style={   % 左侧小卡片样式
 
         % 菌种名称
         \node[cell, align=left] at (0.5,\basepos) {
-            \small\textbf{\item}\\[-0.2em]
+            \fontsize{10}{48}\selectfont\text{\textbf{\item}}\\[-0.2em]
             {\color{gray}\small\enitem}
         };
 
         % 正常范围
-        \node[reference] at (4.5,\basepos) {\footnotesize\range};
+        \node[reference] at (4.5,\basepos) {\fontsize{9}{48}\selectfont\range};
 
         % 进度条相关
         \pgfmathsetmacro{\barypos}{\basepos-\valuebarspace+0.1}
@@ -2459,7 +2527,7 @@ leftcard/.style={   % 左侧小卡片样式
             rectangle (\barstart+\barwidth,\barypos+\barheight);
 
         % 检测丰度值
-        \node[value] at (7.5,{\basepos-\valuebarspace+0.6}) {\footnotesize\value};
+        \node[value] at (7.5,{\basepos-\valuebarspace+0.6}) {\fontsize{8}{48}\selectfont\value};
 
         % 解析范围并计算进度条长度
         \def\parserange#1-#2\endparse{\def\minval{#1}\def\maxval{#2}}
@@ -2467,7 +2535,7 @@ leftcard/.style={   % 左侧小卡片样式
 
         % 计算进度条长度和颜色
         \pgfmathsetmacro{\progress}{min(\value/\maxval, 1.0)}
-        \pgfmathparse{\value > \maxval ? "customred" : (\value < \minval ? "customred" : "green!50")}
+        \pgfmathparse{\value > \maxval ? "customred" : (\value < \minval ? "customred" : "green!90!black")}
         \let\barcolor=\pgfmathresult
 
         % 进度条显示
@@ -2479,21 +2547,48 @@ leftcard/.style={   % 左侧小卡片样式
                 rectangle (\barstart+\barwidth*\progress,\barypos+\barheight);
         \fi
 
+%        % 结果评价
+%        \ifnum\pdfstrcmp{\status}{超标}=0
+%            \node[value, text=customred] at (10.5,\basepos) {\fontsize{10}{48}\selectfont\textbf{\status}};
+%        \else
+%            \node[value, text=customGreen] at (10.5,\basepos) {\fontsize{10}{48}\selectfont\textbf{\status}};
+%        \fi
+
         % 结果评价
-        \ifnum\pdfstrcmp{\status}{超标}=0
-            \node[value, text=customred] at (10.5,\basepos) {\footnotesize\textbf{\status}};
-        \else
-            \node[value, text=customGreen] at (10.5,\basepos) {\footnotesize\textbf{\status}};
-        \fi
+
+        % 结果评价，简化版
+\ifnum\pdfstrcmp{\status}{正常}=0
+    % 正常
+
+\node[value, text=customGreen] at (10.5,\basepos) {\fontsize{10}{48}\selectfont\textbf{正常}};
+\else\ifnum\pdfstrcmp{\status}{未检出}=0
+    % 未检出
+
+\node[value, text=gray] at (10.5,\basepos) {\fontsize{10}{48}\selectfont\textbf{未检出}};
+\else\ifnum\pdfstrcmp{\status}{超标}=0
+    % 超标
+
+\node[value, text=customRed] at (10.5,\basepos) {\fontsize{10}{48}\selectfont\textbf{超标}};
+\else\ifnum\pdfstrcmp{\status}{偏低$\downarrow$}=0
+    % 偏低
+
+\node[value, text=orange] at (10.5,\basepos) {\fontsize{10}{48}\selectfont\textbf{偏低$\downarrow$}};
+\else
+    % 其他情况
+
+\node[value, text=black] at (10.5,\basepos) {\fontsize{10}{48}\selectfont\textbf{未知状态}};
+\fi\fi\fi\fi
+
+
 
         % 丰度超过%人
-        \node[value] at (13,\basepos) {\footnotesize\percentile};
+        \node[value] at (13,\basepos) {\fontsize{9}{48}\selectfont\percentile};
 
         % %正常人检出
-        \node[value] at (16,\basepos) {\footnotesize\detection};
+        \node[value] at (16,\basepos) {\fontsize{9}{48}\selectfont\detection};
 
         % 添加卡片
-        \pgfmathsetmacro{\cardypos}{\basepos-0.5}
+        \pgfmathsetmacro{\cardypos}{\basepos-0.6}
         \begin{scope}[shift={(0,\cardypos)}]
             % 卡片背景
             \pgfmathsetmacro{\cardheight}{
@@ -2504,15 +2599,15 @@ leftcard/.style={   % 左侧小卡片样式
                 \fi
             }
 
-            \fill[rounded corners=5pt, customTeal!5, draw=gray!5]
+            \fill[rounded corners=5pt, customTeal!15, draw=gray!5]
                 (0.3,-\cardheight) rectangle (17.3,0);
 
             % 菌群简介图标和内容
             \node[anchor=west] at (0.5,-0.3) {
-                \textbf{\color{gray!90}\footnotesize \textcolor{customTeal}{\faInfoCircle}}
+                \textbf{\color{orange}\footnotesize \textcolor{customTeal}{\faInfoCircle}}
             };
             \node[anchor=west, text width=16cm] at (0.9,-0.3) {
-                {\small\color{black}\footnotesize \intro}
+                {\small\color{black!80}\footnotesize \intro}
             };
 
             % 异常解读标题和内容
@@ -2521,7 +2616,7 @@ leftcard/.style={   % 左侧小卡片样式
                     \textbf{\color{customRed}\footnotesize \textcolor{customRed}{\faBell}}
                 };
                 \node[anchor=west, text width=16cm] at (0.9,-0.8) {
-                    {\small\color{gray}\footnotesize \suggestion}
+                    {\small\color{black!80}\footnotesize \suggestion}
                 };
             \fi
         \end{scope}
@@ -16419,7 +16514,7 @@ bottom=8pt
 
 \begin{center}\vspace{-10pt}
 \begin{tikzpicture}[
-    font=\small,
+    font=\fontsize{8}{48}\selectfont,
     title/.style={font=\small\bfseries\color{white}},
     value/.style={font=\small},
     reference/.style={font=\small},
@@ -16462,7 +16557,7 @@ bottom=8pt
         {芽麦粉}/{26}/{1402}/{12}/{3}/{70}/{0}/{0}/{10}/7.5,
         {黑麦面包}/{21}/{1188}/{9}/{3}/{53}/{0}/{0}/{6}/8.5,
         {鸡蛋面包}/{2}/{1201}/{9}/{6}/{47}/{0}/{0}/{2}/9.5,
-        {葡萄干浆\\即食谷物}/{0}/{1354}/{7}/{1}/{78}/{0}/{0}/{13}/10.5,
+        {葡萄干浆即食谷物}/{0}/{1354}/{7}/{1}/{78}/{0}/{0}/{13}/10.5,
         {米饭}/{-1}/{1527}/{7}/{0}/{79}/{0}/{0}/{1}/11.5,
         {面条}/{-7}/{1609}/{14}/{4}/{71}/{0}/{0}/{3}/12.5,
         {小麦面包}/{-12}/{1116}/{10}/{3}/{48}/{36}/{0}/{4}/13.5
@@ -16472,7 +16567,7 @@ bottom=8pt
         \pgfmathsetmacro{\ypos}{-\rowspace*\index}
 
         % 项目名
-        \node[cell, align=left] at (0.5,\ypos) {\small\textbf{\item}};
+        \node[cell, align=left] at (0.5,\ypos) {\fontsize{10}{48}\selectfont \item};
 
         % 计算进度条垂直居中的位置
         \pgfmathsetmacro{\barypos}{\ypos-0.5*\barheight}
@@ -16493,7 +16588,7 @@ bottom=8pt
         \fi
 
         % 其他数值显示
-        \node[value] at (5.0,\ypos) {\footnotesize\energy};
+        \node[value] at (5.0,\ypos) {\small\energy};
         \node[value] at (6.5,\ypos) {\footnotesize\protein};
         \node[value] at (8.0,\ypos) {\footnotesize\fat};
         \node[value] at (10.0,\ypos) {\footnotesize\carbs};
@@ -16543,14 +16638,14 @@ bottom=8pt
     top=8pt,
     bottom=8pt
 ]
-{\small{\color{customTeal}\faInfoCircle}
+{\fontsize{10}{48}\selectfont{\color{customTeal}\faInfoCircle}
 以下是6种乳制品的推荐指数，分别按推荐指数从高到低递减排列（从强烈推荐到避免食用）
 }
 \end{tcolorbox}
 
 \begin{center}\vspace{-0.5cm}
 \begin{tikzpicture}[
-    font=\small,
+    font=\fontsize{8}{48}\selectfont,
     title/.style={font=\small\bfseries\color{white}},
     value/.style={font=\small},
     reference/.style={font=\small},
@@ -16595,7 +16690,7 @@ bottom=8pt
         \pgfmathsetmacro{\ypos}{-\rowspace*\index}
 
         % 项目名
-        \node[cell, align=left] at (0.5,\ypos) {\small\textbf{\item}};
+        \node[cell, align=left] at (0.5,\ypos) {\fontsize{10}{48}\selectfont\item};
 
         % 计算进度条垂直居中的位置
         \pgfmathsetmacro{\barypos}{\ypos-0.5*\barheight}
@@ -18880,6 +18975,183 @@ overlay={
 \end{tcolorbox}
 
 
+\newpage
+
+% 核心菌属标题框
+\begin{tcolorbox}[
+    enhanced,
+    colback=white,
+    colframe=white,
+    arc=2mm,
+    boxrule=0pt,
+    width=\textwidth,
+    left=15pt,
+    right=15pt,
+    top=10pt,
+    bottom=10pt,
+    drop shadow={
+        opacity=0.2,
+        color=customTeal
+    },
+    borderline west={5pt}{0pt}{customTeal}
+]
+\textcolor{customTeal}{\large\faBacteria\textbf{核心菌属}}
+\end{tcolorbox}
+
+\vspace{0.05cm}
+
+% 核心菌属描述框
+\begin{tcolorbox}[
+    enhanced,
+    colback=customTeal!15,
+    colframe=customTeal,
+    arc=3mm,
+    boxrule=0pt,
+    width=\textwidth,
+    top=8pt,
+    bottom=8pt
+]
+{\normalsize{\color{customTeal}\faInfoCircle} 核心菌属是指在肠道菌群中丰度（相对数量）较高、具有重要生理功能的优势菌群，它们在维持肠道健康、参与营养物质代谢、调节免疫系统等方面发挥着主导作用，是构成肠道微生态系统的基石。主要包括拟杆菌属（Bacteroides）、普雷沃氏菌属（Prevotella）和瘤胃球菌属（Ruminococcus）等，这些菌群在正常情况下能帮助消化纤维、产生短链脂肪酸、维持肠道屏障功能。如果这些核心菌属丰度异常（过高或过低），可能导致肠道菌群失衡，引发炎症反应、免疫功能紊乱，甚至增加肥胖、糖尿病等代谢性疾病的风险。
+\begin{itemize}
+    \item 在本报告中，核心菌属指的是在90\%人群中可被检测出，且人群平均丰度在1\%以上的菌属。
+\end{itemize}
+}
+\end{tcolorbox}
+
+\vspace{-0.5cm}
+
+% 数据行和卡片
+\newcommand{\fooddata}{
+    {
+        {梭菌属}/{Clostridium}/1.90370/{0-4.464}/67\%/99.52\%/正常/{厌氧菌，能产生丁酸盐，参与胆汁酸代谢和色氨酸代谢，对维持肠道屏障功能和免疫系统调节具有重要作用}/{}/0,
+        {普雷沃氏菌属}/{Prevotella}/0.04290/{0-67.8009}/50\%/99.52\%/正常/{革兰氏阴性厌氧菌，专门降解植物多糖和黏蛋白的菌群，产生琥珀酸和乙酸，与植物性饮食密切相关}/{}/1,
+        {瘤胃球菌属}/{Ruminococcus}/9.84521/{0.0544-19.7985}/44\%/99.52\%/正常/{专性厌氧菌，是肠道主要的纤维素降解菌，能产生乙酸和丁酸，对维持结肠上皮细胞健康至关重要}/{}/2,
+        {拟杆菌属}/{Bacteroides}/0.08974/{1.0578-47.3225}/2\%/99.04\%/偏低/{革兰氏阴性厌氧菌，能降解复杂碳水化合物，产生丙酸盐，参与胆固醇代谢，调节宿主免疫系统}/{建议增加全谷物、豆类等膳食纤维摄入}/3,
+        {真杆菌属}/{Eubacterium}/5.75186/{0.1146-9.4883}/95\%/98.56\%/正常/{专性厌氧菌，主要产生丁酸盐，具有抗炎作用，参与胆固醇转化和胆汁酸代谢，维持肠道屏障完整性}/{}/4,
+        {乳酸杆菌属}/{Lactobacillus}/0.00660/{0-0.4302}/8\%/91.83\%/正常/{革兰氏阳性兼性厌氧菌，产生乳酸和抗菌物质，增强肠道屏障功能，调节免疫系统，抑制有害菌生长}/{}/5,
+        {芽孢杆菌属}/{Bacillus}/ND/{0.0001-0.5535}/27\%/77.88\%/未检出/{革兰氏阳性需氧菌，能形成芽孢，产生多种水解酶和抗菌肽，增强肠道免疫功能，改善肠道微生态平衡}/{建议适当补充含芽孢杆菌的活性益生菌制剂}/6,
+        {Lachnoclostridium}/{Lachnoclostridium}/0.17516/{0-0.2086}/8\%/98.56\%/正常/{厌氧产丁酸菌，能降解复杂碳水化合物，产生短链脂肪酸，参与结肠上皮细胞能量代谢，维持肠道健康}/{}/7
+    }
+}
+
+% 计算表格高度
+\newcommand{\calculateTableHeight}{
+    \pgfmathsetmacro{\rowheight}{0.8} % 每行的高度
+    \pgfmathsetmacro{\extraHeight}{0.4} % 额外的高度
+    \pgfmathsetmacro{\numRows}{8} % 行数
+    \pgfmathsetmacro{\tableHeight}{\rowheight*\numRows+\extraHeight} % 计算总高度
+    \xdef\calculatedHeight{\tableHeight} % 将计算结果保存到变量
+}
+
+% 绘制表格
+\newcommand{\drawFoodTable}{
+    \begin{center}
+    \begin{tikzpicture}[
+        font=\normalsize,
+        title/.style={font=\fontsize{8}{48}\selectfont\bfseries\color{white}},
+        value/.style={font=\fontsize{5}{48}},
+        reference/.style={font=\fontsize{5}{48}},
+        cell/.style={anchor=west, text width=4.2cm},
+        note/.style={anchor=west, text width=4.5cm, align=left}
+    ]
+        \def\cardwidth{\textwidth}
+        \def\cardheight{\calculatedHeight} % 使用计算的高度
+        \def\barheight{0.25}
+        \def\barwidth{1.5}
+        \def\valuebarspace{0.4}
+
+        % 容器和标题栏背景
+        \draw[rounded corners=5, fill=white, draw=gray!20]
+            (0,0) rectangle (\cardwidth,-\cardheight);
+        \path[fill=customTeal]
+            (0,0) [rounded corners=5] -- (\cardwidth,0) --
+            (\cardwidth,0.8) -- (0,0.8) -- cycle;
+
+        % 表头
+        \node[title, anchor=west] at (0.5,0.4) {\textbf{菌种名称}};
+        \node[title] at (4.5,0.4) {\textbf{正常范围}};
+        \node[title] at (7.5,0.4) {\textbf{检测丰度}};
+        \node[title] at (10.5,0.4) {\textbf{结果评价}};
+        \node[title] at (13,0.4) {\textbf{超过\%的人}};
+        \node[title] at (16,0.4) {\textbf{有\%的正常人检出}};
+
+        % 初始化位置计数器
+        \def\currentpos{0.25}
+
+        % 数据行和卡片
+        \foreach \item/\enitem/\value/\range/\percentile/\detection/\status/\intro/\suggestion/\index in \fooddata
+        {
+            % 计算当前行的基础位置
+            \pgfmathsetmacro{\basepos}{-1.5*\currentpos} % 调整行间距
+
+            % 菌种名称
+            \node[cell, align=left] at (0.5,\basepos) {
+                \fontsize{10}{48}\selectfont\text{\textbf{\item}}\\[-0.2em]
+                {\color{gray}\small\enitem}
+            };
+
+            % 正常范围
+            \node[reference] at (4.5,\basepos) {\fontsize{9}{48}\selectfont\range};
+
+            % 进度条相关
+            \pgfmathsetmacro{\barypos}{\basepos-\valuebarspace+0.1}
+            \def\barstart{6.75}
+
+            % 进度条背景
+            \fill[gray!10, rounded corners=2] (\barstart,\barypos)
+                rectangle (\barstart+\barwidth,\barypos+\barheight);
+
+            % 检测丰度值
+            \node[value] at (7.5,{\basepos-\valuebarspace+0.6}) {\fontsize{8}{48}\selectfont\value};
+
+            % 解析范围并计算进度条长度
+            \def\parserange#1-#2\endparse{\def\minval{#1}\def\maxval{#2}}
+            \expandafter\parserange\range\endparse
+
+            % 计算进度条长度和颜色
+            \pgfmathsetmacro{\progress}{min(\value/\maxval, 1.0)}
+            \pgfmathparse{\value > \maxval ? "customred" : (\value < \minval ? "customred" : "green!50")}
+            \let\barcolor=\pgfmathresult
+
+            % 进度条显示
+            \ifnum\pdfstrcmp{\status}{超标}=0
+                \fill[customred, rounded corners=2] (\barstart,\barypos)
+                    rectangle (\barstart+\barwidth,\barypos+\barheight);
+            \else
+                \fill[\barcolor, rounded corners=2] (\barstart,\barypos)
+                    rectangle (\barstart+\barwidth*\progress,\barypos+\barheight);
+            \fi
+
+            % 结果评价
+            \ifnum\pdfstrcmp{\status}{超标}=0
+                \node[value, text=customred] at (10.5,\basepos) {\fontsize{10}{48}\selectfont\textbf{\status}};
+            \else
+                \node[value, text=customGreen] at (10.5,\basepos) {\fontsize{10}{48}\selectfont\textbf{\status}};
+            \fi
+
+            % 丰度超过%人
+            \node[value] at (13,\basepos) {\fontsize{9}{48}\selectfont\percentile};
+
+            % %正常人检出
+            \node[value] at (16,\basepos) {\fontsize{9}{48}\selectfont\detection};
+
+            % 更新位置计数器
+            \pgfmathsetmacro{\nextpos}{\currentpos+1} % 增加行间距
+            \xdef\currentpos{\nextpos}
+        }
+
+        % 分割线
+        \draw[gray!20] (0.2,-0.1) -- (\cardwidth-0.2,-0.1);
+
+    \end{tikzpicture}
+    \end{center}
+}
+
+% 计算表格高度
+\calculateTableHeight
+
+% 绘制表格
+\drawFoodTable
 
 
 
